@@ -150,10 +150,10 @@
       "title": "Blank Starter",
       "description": "A blank application with all brand components and code",
       "registryDependencies": [
-        "https://registry-starter.vercel.app/r/brand-header.json",
-        "https://registry-starter.vercel.app/r/brand-sidebar.json",
-        "https://registry-starter.vercel.app/r/product-grid.json",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://gt-registry.vercel.app/r/brand-header.json",
+        "https://gt-registry.vercel.app/r/brand-sidebar.json",
+        "https://gt-registry.vercel.app/r/product-grid.json",
+        "https://gt-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -173,11 +173,11 @@
       "type": "registry:block",
       "title": "Dashboard Starter",
       "description": "A dashboard application with your brand themed components",
-      "registryDependencies": [
-        "https://registry-starter.vercel.app/r/sonner.json",
-        "https://registry-starter.vercel.app/r/brand-header.json",
-        "https://registry-starter.vercel.app/r/brand-sidebar.json",
-        "https://registry-starter.vercel.app/r/theme.json"
+              "registryDependencies": [
+        "https://gt-registry.vercel.app/r/sonner.json",
+        "https://gt-registry.vercel.app/r/brand-header.json",
+        "https://gt-registry.vercel.app/r/brand-sidebar.json",
+        "https://gt-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -197,9 +197,9 @@
       "type": "registry:block",
       "title": "Store Starter",
       "description": "A store application with your brand themed components",
-      "registryDependencies": [
-        "https://registry-starter.vercel.app/r/product-grid.json",
-        "https://registry-starter.vercel.app/r/theme.json"
+              "registryDependencies": [
+        "https://gt-registry.vercel.app/r/product-grid.json",
+        "https://gt-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -224,9 +224,9 @@
         "input",
         "avatar",
         "sidebar",
-        "https://registry-starter.vercel.app/r/sonner.json",
-        "https://registry-starter.vercel.app/r/logo.json",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://gt-registry.vercel.app/r/sonner.json",
+        "https://gt-registry.vercel.app/r/logo.json",
+        "https://gt-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -254,8 +254,8 @@
         "badge",
         "button",
         "sidebar",
-        "https://registry-starter.vercel.app/r/sonner.json",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://gt-registry.vercel.app/r/sonner.json",
+        "https://gt-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -282,8 +282,8 @@
       "registryDependencies": [
         "badge",
         "button",
-        "https://registry-starter.vercel.app/r/theme.json",
-        "https://registry-starter.vercel.app/r/logo.json"
+        "https://gt-registry.vercel.app/r/theme.json",
+        "https://gt-registry.vercel.app/r/logo.json"
       ],
       "files": [
         {
@@ -308,7 +308,7 @@
       "title": "Brand Logo",
       "description": "A styled, simple, reusable logo",
       "registryDependencies": [
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://gt-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -335,7 +335,7 @@
       "registryDependencies": [
         "badge",
         "button",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://gt-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -361,7 +361,7 @@
       "description": "Attention-grabbing section to display the current promotional deal.",
       "registryDependencies": [
         "button",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://gt-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -386,7 +386,7 @@
       "title": "Product Grid",
       "description": "Product grid displaying all products with API to fetch data",
       "registryDependencies": [
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://gt-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -411,7 +411,7 @@
       "description": "A vertically stacked set of interactive headings that each reveal a section of content.",
       "registryDependencies": [
         "accordion",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://gt-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -428,7 +428,7 @@
       "description": "Displays a callout for user attention.",
       "registryDependencies": [
         "alert",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://gt-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -445,7 +445,7 @@
       "description": "An image element with a fallback for representing the user.",
       "registryDependencies": [
         "avatar",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://gt-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -462,7 +462,7 @@
       "description": "Displays a small count or status indicator.",
       "registryDependencies": [
         "badge",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://gt-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -479,7 +479,7 @@
       "description": "Displays the path to the current resource using a hierarchy of links.",
       "registryDependencies": [
         "breadcrumb",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://gt-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -496,7 +496,7 @@
       "description": "Allows users to take actions with a single click or tap.",
       "registryDependencies": [
         "button",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://gt-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -513,7 +513,7 @@
       "description": "A date field component that allows users to enter and edit date.",
       "registryDependencies": [
         "calendar",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://gt-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -530,7 +530,7 @@
       "description": "Containers for displaying content and actions about a single subject.",
       "registryDependencies": [
         "card",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://gt-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -547,7 +547,7 @@
       "description": "Beautiful charts. Built using Recharts. Copy and paste into your apps.",
       "registryDependencies": [
         "chart",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://gt-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -564,7 +564,7 @@
       "description": "Allows users to select multiple items from a list of options.",
       "registryDependencies": [
         "checkbox",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://gt-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -581,7 +581,7 @@
       "description": "Powerful table and datagrids built using TanStack Table.",
       "registryDependencies": [
         "data-table",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://gt-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -598,7 +598,7 @@
       "description": "Displays the path to the current resource using a hierarchy of links.",
       "registryDependencies": [
         "date-picker",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://gt-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -615,7 +615,7 @@
       "description": "A modal dialog that interrupts the user with important content.",
       "registryDependencies": [
         "dialog",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://gt-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -632,7 +632,7 @@
       "description": "Displays a menu to the user triggered by a button.",
       "registryDependencies": [
         "dropdown-menu",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://gt-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -649,7 +649,7 @@
       "description": "Displays a form input field or a component that looks like an input field.",
       "registryDependencies": [
         "input",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://gt-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -666,7 +666,7 @@
       "description": "A visually persistent menu common in desktop applications that provides quick access to a consistent set of commands.",
       "registryDependencies": [
         "menu-bar",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://gt-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -683,7 +683,7 @@
       "description": "Displays a list of options for the user to pick from—triggered by a button.",
       "registryDependencies": [
         "select",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://gt-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -700,7 +700,7 @@
       "description": "Visually or semantically separates content.",
       "registryDependencies": [
         "separator",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://gt-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -717,7 +717,7 @@
       "description": "Use to show a placeholder while content is loading.",
       "registryDependencies": [
         "skeleton",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://gt-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -734,7 +734,7 @@
       "description": "An input where the user selects a value from within a given range.",
       "registryDependencies": [
         "slider",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://gt-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -751,7 +751,7 @@
       "description": "An opinionated toast component for React.",
       "registryDependencies": [
         "sonner",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://gt-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -773,7 +773,7 @@
       "description": "A control that allows the user to toggle between checked and not checked.",
       "registryDependencies": [
         "switch",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://gt-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -790,7 +790,7 @@
       "description": "A responsive table component.",
       "registryDependencies": [
         "table",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://gt-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -807,7 +807,7 @@
       "description": "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
       "registryDependencies": [
         "tabs",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://gt-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -824,7 +824,7 @@
       "description": "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
       "registryDependencies": [
         "toggle-group",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://gt-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -841,7 +841,7 @@
       "description": "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
       "registryDependencies": [
         "tooltip",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://gt-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
