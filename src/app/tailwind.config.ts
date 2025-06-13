@@ -73,9 +73,20 @@ const config: Config = {
         "2xl": "var(--shadow-2xl)",
       },
       fontFamily: {
-        serif: ["var(--font-serif)", "sans-serif"],
         sans: ["var(--font-sans)", "sans-serif"],
+        serif: ["var(--font-serif)", "serif"],
         mono: ["var(--font-mono)", "monospace"],
+      },
+      letterSpacing: {
+        tighter: "var(--tracking-tighter)",
+        tight: "var(--tracking-tight)",
+        normal: "var(--tracking-normal)",
+        wide: "var(--tracking-wide)",
+        wider: "var(--tracking-wider)",
+        widest: "var(--tracking-widest)",
+      },
+      spacing: {
+        DEFAULT: "var(--spacing)",
       },
       keyframes: {
         "fade-in-scale": {
