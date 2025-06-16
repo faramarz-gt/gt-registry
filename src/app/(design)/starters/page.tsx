@@ -20,6 +20,11 @@ const starters = [
     name: "store",
     url: "/starters/store",
   },
+  {
+    title: "GT - Navigation Header",
+    name: "gt-navigation-header",
+    url: "/starters/gt-navigation-header",
+  },
 ];
 
 export default function StartPage() {
