@@ -113,6 +113,38 @@
       ]
     },
     {
+      "name": "gt-navigation-header",
+      "type": "registry:block",
+      "title": "GT - Navigation Header",
+      "description": "Complete navigation header with GTreasury branding, 8 nav items, search, and user menu",
+      "registryDependencies": [
+        "button",
+        "input",
+        "avatar",
+        "dropdown-menu",
+        "card",
+        "badge",
+        "https://gt-registry.vercel.app/r/logo.json",
+        "https://gt-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/gt-navigation-header.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/app/starters/(minimal)/v0-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/app/starters/(minimal)/gt-navigation-header/page.tsx",
+          "type": "registry:page",
+          "target": "app/page.tsx"
+        }
+      ]
+    },
+    {
       "name": "brand-header",
       "type": "registry:component",
       "title": "Brand Header",
