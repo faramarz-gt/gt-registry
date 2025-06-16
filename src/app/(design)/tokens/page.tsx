@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import type React from "react";
-import { ColorBlock } from "./color-block";
+import { ColorBlock, LogoBlock } from "./color-block";
 
 export default function TokensPage() {
   return (
@@ -22,6 +22,37 @@ export default function TokensPage() {
           A comprehensive overview of all color tokens used in the design system
         </p>
       </div>
+
+      {/* Brand Assets */}
+      <section className="mb-12">
+        <h2 className="mb-4 font-semibold text-xl">Brand Assets</h2>
+        <p className="mb-6 text-muted-foreground">
+          Various versions of the brand logo for different use cases and backgrounds.
+        </p>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <LogoBlock
+            name="Full Logo (Color)"
+            src="/assets/GTreasury-Logo-RGB.svg"
+            description="Primary logo with full branding and color gradient"
+          />
+          <LogoBlock
+            name="Full Logo (White)"
+            src="/assets/GTreasury-Logo-RGB-White.svg"
+            description="White version for dark backgrounds and overlays"
+            className="bg-slate-800 p-4 rounded"
+          />
+          <LogoBlock
+            name="Symbol Only"
+            src="/assets/GTreasury-Logo-RGB-Symbol-only.svg"
+            description="Standalone symbol without text for compact spaces"
+          />
+          <LogoBlock
+            name="Logo Mark"
+            src="/assets/gtreasury-logo-mark.svg"
+            description="Simplified logo mark for icons and favicons"
+          />
+        </div>
+      </section>
 
       {/* Primary Theme */}
       <section className="mb-12">
