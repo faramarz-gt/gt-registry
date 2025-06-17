@@ -124,6 +124,31 @@
       ]
     },
     {
+      "name": "logos",
+      "type": "registry:block",
+      "title": "Brand Logos",
+      "description": "Complete collection of GTreasury brand logos and assets for different use cases",
+      "registryDependencies": [
+        "https://gt-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/logos.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/app/starters/(minimal)/v0-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/app/starters/(minimal)/blank/page.tsx",
+          "type": "registry:page",
+          "target": "app/page.tsx"
+        }
+      ]
+    },
+    {
       "name": "brand-header",
       "type": "registry:component",
       "title": "Brand Header",
@@ -222,6 +247,106 @@
       "files": [
         {
           "path": "src/components/logo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/app/starters/(minimal)/v0-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/app/starters/(minimal)/blank/page.tsx",
+          "type": "registry:page",
+          "target": "app/page.tsx"
+        }
+      ]
+    },
+    {
+      "name": "logo-full",
+      "type": "registry:component",
+      "title": "Logo Full Color",
+      "description": "Primary logo with full branding and color gradient",
+      "registryDependencies": [
+        "https://gt-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/logos.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/app/starters/(minimal)/v0-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/app/starters/(minimal)/blank/page.tsx",
+          "type": "registry:page",
+          "target": "app/page.tsx"
+        }
+      ]
+    },
+    {
+      "name": "logo-full-white",
+      "type": "registry:component",
+      "title": "Logo Full White",
+      "description": "White version for dark backgrounds and overlays",
+      "registryDependencies": [
+        "https://gt-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/logos.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/app/starters/(minimal)/v0-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/app/starters/(minimal)/blank/page.tsx",
+          "type": "registry:page",
+          "target": "app/page.tsx"
+        }
+      ]
+    },
+    {
+      "name": "logo-symbol",
+      "type": "registry:component",
+      "title": "Logo Symbol Only",
+      "description": "Standalone symbol without text for compact spaces",
+      "registryDependencies": [
+        "https://gt-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/logos.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/app/starters/(minimal)/v0-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/app/starters/(minimal)/blank/page.tsx",
+          "type": "registry:page",
+          "target": "app/page.tsx"
+        }
+      ]
+    },
+    {
+      "name": "logo-mark",
+      "type": "registry:component",
+      "title": "Logo Mark",
+      "description": "Simplified logo mark for icons and favicons",
+      "registryDependencies": [
+        "https://gt-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/logos.tsx",
           "type": "registry:component"
         },
         {
