@@ -90,28 +90,7 @@
         }
       ]
     },
-    {
-      "name": "store",
-      "type": "registry:block",
-      "title": "Store Starter",
-      "description": "A store application with your brand themed components",
-      "registryDependencies": [
-        "https://gt-registry.vercel.app/r/product-grid.json",
-        "https://gt-registry.vercel.app/r/theme.json"
-      ],
-      "files": [
-        {
-          "path": "src/app/starters/(minimal)/v0-layout.tsx",
-          "type": "registry:file",
-          "target": "app/layout.tsx"
-        },
-        {
-          "path": "src/app/starters/(minimal)/store/page.tsx",
-          "type": "registry:page",
-          "target": "app/page.tsx"
-        }
-      ]
-    },
+
     {
       "name": "gt-navigation-header",
       "type": "registry:block",
@@ -270,32 +249,6 @@
       "files": [
         {
           "path": "src/components/hero.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/app/starters/(minimal)/v0-layout.tsx",
-          "type": "registry:file",
-          "target": "app/layout.tsx"
-        },
-        {
-          "path": "src/app/starters/(minimal)/blank/page.tsx",
-          "type": "registry:page",
-          "target": "app/page.tsx"
-        }
-      ]
-    },
-    {
-      "name": "promo",
-      "type": "registry:component",
-      "title": "Promo",
-      "description": "Attention-grabbing section to display the current promotional deal.",
-      "registryDependencies": [
-        "button",
-        "https://gt-registry.vercel.app/r/theme.json"
-      ],
-      "files": [
-        {
-          "path": "src/components/promo.tsx",
           "type": "registry:component"
         },
         {

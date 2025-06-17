@@ -1,33 +1,66 @@
-import { ArrowLeft } from "lucide-react";
+"use client";
+
+import { ArrowLeft, Search, X } from "lucide-react";
 import Link from "next/link";
 import type React from "react";
+import { useState } from "react";
 
 import { ComponentCard } from "@/components/design/component-card";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Badge } from "@/components/ui/badge";
 
 const starters = [
   {
     title: "Blank",
     name: "blank",
+    tags: ["minimal", "template", "basic"],
   },
   {
     title: "Dashboard",
     name: "dashboard",
     url: "/starters/dashboard",
-  },
-  {
-    title: "Store",
-    name: "store",
-    url: "/starters/store",
+    tags: ["dashboard", "admin", "analytics"],
   },
   {
     title: "GT - Navigation Header",
     name: "gt-navigation-header",
     url: "/starters/gt-navigation-header",
+    tags: ["navigation", "header", "treasury", "navbar"],
   },
 ];
 
 export default function StartPage() {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
+
+  // Get all unique tags
+  const allTags = Array.from(new Set(starters.flatMap(starter => starter.tags || [])));
+
+  // Filter starters based on search term and selected tags
+  const filteredStarters = starters.filter(starter => {
+    const matchesSearch = starter.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      (starter.tags || []).some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
+    
+    const matchesTags = selectedTags.length === 0 || 
+      selectedTags.some(tag => (starter.tags || []).includes(tag));
+    
+    return matchesSearch && matchesTags;
+  });
+
+  const toggleTag = (tag: string) => {
+    setSelectedTags(prev => 
+      prev.includes(tag) 
+        ? prev.filter(t => t !== tag)
+        : [...prev, tag]
+    );
+  };
+
+  const clearFilters = () => {
+    setSearchTerm("");
+    setSelectedTags([]);
+  };
+
   return (
     <div className="container p-5 md:p-10">
       <div className="mb-6 flex items-center justify-between">
@@ -42,17 +75,77 @@ export default function StartPage() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-8">
-        {starters.map((starter) => (
-          <ComponentCard
-            key={starter.name}
-            name={starter.name}
-            baseUrl={process.env.VERCEL_BRANCH_URL ?? "gt-registry.vercel.app"}
-            title={starter.title}
-            promptTitle={`${starter.title} Starter Kit`}
-            previewUrl={starter.url}
+      {/* Search and Filter Section */}
+      <div className="mb-8 space-y-4">
+        {/* Search Input */}
+        <div className="relative max-w-md">
+          <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+          <Input
+            placeholder="Search starters or tags..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="pl-10"
           />
-        ))}
+        </div>
+
+        {/* Tags Filter */}
+        <div className="space-y-2">
+          <div className="flex items-center gap-2">
+            <span className="text-sm font-medium">Filter by tags:</span>
+            {selectedTags.length > 0 && (
+              <Button 
+                variant="ghost" 
+                size="sm" 
+                onClick={clearFilters}
+                className="h-6 px-2 text-xs"
+              >
+                <X className="mr-1 h-3 w-3" />
+                Clear all
+              </Button>
+            )}
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {allTags.map(tag => (
+              <Badge
+                key={tag}
+                variant={selectedTags.includes(tag) ? "default" : "outline"}
+                className="cursor-pointer hover:bg-primary/10"
+                onClick={() => toggleTag(tag)}
+              >
+                {tag}
+              </Badge>
+            ))}
+          </div>
+        </div>
+
+        {/* Results Summary */}
+        <div className="text-sm text-muted-foreground">
+          Showing {filteredStarters.length} of {starters.length} starters
+        </div>
+      </div>
+
+      {/* Starters Grid */}
+      <div className="flex flex-col gap-8">
+        {filteredStarters.length > 0 ? (
+          filteredStarters.map((starter) => (
+            <ComponentCard
+              key={starter.name}
+              name={starter.name}
+              baseUrl={process.env.VERCEL_BRANCH_URL ?? "gt-registry.vercel.app"}
+              title={starter.title}
+              promptTitle={`${starter.title} Starter Kit`}
+              previewUrl={starter.url}
+            />
+          ))
+        ) : (
+          <div className="flex flex-col items-center justify-center py-12 text-center">
+            <Search className="mb-4 h-12 w-12 text-muted-foreground" />
+            <h3 className="mb-2 text-lg font-semibold">No starters found</h3>
+            <p className="text-muted-foreground">
+              Try adjusting your search terms or clearing the filters.
+            </p>
+          </div>
+        )}
       </div>
     </div>
   );

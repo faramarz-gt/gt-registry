@@ -1,7 +1,6 @@
-import { ArrowRight, Blocks, ToyBrick } from "lucide-react";
+import { ArrowRight, Blocks, ToyBrick, Rocket } from "lucide-react";
 import Link from "next/link";
 
-import { MCPTabs } from "@/components/design/mcp-tabs";
 import {
   Card,
   CardContent,
@@ -25,6 +24,24 @@ const blockItems = [
   { name: "Product Grid", path: "/blocks/product-grid" },
 ];
 
+const starterItems = [
+  { 
+    name: "Blank", 
+    path: "/starters/blank",
+    description: "A minimal starter template with basic setup"
+  },
+  { 
+    name: "Dashboard", 
+    path: "/starters/dashboard",
+    description: "Complete dashboard layout with navigation"
+  },
+  { 
+    name: "GT Navigation", 
+    path: "/starters/gt-navigation-header",
+    description: "GTreasury navigation header template"
+  },
+];
+
 export default function Home() {
   return (
     <main className="container mt-4 p-5 md:mt-8 md:p-10">
@@ -40,7 +57,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="mb-4 grid gap-6 md:grid-cols-2">
+      <div className="mb-4 grid gap-6 md:grid-cols-3">
         <Card className="shadow-none">
           <CardHeader className="space-y-1">
             <div className="flex items-center justify-between">
@@ -100,6 +117,38 @@ export default function Home() {
             </div>
           </CardContent>
         </Card>
+
+        <Card className="shadow-none">
+          <CardHeader className="space-y-1">
+            <div className="flex items-center justify-between">
+              <CardTitle>Starters</CardTitle>
+              <div className="rounded-md bg-blue-500 p-1">
+                <Rocket className="size-5 text-white" />
+              </div>
+            </div>
+            <CardDescription>
+              Complete starter templates to jumpstart your project
+            </CardDescription>
+          </CardHeader>
+
+          <CardContent>
+            <div className="space-y-3">
+              {starterItems.map((item) => (
+                <div key={item.name} className="space-y-1">
+                  <div className="flex items-center justify-between">
+                    <Link href={item.path} className="text-sm font-medium hover:underline">
+                      {item.name}
+                    </Link>
+                    <ArrowRight className="size-4 text-muted-foreground" />
+                  </div>
+                  <p className="text-xs text-muted-foreground">
+                    {item.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
       </div>
 
       <div className="mb-4 rounded-lg border bg-card p-6">
@@ -142,27 +191,6 @@ export default function Home() {
               <span className="underline">GitHub Repository</span>
             </a>
           </p>
-        </div>
-      </div>
-
-      <div className="rounded-lg border bg-card p-6">
-        <div className="flex flex-col gap-2">
-          <h2 className="font-semibold text-xl">MCP</h2>
-          <p className="mb-4 text-muted-foreground">
-            Integrate this registry with AI IDEs using Model Context Protocol
-            (MCP) using the follow code. This utilizes this Registry's style
-            tokens and the Shadcn CLI. To ensure this works, double check that
-            the{" "}
-            <Link href="/r/registry.json">
-              <code className="inline text-sm tabular-nums underline">
-                style:registry
-              </code>
-            </Link>{" "}
-            contains the same colors as your{" "}
-            <code className="inline text-sm tabular-nums">tokens.css</code>
-          </p>
-
-          <MCPTabs rootUrl={process.env.VERCEL_BRANCH_URL ?? ""} />
         </div>
       </div>
     </main>
