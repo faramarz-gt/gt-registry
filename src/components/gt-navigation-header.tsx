@@ -26,11 +26,11 @@ const navigationItems = [
 
 export function GTNavigationHeader() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b bg-night-blue/95 backdrop-blur supports-[backdrop-filter]:bg-night-blue/90">
       <div className="container flex h-16 items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
-          <Logo />
+          <Logo variant="full" />
         </Link>
 
         {/* Navigation Items */}
@@ -39,7 +39,7 @@ export function GTNavigationHeader() {
             <Link
               key={item.name}
               href={item.href}
-              className="transition-colors hover:text-primary text-muted-foreground hover:text-foreground"
+              className="transition-colors text-night-blue-20 hover:text-peppermint-green"
             >
               {item.name}
             </Link>
@@ -50,15 +50,15 @@ export function GTNavigationHeader() {
         <div className="flex items-center space-x-4">
           {/* Search */}
           <div className="relative hidden sm:block">
-            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-night-blue-40" />
             <Input
               placeholder="Search..."
-              className="w-64 pl-10"
+              className="w-64 pl-10 bg-night-blue-80 border-night-blue-60 text-night-blue-10 placeholder:text-night-blue-40"
             />
           </div>
 
           {/* Notifications */}
-          <Button variant="ghost" size="icon" className="hidden sm:flex">
+          <Button variant="ghost" size="icon" className="hidden sm:flex text-night-blue-20 hover:text-peppermint-green hover:bg-night-blue-80">
             <Bell className="h-5 w-5" />
             <span className="sr-only">Notifications</span>
           </Button>
@@ -66,32 +66,32 @@ export function GTNavigationHeader() {
           {/* User Menu */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" className="relative h-8 w-8 rounded-full">
+              <Button variant="ghost" className="relative h-8 w-8 rounded-full hover:bg-night-blue-80">
                 <Avatar className="h-8 w-8">
-                  <AvatarFallback>FH</AvatarFallback>
+                  <AvatarFallback className="bg-sea-blue text-white">FH</AvatarFallback>
                 </Avatar>
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-56" align="end" forceMount>
+            <DropdownMenuContent className="w-56 bg-night-blue-90 border-night-blue-70" align="end" forceMount>
               <DropdownMenuLabel className="font-normal">
                 <div className="flex flex-col space-y-1">
-                  <p className="text-sm font-medium leading-none">GTreasury User</p>
-                  <p className="text-xs leading-none text-muted-foreground">
+                  <p className="text-sm font-medium leading-none text-night-blue-10">GTreasury User</p>
+                  <p className="text-xs leading-none text-night-blue-40">
                     user@gtreasury.com
                   </p>
                 </div>
               </DropdownMenuLabel>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>
+              <DropdownMenuSeparator className="bg-night-blue-70" />
+              <DropdownMenuItem className="text-night-blue-20 hover:bg-night-blue-80 hover:text-peppermint-green">
                 <User className="mr-2 h-4 w-4" />
                 <span>Profile</span>
               </DropdownMenuItem>
-              <DropdownMenuItem>
+              <DropdownMenuItem className="text-night-blue-20 hover:bg-night-blue-80 hover:text-peppermint-green">
                 <Settings className="mr-2 h-4 w-4" />
                 <span>Settings</span>
               </DropdownMenuItem>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>
+              <DropdownMenuSeparator className="bg-night-blue-70" />
+              <DropdownMenuItem className="text-night-blue-20 hover:bg-night-blue-80 hover:text-peppermint-green">
                 <LogOut className="mr-2 h-4 w-4" />
                 <span>Log out</span>
               </DropdownMenuItem>
@@ -99,7 +99,7 @@ export function GTNavigationHeader() {
           </DropdownMenu>
 
           {/* Mobile Menu Button */}
-          <Button variant="ghost" size="icon" className="md:hidden">
+          <Button variant="ghost" size="icon" className="md:hidden text-night-blue-20 hover:text-peppermint-green hover:bg-night-blue-80">
             <Menu className="h-5 w-5" />
             <span className="sr-only">Toggle menu</span>
           </Button>

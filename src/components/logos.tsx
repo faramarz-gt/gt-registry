@@ -2,7 +2,7 @@ export function LogoFull() {
   return (
     <div className="flex items-center justify-center p-6 bg-background rounded-lg border">
       <img
-        src="/assets/GTreasury-Logo-RGB.svg"
+        src="/assets/gtreasury-logo-rgb.svg"
         alt="GTreasury Full Logo"
         className="max-h-16 w-auto object-contain"
       />
@@ -65,7 +65,7 @@ export function LogosGrid() {
               Primary logo with full branding and color gradient
             </div>
             <code className="font-mono text-muted-foreground text-xs mt-2 block">
-              /assets/GTreasury-Logo-RGB.svg
+              /assets/gtreasury-logo-rgb.svg
             </code>
           </div>
         </div>

@@ -1,5 +1,80 @@
 /* GT3 rebrand colors imported by Faramarz Hashemi - 2024-06-13 */
+/* GTreasury Color Tokens - Updated with comprehensive palette */
 :root {
+  /* GTreasury Primary Colors */
+  --night-blue: #012030;
+  --sea-blue: #115D7E;
+  --peppermint-green: #45C4B0;
+  --monsoon-green: #9AEBA3;
+  --white: #FFFFFF;
+
+  /* GTreasury Secondary Colors */
+  --lime-green: #BAEB4F;
+  --sage-green: #D9FCBA;
+  --pale-yellow: #FFFAD6;
+
+  /* Night Blue Tints */
+  --night-blue-100: #012030;
+  --night-blue-90: #1A3645;
+  --night-blue-80: #344D59;
+  --night-blue-70: #4D636E;
+  --night-blue-60: #677983;
+  --night-blue-50: #809098;
+  --night-blue-40: #99A6AC;
+  --night-blue-30: #B3BCC1;
+  --night-blue-20: #CCD2D6;
+  --night-blue-10: #E6E9EA;
+
+  /* Sea Blue Tints */
+  --sea-blue-130: #0C4158;
+  --sea-blue-120: #0E4A65;
+  --sea-blue-110: #0F5471;
+  --sea-blue-100: #115D7E;
+  --sea-blue-90: #296D8B;
+  --sea-blue-80: #417D98;
+  --sea-blue-70: #588EA5;
+  --sea-blue-60: #709EB2;
+  --sea-blue-50: #88AEBF;
+  --sea-blue-40: #A0BEC8;
+  --sea-blue-30: #B8CED8;
+  --sea-blue-20: #CFDFE5;
+  --sea-blue-10: #E7EFF2;
+
+  /* Peppermint Green Tints */
+  --peppermint-green-150: #236258;
+  --peppermint-green-140: #29766A;
+  --peppermint-green-130: #30897B;
+  --peppermint-green-120: #379B8D;
+  --peppermint-green-110: #3EB09E;
+  --peppermint-green-100: #45C4B0;
+  --peppermint-green-90: #58CAB8;
+  --peppermint-green-80: #6AD0C0;
+  --peppermint-green-70: #7DD6C8;
+  --peppermint-green-60: #8FDCD0;
+  --peppermint-green-50: #A2E2D8;
+  --peppermint-green-40: #B5E7DF;
+  --peppermint-green-30: #C7EDE7;
+  --peppermint-green-20: #DAF3EF;
+  --peppermint-green-10: #ECF9F7;
+
+  /* Monsoon Green Tints */
+  --monsoon-green-150: #4D7652;
+  --monsoon-green-140: #5C8D62;
+  --monsoon-green-130: #6CA572;
+  --monsoon-green-120: #7BBC82;
+  --monsoon-green-110: #8BD493;
+  --monsoon-green-100: #9AEBA3;
+  --monsoon-green-90: #A4EDAC;
+  --monsoon-green-80: #AEEFB5;
+  --monsoon-green-70: #B8F1BF;
+  --monsoon-green-60: #C2F3C8;
+  --monsoon-green-50: #CDF5D1;
+  --monsoon-green-40: #D7F7DA;
+  --monsoon-green-30: #E1F9E3;
+  --monsoon-green-20: #EBFBED;
+  --monsoon-green-10: #F5FDF6;
+
+  /* Legacy Theme Colors */
   --background: oklch(1.0000 0 0);
   --foreground: oklch(0.2302 0.0476 235.2985);
 
@@ -58,6 +133,80 @@
 }
 
 .dark {
+  /* GTreasury Primary Colors - Same for dark mode */
+  --night-blue: #012030;
+  --sea-blue: #115D7E;
+  --peppermint-green: #45C4B0;
+  --monsoon-green: #9AEBA3;
+  --white: #FFFFFF;
+
+  /* GTreasury Secondary Colors - Same for dark mode */
+  --lime-green: #BAEB4F;
+  --sage-green: #D9FCBA;
+  --pale-yellow: #FFFAD6;
+
+  /* Night Blue Tints - Same for dark mode */
+  --night-blue-100: #012030;
+  --night-blue-90: #1A3645;
+  --night-blue-80: #344D59;
+  --night-blue-70: #4D636E;
+  --night-blue-60: #677983;
+  --night-blue-50: #809098;
+  --night-blue-40: #99A6AC;
+  --night-blue-30: #B3BCC1;
+  --night-blue-20: #CCD2D6;
+  --night-blue-10: #E6E9EA;
+
+  /* Sea Blue Tints - Same for dark mode */
+  --sea-blue-130: #0C4158;
+  --sea-blue-120: #0E4A65;
+  --sea-blue-110: #0F5471;
+  --sea-blue-100: #115D7E;
+  --sea-blue-90: #296D8B;
+  --sea-blue-80: #417D98;
+  --sea-blue-70: #588EA5;
+  --sea-blue-60: #709EB2;
+  --sea-blue-50: #88AEBF;
+  --sea-blue-40: #A0BEC8;
+  --sea-blue-30: #B8CED8;
+  --sea-blue-20: #CFDFE5;
+  --sea-blue-10: #E7EFF2;
+
+  /* Peppermint Green Tints - Same for dark mode */
+  --peppermint-green-150: #236258;
+  --peppermint-green-140: #29766A;
+  --peppermint-green-130: #30897B;
+  --peppermint-green-120: #379B8D;
+  --peppermint-green-110: #3EB09E;
+  --peppermint-green-100: #45C4B0;
+  --peppermint-green-90: #58CAB8;
+  --peppermint-green-80: #6AD0C0;
+  --peppermint-green-70: #7DD6C8;
+  --peppermint-green-60: #8FDCD0;
+  --peppermint-green-50: #A2E2D8;
+  --peppermint-green-40: #B5E7DF;
+  --peppermint-green-30: #C7EDE7;
+  --peppermint-green-20: #DAF3EF;
+  --peppermint-green-10: #ECF9F7;
+
+  /* Monsoon Green Tints - Same for dark mode */
+  --monsoon-green-150: #4D7652;
+  --monsoon-green-140: #5C8D62;
+  --monsoon-green-130: #6CA572;
+  --monsoon-green-120: #7BBC82;
+  --monsoon-green-110: #8BD493;
+  --monsoon-green-100: #9AEBA3;
+  --monsoon-green-90: #A4EDAC;
+  --monsoon-green-80: #AEEFB5;
+  --monsoon-green-70: #B8F1BF;
+  --monsoon-green-60: #C2F3C8;
+  --monsoon-green-50: #CDF5D1;
+  --monsoon-green-40: #D7F7DA;
+  --monsoon-green-30: #E1F9E3;
+  --monsoon-green-20: #EBFBED;
+  --monsoon-green-10: #F5FDF6;
+
+  /* Legacy Theme Colors - Dark mode variants */
   --background: oklch(0.2046 0 0);
   --foreground: oklch(0.9219 0 0);
 
@@ -116,6 +265,79 @@
 }
 
 @theme inline {
+  /* GTreasury Color Tokens for Tailwind */
+  --color-night-blue: var(--night-blue);
+  --color-sea-blue: var(--sea-blue);
+  --color-peppermint-green: var(--peppermint-green);
+  --color-monsoon-green: var(--monsoon-green);
+  --color-gt-white: var(--white);
+
+  --color-lime-green: var(--lime-green);
+  --color-sage-green: var(--sage-green);
+  --color-pale-yellow: var(--pale-yellow);
+
+  /* Night Blue Tints */
+  --color-night-blue-100: var(--night-blue-100);
+  --color-night-blue-90: var(--night-blue-90);
+  --color-night-blue-80: var(--night-blue-80);
+  --color-night-blue-70: var(--night-blue-70);
+  --color-night-blue-60: var(--night-blue-60);
+  --color-night-blue-50: var(--night-blue-50);
+  --color-night-blue-40: var(--night-blue-40);
+  --color-night-blue-30: var(--night-blue-30);
+  --color-night-blue-20: var(--night-blue-20);
+  --color-night-blue-10: var(--night-blue-10);
+
+  /* Sea Blue Tints */
+  --color-sea-blue-130: var(--sea-blue-130);
+  --color-sea-blue-120: var(--sea-blue-120);
+  --color-sea-blue-110: var(--sea-blue-110);
+  --color-sea-blue-100: var(--sea-blue-100);
+  --color-sea-blue-90: var(--sea-blue-90);
+  --color-sea-blue-80: var(--sea-blue-80);
+  --color-sea-blue-70: var(--sea-blue-70);
+  --color-sea-blue-60: var(--sea-blue-60);
+  --color-sea-blue-50: var(--sea-blue-50);
+  --color-sea-blue-40: var(--sea-blue-40);
+  --color-sea-blue-30: var(--sea-blue-30);
+  --color-sea-blue-20: var(--sea-blue-20);
+  --color-sea-blue-10: var(--sea-blue-10);
+
+  /* Peppermint Green Tints */
+  --color-peppermint-green-150: var(--peppermint-green-150);
+  --color-peppermint-green-140: var(--peppermint-green-140);
+  --color-peppermint-green-130: var(--peppermint-green-130);
+  --color-peppermint-green-120: var(--peppermint-green-120);
+  --color-peppermint-green-110: var(--peppermint-green-110);
+  --color-peppermint-green-100: var(--peppermint-green-100);
+  --color-peppermint-green-90: var(--peppermint-green-90);
+  --color-peppermint-green-80: var(--peppermint-green-80);
+  --color-peppermint-green-70: var(--peppermint-green-70);
+  --color-peppermint-green-60: var(--peppermint-green-60);
+  --color-peppermint-green-50: var(--peppermint-green-50);
+  --color-peppermint-green-40: var(--peppermint-green-40);
+  --color-peppermint-green-30: var(--peppermint-green-30);
+  --color-peppermint-green-20: var(--peppermint-green-20);
+  --color-peppermint-green-10: var(--peppermint-green-10);
+
+  /* Monsoon Green Tints */
+  --color-monsoon-green-150: var(--monsoon-green-150);
+  --color-monsoon-green-140: var(--monsoon-green-140);
+  --color-monsoon-green-130: var(--monsoon-green-130);
+  --color-monsoon-green-120: var(--monsoon-green-120);
+  --color-monsoon-green-110: var(--monsoon-green-110);
+  --color-monsoon-green-100: var(--monsoon-green-100);
+  --color-monsoon-green-90: var(--monsoon-green-90);
+  --color-monsoon-green-80: var(--monsoon-green-80);
+  --color-monsoon-green-70: var(--monsoon-green-70);
+  --color-monsoon-green-60: var(--monsoon-green-60);
+  --color-monsoon-green-50: var(--monsoon-green-50);
+  --color-monsoon-green-40: var(--monsoon-green-40);
+  --color-monsoon-green-30: var(--monsoon-green-30);
+  --color-monsoon-green-20: var(--monsoon-green-20);
+  --color-monsoon-green-10: var(--monsoon-green-10);
+
+  /* Legacy Theme Colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);

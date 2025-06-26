@@ -31,6 +31,7 @@ import {
   useSidebar,
 } from "@/components/ui/sidebar";
 import { cn } from "@/lib/utils";
+import { Logo } from "./logo";
 
 interface NavItem {
   title: string;
@@ -116,7 +117,12 @@ export function BrandSidebar({
   return (
     <Sidebar variant="sidebar" collapsible="icon" className="mt-16">
       <SidebarHeader>
-        <div className={cn(isCollapsed ? "py-2" : "p-2")}>
+        <div className={cn("flex items-center gap-2", isCollapsed ? "py-2 justify-center" : "p-2")}>
+          {isCollapsed && (
+            <Link href="/" className="flex items-center justify-center">
+              <Logo variant="mark" />
+            </Link>
+          )}
           <Button className={cn(isCollapsed ? "h-8 w-8 p-0" : "w-full")}>
             <Plus className={cn("size-4", !isCollapsed && "mr-1")} />
             {!isCollapsed && <span>Create</span>}

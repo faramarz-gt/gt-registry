@@ -1,22 +1,89 @@
-export function Logo() {
-  return (
-    <div className="flex items-center gap-2">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="size-8"
-        role="graphics-symbol"
-      >
-        <circle className="fill-primary" cx="13.5" cy="6.5" r="2.5" />
-        <circle className="fill-primary" cx="19" cy="13" r="2.5" />
-        <circle className="fill-primary" cx="13.5" cy="19.5" r="2.5" />
-        <circle className="fill-primary" cx="6.5" cy="13" r="2.5" />
-      </svg>
+"use client";
 
-      <h1 className="font-bold">GTreasury</h1>
-    </div>
+import Image from "next/image";
+import { useEffect, useState } from "react";
+
+interface LogoProps {
+  variant?: "full" | "mark";
+  className?: string;
+}
+
+export function Logo({ variant = "full", className = "" }: LogoProps) {
+  const [isDark, setIsDark] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    // Check for dark mode class on document element
+    const checkDarkMode = () => {
+      setIsDark(document.documentElement.classList.contains('dark'));
+    };
+    
+    checkDarkMode();
+    
+    // Listen for changes to dark mode
+    const observer = new MutationObserver(checkDarkMode);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  // If not mounted yet, use default (light) theme to prevent hydration mismatch
+  if (!mounted) {
+    if (variant === "mark") {
+      return (
+        <Image
+          src="/assets/gtreasury-logo-mark.svg"
+          alt="GTreasury"
+          width={32}
+          height={32}
+          className={`h-8 w-8 ${className}`}
+          priority
+        />
+      );
+    }
+
+    return (
+      <Image
+        src="/assets/gtreasury-logo-rgb.svg"
+        alt="GTreasury"
+        width={120}
+        height={29}
+        className={`h-7 w-auto ${className}`}
+        priority
+      />
+    );
+  }
+
+  if (variant === "mark") {
+    return (
+      <Image
+        src="/assets/gtreasury-logo-mark.svg"
+        alt="GTreasury"
+        width={32}
+        height={32}
+        className={`h-8 w-8 ${className}`}
+        priority
+      />
+    );
+  }
+
+  // For full logo, use appropriate color variant based on theme
+  const logoSrc = isDark
+    ? "/assets/GTreasury-Logo-RGB-White.svg"
+    : "/assets/gtreasury-logo-rgb.svg";
+
+  return (
+    <Image
+      src={logoSrc}
+      alt="GTreasury"
+      width={120}
+      height={29}
+      className={`h-7 w-auto ${className}`}
+      priority
+    />
   );
 }

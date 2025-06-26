@@ -43,7 +43,7 @@ export function BrandHeader() {
           </Button>
 
           <Link href="/" className="flex items-center">
-            <Logo />
+            <Logo variant={isCollapsed ? "mark" : "full"} />
           </Link>
         </div>
 
