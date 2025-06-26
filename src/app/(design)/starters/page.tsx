@@ -14,23 +14,27 @@ const starters = [
   {
     title: "Blank",
     name: "blank",
+    description: "A minimal starter template with basic setup and clean foundation to build upon.",
+    previewUrl: "/starters/blank",
     tags: ["minimal", "template", "basic"],
   },
   {
     title: "Dashboard",
-    name: "dashboard",
-    url: "/starters/dashboard",
+    name: "dashboard", 
+    description: "Complete dashboard layout with navigation, sidebar, and responsive design patterns.",
+    previewUrl: "/starters/dashboard",
     tags: ["dashboard", "admin", "analytics"],
   },
   {
-    title: "GT - Navigation Header",
+    title: "GT Navigation Header",
     name: "gt-navigation-header",
-    url: "/starters/gt-navigation-header",
-    tags: ["navigation", "header", "treasury", "navbar"],
+    description: "GTreasury-branded navigation header with treasury-focused navigation items and user management.",
+    previewUrl: "/starters/gt-navigation-header", 
+    tags: ["navigation", "header", "treasury", "navbar", "gtreasury"],
   },
 ];
 
-export default function StartPage() {
+export default function StartersPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
@@ -40,6 +44,7 @@ export default function StartPage() {
   // Filter starters based on search term and selected tags
   const filteredStarters = starters.filter(starter => {
     const matchesSearch = starter.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      starter.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
       (starter.tags || []).some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
     
     const matchesTags = selectedTags.length === 0 || 
@@ -63,16 +68,17 @@ export default function StartPage() {
 
   return (
     <div className="container p-5 md:p-10">
-      <div className="mb-6 flex items-center justify-between">
-        <div>
-          <Button variant="ghost" size="sm" asChild className="mb-4">
-            <Link href="/">
-              <ArrowLeft className="mr-2 size-4" />
-              Back to Home
-            </Link>
-          </Button>
-          <h1 className="font-bold text-3xl tracking-tight">Starters</h1>
-        </div>
+      <div className="mb-6">
+        <Button variant="ghost" size="sm" asChild className="mb-4">
+          <Link href="/">
+            <ArrowLeft className="mr-2 size-4" />
+            Back to Home
+          </Link>
+        </Button>
+        <h1 className="font-bold text-3xl tracking-tight">Starter Templates</h1>
+        <p className="mt-2 text-muted-foreground">
+          Complete starter templates to jumpstart your GTreasury applications with pre-built layouts and components.
+        </p>
       </div>
 
       {/* Search and Filter Section */}
@@ -125,7 +131,7 @@ export default function StartPage() {
       </div>
 
       {/* Starters Grid */}
-      <div className="flex flex-col gap-8">
+      <div className="space-y-8">
         {filteredStarters.length > 0 ? (
           filteredStarters.map((starter) => (
             <ComponentCard
@@ -133,8 +139,9 @@ export default function StartPage() {
               name={starter.name}
               baseUrl={process.env.VERCEL_BRANCH_URL ?? "gt-registry.vercel.app"}
               title={starter.title}
+              description={starter.description}
               promptTitle={`${starter.title} Starter Kit`}
-              previewUrl={starter.url}
+              previewUrl={starter.previewUrl}
             />
           ))
         ) : (
@@ -149,4 +156,4 @@ export default function StartPage() {
       </div>
     </div>
   );
-}
+} 

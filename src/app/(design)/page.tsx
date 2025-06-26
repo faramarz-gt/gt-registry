@@ -146,6 +146,11 @@ export default function Home() {
                   </p>
                 </div>
               ))}
+              <div className="pt-2 border-t">
+                <Link href="/starters" className="text-sm font-medium text-primary hover:underline">
+                  View all starters
+                </Link>
+              </div>
             </div>
           </CardContent>
         </Card>

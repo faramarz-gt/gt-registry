@@ -9,6 +9,7 @@ import {
   ToyBrick,
   X,
   Code,
+  Rocket,
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -71,7 +72,15 @@ export const componentItems = [
 export const blockItems = [
   { name: "Hero", path: "/blocks/hero" },
   { name: "Login", path: "/blocks/login" },
+  { name: "Logos", path: "/blocks/logos" },
   { name: "Product Grid", path: "/blocks/product-grid" },
+];
+
+export const starterItems = [
+  { name: "View All", path: "/starters" },
+  { name: "Blank", path: "/starters/blank" },
+  { name: "Dashboard", path: "/starters/dashboard" },
+  { name: "GT Navigation", path: "/starters/gt-navigation-header" },
 ];
 
 export const gettingStartedItems = [
@@ -104,6 +113,7 @@ export function RegistrySidebar() {
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredComponents, setFilteredComponents] = useState(componentItems);
   const [filteredBlocks, setFilteredBlocks] = useState(blockItems);
+  const [filteredStarters, setFilteredStarters] = useState(starterItems);
 
   useEffect(() => {
     if (searchTerm) {
@@ -117,9 +127,15 @@ export function RegistrySidebar() {
           item.name.toLowerCase().includes(searchTerm.toLowerCase()),
         ),
       );
+      setFilteredStarters(
+        starterItems.filter((item) =>
+          item.name.toLowerCase().includes(searchTerm.toLowerCase()),
+        ),
+      );
     } else {
       setFilteredComponents(componentItems);
       setFilteredBlocks(blockItems);
+      setFilteredStarters(starterItems);
     }
   }, [searchTerm]);
 
@@ -211,6 +227,44 @@ export function RegistrySidebar() {
                 <SidebarGroupContent>
                   <SidebarMenu>
                     {developmentItems.map((item) => (
+                      <SidebarMenuItem key={item.path}>
+                        <SidebarMenuButton
+                          asChild
+                          isActive={pathname === item.path}
+                        >
+                          <Link
+                            onClick={() => setOpenMobile(false)}
+                            href={item.path}
+                          >
+                            {item.name}
+                          </Link>
+                        </SidebarMenuButton>
+                      </SidebarMenuItem>
+                    ))}
+                  </SidebarMenu>
+                </SidebarGroupContent>
+              </CollapsibleContent>
+            </SidebarGroup>
+          </Collapsible>
+
+          <Collapsible defaultOpen={true} className="group/collapsible">
+            <SidebarGroup>
+              <CollapsibleTrigger className="w-full">
+                <SidebarGroupLabel className="flex cursor-pointer items-center justify-between">
+                  <div className="flex min-w-0 items-center">
+                    <Rocket className="size-4 flex-shrink-0" />
+                    <span className="ml-2 transition-all duration-200">
+                      Starters
+                    </span>
+                  </div>
+                  <ChevronDown className="size-4 flex-shrink-0 transition-all duration-200 group-data-[state=open]/collapsible:rotate-180" />
+                </SidebarGroupLabel>
+              </CollapsibleTrigger>
+
+              <CollapsibleContent>
+                <SidebarGroupContent>
+                  <SidebarMenu>
+                    {filteredStarters.map((item) => (
                       <SidebarMenuItem key={item.path}>
                         <SidebarMenuButton
                           asChild
