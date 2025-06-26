@@ -10,7 +10,6 @@ import {
   X,
   Code,
   Rocket,
-  BarChart,
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -44,8 +43,10 @@ import type * as React from "react";
 export const componentItems = [
   { name: "Accordion", path: "/components/accordion" },
   { name: "Alert", path: "/components/alert" },
+  { name: "Area Chart", path: "/components/area-chart" },
   { name: "Avatar", path: "/components/avatar" },
   { name: "Badge", path: "/components/badge" },
+  { name: "Bar Chart", path: "/components/bar-chart" },
   { name: "Breadcrumb", path: "/components/breadcrumb" },
   { name: "Button", path: "/components/button" },
   { name: "Calendar", path: "/components/calendar" },
@@ -58,6 +59,7 @@ export const componentItems = [
   { name: "Dropdown Menu", path: "/components/dropdown-menu" },
   { name: "Input", path: "/components/input" },
   { name: "Menu Bar", path: "/components/menu-bar" },
+  { name: "Pie Chart", path: "/components/pie-chart" },
   { name: "Select", path: "/components/select" },
   { name: "Separator", path: "/components/separator" },
   { name: "Skeleton", path: "/components/skeleton" },
@@ -94,55 +96,6 @@ export const developmentItems = [
   { name: "MCP", path: "/mcp" },
 ];
 
-export const chartItems = [
-  { name: "Area Chart", path: "/charts/area-chart" },
-  { name: "Area Chart - Interactive", path: "/charts/area-chart-interactive" },
-  { name: "Area Chart - Linear", path: "/charts/area-chart-linear" },
-  { name: "Area Chart - Step", path: "/charts/area-chart-step" },
-  { name: "Area Chart - Legend", path: "/charts/area-chart-legend" },
-  { name: "Area Chart - Stacked", path: "/charts/area-chart-stacked" },
-  { name: "Area Chart - Stacked Expanded", path: "/charts/area-chart-stacked-expanded" },
-  { name: "Area Chart - Icons", path: "/charts/area-chart-icons" },
-  { name: "Area Chart - Gradient", path: "/charts/area-chart-gradient" },
-  { name: "Area Chart - Axes", path: "/charts/area-chart-axes" },
-  { name: "Bar Chart", path: "/charts/bar-chart" },
-  { name: "Bar Chart - Interactive", path: "/charts/bar-chart-interactive" },
-  { name: "Bar Chart - Label", path: "/charts/bar-chart-label" },
-  { name: "Bar Chart - Horizontal", path: "/charts/bar-chart-horizontal" },
-  { name: "Bar Chart - Multiple", path: "/charts/bar-chart-multiple" },
-  { name: "Bar Chart - Negative", path: "/charts/bar-chart-negative" },
-  { name: "Bar Chart - Stacked", path: "/charts/bar-chart-stacked" },
-  { name: "Bar Chart - Active", path: "/charts/bar-chart-active" },
-  { name: "Line Chart", path: "/charts/line-chart" },
-  { name: "Line Chart - Interactive", path: "/charts/line-chart-interactive" },
-  { name: "Line Chart - Multiple", path: "/charts/line-chart-multiple" },
-  { name: "Line Chart - Dots", path: "/charts/line-chart-dots" },
-  { name: "Line Chart - Linear", path: "/charts/line-chart-linear" },
-  { name: "Line Chart - Step", path: "/charts/line-chart-step" },
-  { name: "Pie Chart", path: "/charts/pie-chart" },
-  { name: "Pie Chart - Interactive", path: "/charts/pie-chart-interactive" },
-  { name: "Pie Chart - Label", path: "/charts/pie-chart-label" },
-  { name: "Pie Chart - Custom Label", path: "/charts/pie-chart-custom-label" },
-  { name: "Pie Chart - Label List", path: "/charts/pie-chart-label-list" },
-  { name: "Pie Chart - Legend", path: "/charts/pie-chart-legend" },
-  { name: "Pie Chart - Donut", path: "/charts/pie-chart-donut" },
-  { name: "Pie Chart - Donut Active", path: "/charts/pie-chart-donut-active" },
-  { name: "Pie Chart - Donut with Text", path: "/charts/pie-chart-donut-text" },
-  { name: "Pie Chart - Stacked", path: "/charts/pie-chart-stacked" },
-  { name: "Radar Chart", path: "/charts/radar-chart" },
-  { name: "Radar Chart - Dots", path: "/charts/radar-chart-dots" },
-  { name: "Radar Chart - Multiple", path: "/charts/radar-chart-multiple" },
-  { name: "Radar Chart - Lines Only", path: "/charts/radar-chart-lines-only" },
-  { name: "Radar Chart - Legend", path: "/charts/radar-chart-legend" },
-  { name: "Radar Chart - Icons", path: "/charts/radar-chart-icons" },
-  { name: "Radial Chart", path: "/charts/radial-chart" },
-  { name: "Radial Chart - Label", path: "/charts/radial-chart-label" },
-  { name: "Radial Chart - Grid", path: "/charts/radial-chart-grid" },
-  { name: "Radial Chart - Text", path: "/charts/radial-chart-text" },
-  { name: "Radial Chart - Shape", path: "/charts/radial-chart-shape" },
-  { name: "Radial Chart - Stacked", path: "/charts/radial-chart-stacked" },
-];
-
 export function MobileSidebarTrigger() {
   const { setOpenMobile } = useSidebar();
 
@@ -164,7 +117,6 @@ export function RegistrySidebar() {
   const [filteredComponents, setFilteredComponents] = useState(componentItems);
   const [filteredBlocks, setFilteredBlocks] = useState(blockItems);
   const [filteredStarters, setFilteredStarters] = useState(starterItems);
-  const [filteredCharts, setFilteredCharts] = useState(chartItems);
 
   useEffect(() => {
     if (searchTerm) {
@@ -183,16 +135,10 @@ export function RegistrySidebar() {
           item.name.toLowerCase().includes(searchTerm.toLowerCase()),
         ),
       );
-      setFilteredCharts(
-        chartItems.filter((item) =>
-          item.name.toLowerCase().includes(searchTerm.toLowerCase()),
-        ),
-      );
     } else {
       setFilteredComponents(componentItems);
       setFilteredBlocks(blockItems);
       setFilteredStarters(starterItems);
-      setFilteredCharts(chartItems);
     }
   }, [searchTerm]);
 
@@ -360,43 +306,6 @@ export function RegistrySidebar() {
                 <SidebarGroupContent>
                   <SidebarMenu>
                     {filteredBlocks.map((item) => (
-                      <SidebarMenuItem key={item.path}>
-                        <SidebarMenuButton
-                          asChild
-                          isActive={pathname === item.path}
-                        >
-                          <Link
-                            onClick={() => setOpenMobile(false)}
-                            href={item.path}
-                          >
-                            {item.name}
-                          </Link>
-                        </SidebarMenuButton>
-                      </SidebarMenuItem>
-                    ))}
-                  </SidebarMenu>
-                </SidebarGroupContent>
-              </CollapsibleContent>
-            </SidebarGroup>
-          </Collapsible>
-
-          <Collapsible defaultOpen={true} className="group/collapsible">
-            <SidebarGroup>
-              <CollapsibleTrigger className="w-full">
-                <SidebarGroupLabel className="flex cursor-pointer items-center justify-between">
-                  <div className="flex min-w-0 items-center">
-                    <BarChart className="size-4 flex-shrink-0" />
-                    <span className="ml-2 transition-all duration-200">
-                      Charts
-                    </span>
-                  </div>
-                  <ChevronDown className="size-4 flex-shrink-0 transition-all duration-200 group-data-[state=open]/collapsible:rotate-180" />
-                </SidebarGroupLabel>
-              </CollapsibleTrigger>
-              <CollapsibleContent>
-                <SidebarGroupContent>
-                  <SidebarMenu>
-                    {filteredCharts.map((item) => (
                       <SidebarMenuItem key={item.path}>
                         <SidebarMenuButton
                           asChild
