@@ -11,6 +11,7 @@ interface LogoProps {
 export function Logo({ variant = "full", className = "" }: LogoProps) {
   const [isDark, setIsDark] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [imageError, setImageError] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -31,10 +32,19 @@ export function Logo({ variant = "full", className = "" }: LogoProps) {
     return () => observer.disconnect();
   }, []);
 
+  // Fallback component if image fails to load
+  const LogoFallback = ({ text }: { text: string }) => (
+    <div className={`flex items-center justify-center bg-primary text-primary-foreground font-bold rounded ${className}`}>
+      <span className={variant === "mark" ? "text-xs" : "text-sm"}>{text}</span>
+    </div>
+  );
+
   // If not mounted yet, use default (light) theme to prevent hydration mismatch
   if (!mounted) {
     if (variant === "mark") {
-      return (
+      return imageError ? (
+        <LogoFallback text="GT" />
+      ) : (
         <Image
           src="/assets/gtreasury-logo-mark.svg"
           alt="GTreasury"
@@ -42,11 +52,14 @@ export function Logo({ variant = "full", className = "" }: LogoProps) {
           height={32}
           className={`h-8 w-8 ${className}`}
           priority
+          onError={() => setImageError(true)}
         />
       );
     }
 
-    return (
+    return imageError ? (
+      <LogoFallback text="GTreasury" />
+    ) : (
       <Image
         src="/assets/gtreasury-logo-rgb.svg"
         alt="GTreasury"
@@ -54,12 +67,15 @@ export function Logo({ variant = "full", className = "" }: LogoProps) {
         height={29}
         className={`h-7 w-auto ${className}`}
         priority
+        onError={() => setImageError(true)}
       />
     );
   }
 
   if (variant === "mark") {
-    return (
+    return imageError ? (
+      <LogoFallback text="GT" />
+    ) : (
       <Image
         src="/assets/gtreasury-logo-mark.svg"
         alt="GTreasury"
@@ -67,6 +83,7 @@ export function Logo({ variant = "full", className = "" }: LogoProps) {
         height={32}
         className={`h-8 w-8 ${className}`}
         priority
+        onError={() => setImageError(true)}
       />
     );
   }
@@ -76,7 +93,9 @@ export function Logo({ variant = "full", className = "" }: LogoProps) {
     ? "/assets/gtreasury-logo-rgb-white.svg"
     : "/assets/gtreasury-logo-rgb.svg";
 
-  return (
+  return imageError ? (
+    <LogoFallback text="GTreasury" />
+  ) : (
     <Image
       src={logoSrc}
       alt="GTreasury"
@@ -84,6 +103,7 @@ export function Logo({ variant = "full", className = "" }: LogoProps) {
       height={29}
       className={`h-7 w-auto ${className}`}
       priority
+      onError={() => setImageError(true)}
     />
   );
 }
