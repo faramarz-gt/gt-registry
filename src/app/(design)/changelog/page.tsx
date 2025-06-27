@@ -27,6 +27,46 @@ interface ChangelogEntry {
 
 const changelogData: ChangelogEntry[] = [
   {
+    version: "1.5.0",
+    date: "2025-01-27",
+    title: "Team Authentication & Security System",
+    description: "Complete authentication system implementation with Redis-powered magic link authentication, Zapier email automation, and team-only access control for GTreasury members.",
+    changes: [
+      {
+        type: "added",
+        items: [
+          "Magic link email authentication system",
+          "Redis-powered secure token storage with 24-hour expiration",
+          "Zapier webhook integration for reliable email delivery",
+          "Domain restriction to @gtreasury.com email addresses only",
+          "One-time token usage with automatic cleanup",
+          "Custom authentication pages with GTreasury branding",
+          "Route protection middleware for all registry pages",
+          "Session management with NextAuth.js integration",
+          "Comprehensive authentication documentation and setup guides"
+        ]
+      },
+      {
+        type: "improved",
+        items: [
+          "Enhanced security with SHA-256 token encryption",
+          "Professional email templates with responsive design",
+          "Serverless-first architecture optimized for Vercel",
+          "User experience with clear sign-in flow and error handling",
+          "Development workflow with local testing capabilities"
+        ]
+      },
+      {
+        type: "changed",
+        items: [
+          "Registry access now requires team authentication",
+          "All routes protected except authentication endpoints",
+          "Email-based authentication replaces open access"
+        ]
+      }
+    ]
+  },
+  {
     version: "1.4.0",
     date: "2024-01-15",
     title: "Enhanced Navigation & Collapsible Sidebar",
