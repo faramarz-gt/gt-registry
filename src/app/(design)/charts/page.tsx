@@ -27,7 +27,7 @@ import {
 
 // Import all chart components - these will use the latest implementations
 import { AreaChartComponent } from "@/app/(design)/components/[slug]/(demos)/area-chart";
-import { BarChartComponent } from "@/app/(design)/components/[slug]/(demos)/bar-chart";
+import { BarChartComponent, BarChartNegative } from "@/app/(design)/components/[slug]/(demos)/bar-chart";
 import { LineChartComponent } from "@/app/(design)/components/[slug]/(demos)/line-chart";
 import { PieChartComponent } from "@/app/(design)/components/[slug]/(demos)/pie-chart";
 import { RadarChartComponent } from "@/app/(design)/components/[slug]/(demos)/radar-chart";
@@ -377,8 +377,8 @@ const chartTypes = [
       },
       {
         name: "Bar Chart - Negative",
-        description: "January - June 2024",
-        component: <BarChartComponent />,
+        description: "Showing positive and negative values with color coding",
+        component: <BarChartNegative />,
         slug: "bar-chart"
       }
     ]
