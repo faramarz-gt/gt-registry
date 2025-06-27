@@ -50,7 +50,7 @@ export function LogoMark() {
 // GSmart Logo Components
 export function GSmartConnectivity() {
   return (
-    <div className="flex items-center justify-center p-6 bg-background rounded-lg border">
+    <div className="flex items-center justify-center p-6 bg-slate-800 rounded-lg border">
       <img
         src="/assets/gsmart/GSmart logo - Connectivity (White Transparent).svg"
         alt="GSmart Connectivity Logo"
@@ -74,7 +74,7 @@ export function GSmartConnectivityGradient() {
 
 export function GSmartForecast() {
   return (
-    <div className="flex items-center justify-center p-6 bg-background rounded-lg border">
+    <div className="flex items-center justify-center p-6 bg-slate-800 rounded-lg border">
       <img
         src="/assets/gsmart/GSmart logo - Forecast (White Transparent).svg"
         alt="GSmart Forecast Logo"
@@ -86,7 +86,7 @@ export function GSmartForecast() {
 
 export function GSmartLedger() {
   return (
-    <div className="flex items-center justify-center p-6 bg-background rounded-lg border">
+    <div className="flex items-center justify-center p-6 bg-slate-800 rounded-lg border">
       <img
         src="/assets/gsmart/GSmart logo - Ledger (White Transparent).svg"
         alt="GSmart Ledger Logo"
@@ -98,7 +98,7 @@ export function GSmartLedger() {
 
 export function GSmartLiquidity() {
   return (
-    <div className="flex items-center justify-center p-6 bg-background rounded-lg border">
+    <div className="flex items-center justify-center p-6 bg-slate-800 rounded-lg border">
       <img
         src="/assets/gsmart/GSmart logo - Liquidity (White Transparent).svg"
         alt="GSmart Liquidity Logo"
@@ -110,7 +110,7 @@ export function GSmartLiquidity() {
 
 export function GSmartRisk() {
   return (
-    <div className="flex items-center justify-center p-6 bg-background rounded-lg border">
+    <div className="flex items-center justify-center p-6 bg-slate-800 rounded-lg border">
       <img
         src="/assets/gsmart/GSmart logo - Risk (White Transparent).svg"
         alt="GSmart Risk Logo"
