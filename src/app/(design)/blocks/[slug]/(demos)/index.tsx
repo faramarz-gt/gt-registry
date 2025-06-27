@@ -3,6 +3,7 @@ import type { ReactElement, ReactNode } from "react";
 import { hero } from "@/app/(design)/blocks/[slug]/(demos)/hero";
 import { login } from "@/app/(design)/blocks/[slug]/(demos)/login";
 import { logos } from "@/app/(design)/blocks/[slug]/(demos)/logos";
+import { varianceBarChart } from "@/app/(design)/blocks/[slug]/(demos)/variance-bar-chart";
 
 interface Block {
   name: string; // this must match the `registry.json` name
@@ -15,4 +16,5 @@ export const demos: { [name: string]: Block } = {
   hero,
   login,
   logos,
+  "variance-bar-chart": varianceBarChart,
 };

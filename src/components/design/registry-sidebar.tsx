@@ -84,6 +84,7 @@ export const blockItems = [
   { name: "Hero", path: "/blocks/hero" },
   { name: "Login", path: "/blocks/login" },
   { name: "Logos", path: "/blocks/logos" },
+  { name: "Variance Bar Chart", path: "/blocks/variance-bar-chart" },
 ];
 
 export const starterItems = [
