@@ -223,7 +223,7 @@ export default function TokensPage() {
         </div>
       </section>
 
-      {/* Color Usage Guidelines */}
+      {/* Color Usage Guidelines & Accessibility */}
       <section className="mb-12">
         <h2 className="mb-4 font-semibold text-xl">Color Usage Guidelines & Accessibility</h2>
         <div className="space-y-6">
@@ -298,6 +298,126 @@ export default function TokensPage() {
                     <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">5.8:1</span>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Chart Color System */}
+      <section className="mb-12">
+        <h2 className="mb-4 font-semibold text-xl">Chart Color System</h2>
+        <p className="mb-6 text-muted-foreground">
+          Chart colors prioritize PRIMARY GTreasury colors first, then use shades for additional data series while maintaining AA accessibility compliance.
+        </p>
+        
+        <div className="space-y-6">
+          <div className="rounded-lg border bg-card p-6">
+            <h3 className="font-semibold text-lg mb-4">Primary Chart Colors (Use First)</h3>
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+              <div className="flex flex-col items-center p-3 rounded border bg-white">
+                <div className="w-12 h-12 rounded-lg border shadow-sm mb-2" style={{ backgroundColor: "var(--night-blue)" }}>
+                  <div className="w-full h-full flex items-center justify-center text-white text-xs font-medium">1</div>
+                </div>
+                <span className="text-sm font-medium">Night Blue</span>
+                <code className="text-xs text-muted-foreground">--chart-1</code>
+              </div>
+              <div className="flex flex-col items-center p-3 rounded border bg-white">
+                <div className="w-12 h-12 rounded-lg border shadow-sm mb-2" style={{ backgroundColor: "var(--sea-blue)" }}>
+                  <div className="w-full h-full flex items-center justify-center text-white text-xs font-medium">2</div>
+                </div>
+                <span className="text-sm font-medium">Sea Blue</span>
+                <code className="text-xs text-muted-foreground">--chart-2</code>
+              </div>
+              <div className="flex flex-col items-center p-3 rounded border bg-white">
+                <div className="w-12 h-12 rounded-lg border shadow-sm mb-2" style={{ backgroundColor: "var(--peppermint-green)" }}>
+                  <div className="w-full h-full flex items-center justify-center text-black text-xs font-medium">3</div>
+                </div>
+                <span className="text-sm font-medium">Peppermint Green</span>
+                <code className="text-xs text-muted-foreground">--chart-3</code>
+              </div>
+              <div className="flex flex-col items-center p-3 rounded border bg-white">
+                <div className="w-12 h-12 rounded-lg border shadow-sm mb-2" style={{ backgroundColor: "var(--monsoon-green)" }}>
+                  <div className="w-full h-full flex items-center justify-center text-black text-xs font-medium">4</div>
+                </div>
+                <span className="text-sm font-medium">Monsoon Green</span>
+                <code className="text-xs text-muted-foreground">--chart-4</code>
+              </div>
+              <div className="flex flex-col items-center p-3 rounded border bg-gray-100">
+                <div className="w-12 h-12 rounded-lg border shadow-sm mb-2" style={{ backgroundColor: "var(--white)", border: "2px solid #ddd" }}>
+                  <div className="w-full h-full flex items-center justify-center text-black text-xs font-medium">5</div>
+                </div>
+                <span className="text-sm font-medium">White</span>
+                <code className="text-xs text-muted-foreground">--chart-5</code>
+              </div>
+            </div>
+          </div>
+          
+          <div className="rounded-lg border bg-card p-6">
+            <h3 className="font-semibold text-lg mb-4">Secondary Chart Colors (Additional Data)</h3>
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+              <div className="flex flex-col items-center p-3 rounded border bg-white">
+                <div className="w-12 h-12 rounded-lg border shadow-sm mb-2" style={{ backgroundColor: "var(--night-blue-70)" }}>
+                  <div className="w-full h-full flex items-center justify-center text-white text-xs font-medium">6</div>
+                </div>
+                <span className="text-sm font-medium">Night Blue 70</span>
+                <code className="text-xs text-muted-foreground">--chart-6</code>
+              </div>
+              <div className="flex flex-col items-center p-3 rounded border bg-white">
+                <div className="w-12 h-12 rounded-lg border shadow-sm mb-2" style={{ backgroundColor: "var(--sea-blue-80)" }}>
+                  <div className="w-full h-full flex items-center justify-center text-white text-xs font-medium">7</div>
+                </div>
+                <span className="text-sm font-medium">Sea Blue 80</span>
+                <code className="text-xs text-muted-foreground">--chart-7</code>
+              </div>
+              <div className="flex flex-col items-center p-3 rounded border bg-white">
+                <div className="w-12 h-12 rounded-lg border shadow-sm mb-2" style={{ backgroundColor: "var(--peppermint-green-130)" }}>
+                  <div className="w-full h-full flex items-center justify-center text-white text-xs font-medium">8</div>
+                </div>
+                <span className="text-sm font-medium">Peppermint 130</span>
+                <code className="text-xs text-muted-foreground">--chart-8</code>
+              </div>
+              <div className="flex flex-col items-center p-3 rounded border bg-white">
+                <div className="w-12 h-12 rounded-lg border shadow-sm mb-2" style={{ backgroundColor: "var(--monsoon-green-130)" }}>
+                  <div className="w-full h-full flex items-center justify-center text-white text-xs font-medium">9</div>
+                </div>
+                <span className="text-sm font-medium">Monsoon 130</span>
+                <code className="text-xs text-muted-foreground">--chart-9</code>
+              </div>
+              <div className="flex flex-col items-center p-3 rounded border bg-white">
+                <div className="w-12 h-12 rounded-lg border shadow-sm mb-2" style={{ backgroundColor: "var(--night-blue-30)" }}>
+                  <div className="w-full h-full flex items-center justify-center text-black text-xs font-medium">10</div>
+                </div>
+                <span className="text-sm font-medium">Night Blue 30</span>
+                <code className="text-xs text-muted-foreground">--chart-10</code>
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-lg border bg-emerald-50/50 border-emerald-200 p-6">
+            <h3 className="font-semibold text-lg mb-3 flex items-center gap-2">
+              <span className="w-2 h-2 bg-emerald-500 rounded-full"></span>
+              Chart Color Usage Guidelines
+            </h3>
+            <div className="grid md:grid-cols-2 gap-4 text-sm">
+              <div>
+                <h4 className="font-medium mb-2">Color Priority Order:</h4>
+                <ol className="space-y-1 text-muted-foreground list-decimal list-inside">
+                  <li><strong>Night Blue</strong> - Primary data series</li>
+                  <li><strong>Sea Blue</strong> - Secondary data series</li>
+                  <li><strong>Peppermint Green</strong> - Third data series</li>
+                  <li><strong>Monsoon Green</strong> - Fourth data series</li>
+                  <li><strong>White</strong> - Background contrast series</li>
+                </ol>
+              </div>
+              <div>
+                <h4 className="font-medium mb-2">Best Practices:</h4>
+                <ul className="space-y-1 text-muted-foreground">
+                  <li>• Use primary colors for most important data</li>
+                  <li>• Reserve shades for additional series</li>
+                  <li>• Maintain contrast ratios for accessibility</li>
+                  <li>• Test charts in both light and dark themes</li>
+                </ul>
               </div>
             </div>
           </div>
