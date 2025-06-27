@@ -499,11 +499,11 @@ export default function TokensPage() {
                 <span className="text-sm font-medium">Monsoon Green</span>
                 <code className="text-xs text-muted-foreground">--chart-4</code>
               </div>
-              <div className="flex flex-col items-center p-3 rounded border bg-gray-100">
-                <div className="w-12 h-12 rounded-lg border shadow-sm mb-2" style={{ backgroundColor: "var(--white)", border: "2px solid #ddd" }}>
+              <div className="flex flex-col items-center p-3 rounded border bg-white">
+                <div className="w-12 h-12 rounded-lg border shadow-sm mb-2" style={{ backgroundColor: "var(--lime-green)" }}>
                   <div className="w-full h-full flex items-center justify-center text-black text-xs font-medium">5</div>
                 </div>
-                <span className="text-sm font-medium">White</span>
+                <span className="text-sm font-medium">Lime Green</span>
                 <code className="text-xs text-muted-foreground">--chart-5</code>
               </div>
             </div>
@@ -563,7 +563,7 @@ export default function TokensPage() {
                   <li><strong>Sea Blue</strong> - Secondary data series</li>
                   <li><strong>Peppermint Green</strong> - Third data series</li>
                   <li><strong>Monsoon Green</strong> - Fourth data series</li>
-                  <li><strong>White</strong> - Background contrast series</li>
+                  <li><strong>Lime Green</strong> - Fifth data series</li>
                 </ol>
               </div>
               <div>
