@@ -1,4 +1,4 @@
-import { ArrowRight, Blocks, ToyBrick, Rocket } from "lucide-react";
+import { ArrowRight, Blocks, ToyBrick, Rocket, BarChart3 } from "lucide-react";
 import Link from "next/link";
 
 import {
@@ -15,6 +15,14 @@ const componentItems = [
   { name: "Card", path: "/components/card" },
   { name: "Dialog", path: "/components/dialog" },
   { name: "Dropdown Menu", path: "/components/dropdown-menu" },
+];
+
+const chartItems = [
+  { name: "Area Chart", path: "/components/area-chart" },
+  { name: "Bar Chart", path: "/components/bar-chart" },
+  { name: "Line Chart", path: "/components/line-chart" },
+  { name: "Pie Chart", path: "/components/pie-chart" },
+  { name: "Radar Chart", path: "/components/radar-chart" },
 ];
 
 const blockItems = [
@@ -57,7 +65,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="mb-4 grid gap-6 md:grid-cols-3">
+      <div className="mb-4 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         <Card className="shadow-none">
           <CardHeader className="space-y-1">
             <div className="flex items-center justify-between">
@@ -84,6 +92,41 @@ export default function Home() {
                   <ArrowRight className="size-4 text-muted-foreground" />
                 </div>
               ))}
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="shadow-none">
+          <CardHeader className="space-y-1">
+            <div className="flex items-center justify-between">
+              <CardTitle>Charts</CardTitle>
+              <div className="rounded-md bg-green-500 p-1">
+                <BarChart3 className="size-5 text-white" />
+              </div>
+            </div>
+            <CardDescription>
+              Beautiful data visualization components
+            </CardDescription>
+          </CardHeader>
+
+          <CardContent>
+            <div className="space-y-2">
+              {chartItems.map((item) => (
+                <div
+                  key={item.name}
+                  className="flex items-center justify-between"
+                >
+                  <Link href={item.path} className="text-sm hover:underline">
+                    {item.name}
+                  </Link>
+                  <ArrowRight className="size-4 text-muted-foreground" />
+                </div>
+              ))}
+              <div className="pt-2 border-t">
+                <Link href="/charts" className="text-sm font-medium text-primary hover:underline">
+                  View all charts
+                </Link>
+              </div>
             </div>
           </CardContent>
         </Card>

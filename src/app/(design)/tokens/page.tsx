@@ -197,6 +197,7 @@ export default function TokensPage() {
               hex={color.hex}
               description={color.description}
               usage={color.usage}
+              isPrimary={true}
             />
           ))}
         </div>
@@ -224,17 +225,82 @@ export default function TokensPage() {
 
       {/* Color Usage Guidelines */}
       <section className="mb-12">
-        <h2 className="mb-4 font-semibold text-xl">Color Usage Guidelines</h2>
-        <div className="rounded-lg border bg-card p-6">
-          <p className="text-muted-foreground mb-4">
-            The primary colors (including white) should be used for the majority of the brand output. The color usage should follow these guidelines:
-          </p>
-          <ul className="space-y-2 text-sm text-muted-foreground">
-            <li>• <strong>White, Night Blue, and Sea Blue</strong> should be the predominant colors</li>
-            <li>• <strong>Peppermint Green and Monsoon Green</strong> should be used more for highlights and accents</li>
-            <li>• <strong>Secondary colors</strong> can be used when additional variety is required</li>
-            <li>• Always maintain proper contrast ratios for accessibility</li>
-          </ul>
+        <h2 className="mb-4 font-semibold text-xl">Color Usage Guidelines & Accessibility</h2>
+        <div className="space-y-6">
+          <div className="rounded-lg border bg-card p-6">
+            <h3 className="font-semibold text-lg mb-3">Primary Color Priority</h3>
+            <p className="text-muted-foreground mb-4">
+              The primary colors (including white) should be used for the majority of the brand output. The color usage should follow these guidelines:
+            </p>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li>• <strong>White, Night Blue, and Sea Blue</strong> should be the predominant colors</li>
+              <li>• <strong>Peppermint Green and Monsoon Green</strong> should be used more for highlights and accents</li>
+              <li>• <strong>Secondary colors</strong> can be used when additional variety is required</li>
+              <li>• Always maintain proper contrast ratios for accessibility</li>
+            </ul>
+          </div>
+          
+          <div className="rounded-lg border bg-amber-50/50 border-amber-200 p-6">
+            <h3 className="font-semibold text-lg mb-3 flex items-center gap-2">
+              <span className="w-2 h-2 bg-amber-500 rounded-full"></span>
+              WCAG AA Compliance
+            </h3>
+            <div className="grid md:grid-cols-2 gap-4 text-sm">
+              <div>
+                <h4 className="font-medium mb-2">Contrast Requirements:</h4>
+                <ul className="space-y-1 text-muted-foreground">
+                  <li>• <strong>Normal Text:</strong> 4.5:1 minimum</li>
+                  <li>• <strong>Large Text:</strong> 3:1 minimum</li>
+                  <li>• <strong>AAA Level:</strong> 7:1 for enhanced accessibility</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-medium mb-2">Recommended Combinations:</h4>
+                <ul className="space-y-1 text-muted-foreground">
+                  <li>• <strong>Night Blue on White:</strong> Excellent contrast</li>
+                  <li>• <strong>Sea Blue on White:</strong> AA compliant</li>
+                  <li>• <strong>White on Night Blue:</strong> Excellent contrast</li>
+                  <li>• <strong>White on Sea Blue:</strong> AA compliant</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div className="rounded-lg border bg-blue-50/50 border-blue-200 p-6">
+            <h3 className="font-semibold text-lg mb-3">Primary Color Combinations</h3>
+            <div className="grid md:grid-cols-2 gap-4">
+              <div className="space-y-3">
+                <h4 className="font-medium">High Contrast (AAA)</h4>
+                <div className="space-y-2 text-sm">
+                  <div className="flex items-center gap-3 p-2 rounded border bg-white">
+                    <div className="w-4 h-4 rounded" style={{ backgroundColor: "#012030" }}></div>
+                    <span>Night Blue on White</span>
+                    <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">16.3:1</span>
+                  </div>
+                  <div className="flex items-center gap-3 p-2 rounded border" style={{ backgroundColor: "#012030", color: "white" }}>
+                    <div className="w-4 h-4 rounded bg-white"></div>
+                    <span>White on Night Blue</span>
+                    <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">16.3:1</span>
+                  </div>
+                </div>
+              </div>
+              <div className="space-y-3">
+                <h4 className="font-medium">Good Contrast (AA)</h4>
+                <div className="space-y-2 text-sm">
+                  <div className="flex items-center gap-3 p-2 rounded border bg-white">
+                    <div className="w-4 h-4 rounded" style={{ backgroundColor: "#115D7E" }}></div>
+                    <span>Sea Blue on White</span>
+                    <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">5.8:1</span>
+                  </div>
+                  <div className="flex items-center gap-3 p-2 rounded border" style={{ backgroundColor: "#115D7E", color: "white" }}>
+                    <div className="w-4 h-4 rounded bg-white"></div>
+                    <span>White on Sea Blue</span>
+                    <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">5.8:1</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

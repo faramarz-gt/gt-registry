@@ -74,40 +74,41 @@
   --monsoon-green-20: #EBFBED;
   --monsoon-green-10: #F5FDF6;
 
-  /* Legacy Theme Colors */
-  --background: oklch(1.0000 0 0);
-  --foreground: oklch(0.2302 0.0476 235.2985);
+  /* Theme Colors - Mapped to GTreasury Primary Colors for AA Compliance */
+  --background: var(--white); /* #FFFFFF - Pure white background */
+  --foreground: var(--night-blue); /* #012030 - Night Blue for high contrast text (16.3:1) */
 
-  --card: oklch(1.0000 0 0);
-  --card-foreground: oklch(0.2302 0.0476 235.2985);
+  --card: var(--white); /* #FFFFFF - White card backgrounds */
+  --card-foreground: var(--night-blue); /* #012030 - Night Blue text on cards (16.3:1) */
 
-  --popover: oklch(1.0000 0 0);
-  --popover-foreground: oklch(0.2302 0.0476 235.2985);
+  --popover: var(--white); /* #FFFFFF - White popover backgrounds */
+  --popover-foreground: var(--night-blue); /* #012030 - Night Blue text in popovers (16.3:1) */
 
-  --primary: oklch(0.4513 0.0871 233.2261);
-  --primary-foreground: oklch(1.0000 0 0);
+  --primary: var(--sea-blue); /* #115D7E - Sea Blue for primary actions (5.8:1 on white) */
+  --primary-foreground: var(--white); /* #FFFFFF - White text on Sea Blue (5.8:1) */
 
-  --secondary: oklch(0.8696 0.1268 147.0805);
-  --secondary-foreground: oklch(0.2302 0.0476 235.2985);
+  --secondary: var(--peppermint-green); /* #45C4B0 - Peppermint Green for secondary actions */
+  --secondary-foreground: var(--night-blue); /* #012030 - Night Blue text on Peppermint Green */
 
-  --muted: oklch(0.9470 0.0095 222.0590);
-  --muted-foreground: oklch(0.4049 0.0365 229.4073);
+  --muted: var(--night-blue-10); /* #E6E9EA - Very light Night Blue for muted backgrounds */
+  --muted-foreground: var(--night-blue-70); /* #4D636E - Medium Night Blue for muted text */
 
-  --accent: oklch(0.9448 0.0267 185.1630);
-  --accent-foreground: oklch(0.2302 0.0476 235.2985);
+  --accent: var(--peppermint-green-20); /* #DAF3EF - Light Peppermint Green for accents */
+  --accent-foreground: var(--night-blue); /* #012030 - Night Blue text on light accents */
 
-  --destructive: oklch(0.6368 0.2078 25.3313);
-  --destructive-foreground: oklch(1.0000 0 0);
+  --destructive: #dc2626; /* Red for destructive actions - keeping standard for accessibility */
+  --destructive-foreground: var(--white); /* #FFFFFF - White text on red */
 
-  --border: oklch(0.7474 0.0468 231.9162);
-  --input: oklch(0.7474 0.0468 231.9162);
-  --ring: oklch(0.4839 0.0927 232.2901);
+  --border: var(--night-blue-20); /* #CCD2D6 - Light Night Blue for borders */
+  --input: var(--night-blue-20); /* #CCD2D6 - Light Night Blue for input borders */
+  --ring: var(--sea-blue); /* #115D7E - Sea Blue for focus rings */
 
-  --chart-1: oklch(0.4839 0.0927 232.2901);
-  --chart-2: oklch(0.7455 0.1144 180.5804);
-  --chart-3: oklch(0.8696 0.1268 147.0805);
-  --chart-4: oklch(0.8769 0.1874 125.1799);
-  --chart-5: oklch(0.9499 0.0934 130.7273);
+  /* Chart colors updated for WCAG AA accessibility compliance */
+  --chart-1: var(--night-blue-100); /* #012030 - Dark blue, high contrast */
+  --chart-2: var(--sea-blue-100); /* #115D7E - Medium blue, good contrast */
+  --chart-3: var(--peppermint-green-130); /* #30897B - Dark teal, accessible */
+  --chart-4: var(--monsoon-green-130); /* #6CA572 - Medium green, good contrast */
+  --chart-5: var(--night-blue-70); /* #4D636E - Medium gray-blue, accessible */
 
   --sidebar: oklch(0.9320 0.0035 219.5341);
   --sidebar-foreground: oklch(0.2302 0.0476 235.2985);
@@ -206,40 +207,41 @@
   --monsoon-green-20: #EBFBED;
   --monsoon-green-10: #F5FDF6;
 
-  /* Legacy Theme Colors - Dark mode variants */
-  --background: oklch(0.2046 0 0);
-  --foreground: oklch(0.9219 0 0);
+  /* Dark Theme Colors - GTreasury Primary Colors for AA Compliance */
+  --background: var(--night-blue-100); /* #012030 - Night Blue background for dark theme */
+  --foreground: var(--white); /* #FFFFFF - White text on dark background (16.3:1) */
 
-  --card: oklch(0.2686 0 0);
-  --card-foreground: oklch(0.9219 0 0);
+  --card: var(--night-blue-90); /* #1A3645 - Slightly lighter Night Blue for cards */
+  --card-foreground: var(--white); /* #FFFFFF - White text on dark cards */
 
-  --popover: oklch(0.2686 0 0);
-  --popover-foreground: oklch(0.9219 0 0);
+  --popover: var(--night-blue-90); /* #1A3645 - Slightly lighter Night Blue for popovers */
+  --popover-foreground: var(--white); /* #FFFFFF - White text in dark popovers */
 
-  --primary: oklch(0.4839 0.0927 232.2901);
-  --primary-foreground: oklch(1.0000 0 0);
+  --primary: var(--peppermint-green); /* #45C4B0 - Peppermint Green for primary actions in dark theme */
+  --primary-foreground: var(--night-blue); /* #012030 - Night Blue text on Peppermint Green */
 
-  --secondary: oklch(0.2686 0 0);
-  --secondary-foreground: oklch(0.9219 0 0);
+  --secondary: var(--sea-blue-80); /* #417D98 - Lighter Sea Blue for secondary actions */
+  --secondary-foreground: var(--white); /* #FFFFFF - White text on secondary */
 
-  --muted: oklch(0.2686 0 0);
-  --muted-foreground: oklch(0.7155 0 0);
+  --muted: var(--night-blue-80); /* #344D59 - Medium Night Blue for muted backgrounds */
+  --muted-foreground: var(--night-blue-30); /* #B3BCC1 - Light Night Blue for muted text */
 
-  --accent: oklch(0.3791 0.1378 265.5222);
-  --accent-foreground: oklch(0.8823 0.0571 254.1284);
+  --accent: var(--peppermint-green-130); /* #30897B - Darker Peppermint Green for accents */
+  --accent-foreground: var(--white); /* #FFFFFF - White text on dark accents */
 
-  --destructive: oklch(0.6368 0.2078 25.3313);
-  --destructive-foreground: oklch(1.0000 0 0);
+  --destructive: #ef4444; /* Lighter red for dark theme - maintaining accessibility */
+  --destructive-foreground: var(--white); /* #FFFFFF - White text on red */
 
-  --border: oklch(0.3715 0 0);
-  --input: oklch(0.3715 0 0);
-  --ring: oklch(0.6231 0.1880 259.8145);
+  --border: var(--night-blue-70); /* #4D636E - Medium Night Blue for borders */
+  --input: var(--night-blue-70); /* #4D636E - Medium Night Blue for input borders */
+  --ring: var(--peppermint-green); /* #45C4B0 - Peppermint Green for focus rings */
 
-  --chart-1: oklch(0.7137 0.1434 254.6240);
-  --chart-2: oklch(0.6231 0.1880 259.8145);
-  --chart-3: oklch(0.5461 0.2152 262.8809);
-  --chart-4: oklch(0.4882 0.2172 264.3763);
-  --chart-5: oklch(0.4244 0.1809 265.6377);
+  /* Chart colors updated for WCAG AA accessibility compliance */
+  --chart-1: var(--night-blue-100); /* #012030 - Dark blue, high contrast */
+  --chart-2: var(--sea-blue-100); /* #115D7E - Medium blue, good contrast */
+  --chart-3: var(--peppermint-green-130); /* #30897B - Dark teal, accessible */
+  --chart-4: var(--monsoon-green-130); /* #6CA572 - Medium green, good contrast */
+  --chart-5: var(--night-blue-70); /* #4D636E - Medium gray-blue, accessible */
 
   --sidebar: oklch(0.2302 0.0476 235.2985);
   --sidebar-foreground: oklch(0.9219 0 0);

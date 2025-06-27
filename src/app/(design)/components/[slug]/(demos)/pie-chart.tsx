@@ -78,7 +78,8 @@ export function PieChartComponent() {
               dataKey="visitors"
               nameKey="browser"
               innerRadius={60}
-              strokeWidth={5}
+              strokeWidth={8}
+              stroke="var(--background)"
             >
               <Label
                 content={({ viewBox }) => {

@@ -2,8 +2,10 @@ import type { ReactElement, ReactNode } from "react";
 
 import { accordion } from "@/app/(design)/components/[slug]/(demos)/accordion";
 import { alert } from "@/app/(design)/components/[slug]/(demos)/alert";
+import { AreaChartComponent } from "@/app/(design)/components/[slug]/(demos)/area-chart";
 import { avatar } from "@/app/(design)/components/[slug]/(demos)/avatar";
 import { badge } from "@/app/(design)/components/[slug]/(demos)/badge";
+import { BarChartComponent } from "@/app/(design)/components/[slug]/(demos)/bar-chart";
 import { breadcrumb } from "@/app/(design)/components/[slug]/(demos)/breadcrumb";
 import { button } from "@/app/(design)/components/[slug]/(demos)/button";
 import { calendar } from "@/app/(design)/components/[slug]/(demos)/calendar";
@@ -15,7 +17,11 @@ import { datePicker } from "@/app/(design)/components/[slug]/(demos)/date-picker
 import { dialog } from "@/app/(design)/components/[slug]/(demos)/dialog";
 import { dropdownMenu } from "@/app/(design)/components/[slug]/(demos)/dropdown-menu";
 import { input } from "@/app/(design)/components/[slug]/(demos)/input";
+import { LineChartComponent } from "@/app/(design)/components/[slug]/(demos)/line-chart";
 import { menuBar } from "@/app/(design)/components/[slug]/(demos)/menu-bar";
+import { PieChartComponent } from "@/app/(design)/components/[slug]/(demos)/pie-chart";
+import { RadarChartComponent } from "@/app/(design)/components/[slug]/(demos)/radar-chart";
+import { RadialChartComponent } from "@/app/(design)/components/[slug]/(demos)/radial-chart";
 import { select } from "@/app/(design)/components/[slug]/(demos)/select";
 import { separator } from "@/app/(design)/components/[slug]/(demos)/separator";
 import { skeleton } from "@/app/(design)/components/[slug]/(demos)/skeleton";
@@ -34,11 +40,56 @@ interface Demo {
   };
 }
 
+// Individual chart demo objects
+const areaChart: Demo = {
+  name: "area-chart",
+  components: {
+    AreaChart: <AreaChartComponent />,
+  },
+};
+
+const barChart: Demo = {
+  name: "bar-chart",
+  components: {
+    BarChart: <BarChartComponent />,
+  },
+};
+
+const lineChart: Demo = {
+  name: "line-chart",
+  components: {
+    LineChart: <LineChartComponent />,
+  },
+};
+
+const pieChart: Demo = {
+  name: "pie-chart",
+  components: {
+    PieChart: <PieChartComponent />,
+  },
+};
+
+const radarChart: Demo = {
+  name: "radar-chart",
+  components: {
+    RadarChart: <RadarChartComponent />,
+  },
+};
+
+const radialChart: Demo = {
+  name: "radial-chart",
+  components: {
+    RadialChart: <RadialChartComponent />,
+  },
+};
+
 export const demos: { [name: string]: Demo } = {
   accordion,
   alert,
+  "area-chart": areaChart,
   avatar,
   badge,
+  "bar-chart": barChart,
   breadcrumb,
   button,
   calendar,
@@ -50,7 +101,11 @@ export const demos: { [name: string]: Demo } = {
   "data-table": dataTable,
   "dropdown-menu": dropdownMenu,
   input,
+  "line-chart": lineChart,
   "menu-bar": menuBar,
+  "pie-chart": pieChart,
+  "radar-chart": radarChart,
+  "radial-chart": radialChart,
   select,
   separator,
   skeleton,

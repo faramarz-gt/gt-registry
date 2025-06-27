@@ -566,6 +566,108 @@
       ]
     },
     {
+      "name": "area-chart",
+      "type": "registry:ui",
+      "title": "Area Chart",
+      "description": "An area chart built with Recharts.",
+      "registryDependencies": [
+        "chart",
+        "https://gt-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/app/starters/(minimal)/v0-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bar-chart",
+      "type": "registry:ui",
+      "title": "Bar Chart",
+      "description": "A bar chart built with Recharts.",
+      "registryDependencies": [
+        "chart",
+        "https://gt-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/app/starters/(minimal)/v0-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pie-chart",
+      "type": "registry:ui",
+      "title": "Pie Chart",
+      "description": "A pie chart built with Recharts.",
+      "registryDependencies": [
+        "chart",
+        "https://gt-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/app/starters/(minimal)/v0-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        }
+      ]
+    },
+    {
+      "name": "line-chart",
+      "type": "registry:ui",
+      "title": "Line Chart",
+      "description": "A line chart built with Recharts.",
+      "registryDependencies": [
+        "chart",
+        "https://gt-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/app/starters/(minimal)/v0-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radar-chart",
+      "type": "registry:ui",
+      "title": "Radar Chart",
+      "description": "A radar chart built with Recharts.",
+      "registryDependencies": [
+        "chart",
+        "https://gt-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/app/starters/(minimal)/v0-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radial-chart",
+      "type": "registry:ui",
+      "title": "Radial Chart",
+      "description": "A radial chart built with Recharts.",
+      "registryDependencies": [
+        "chart",
+        "https://gt-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/app/starters/(minimal)/v0-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        }
+      ]
+    },
+    {
       "name": "checkbox",
       "type": "registry:ui",
       "title": "Checkbox",

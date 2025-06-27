@@ -10,6 +10,7 @@ import {
   X,
   Code,
   Rocket,
+  BarChart3,
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -43,15 +44,12 @@ import type * as React from "react";
 export const componentItems = [
   { name: "Accordion", path: "/components/accordion" },
   { name: "Alert", path: "/components/alert" },
-  { name: "Area Chart", path: "/components/area-chart" },
   { name: "Avatar", path: "/components/avatar" },
   { name: "Badge", path: "/components/badge" },
-  { name: "Bar Chart", path: "/components/bar-chart" },
   { name: "Breadcrumb", path: "/components/breadcrumb" },
   { name: "Button", path: "/components/button" },
   { name: "Calendar", path: "/components/calendar" },
   { name: "Card", path: "/components/card" },
-  { name: "Chart", path: "/components/chart" },
   { name: "Checkbox", path: "/components/checkbox" },
   { name: "Date Picker", path: "/components/date-picker" },
   { name: "Data Table", path: "/components/data-table" },
@@ -59,7 +57,6 @@ export const componentItems = [
   { name: "Dropdown Menu", path: "/components/dropdown-menu" },
   { name: "Input", path: "/components/input" },
   { name: "Menu Bar", path: "/components/menu-bar" },
-  { name: "Pie Chart", path: "/components/pie-chart" },
   { name: "Select", path: "/components/select" },
   { name: "Separator", path: "/components/separator" },
   { name: "Skeleton", path: "/components/skeleton" },
@@ -70,6 +67,17 @@ export const componentItems = [
   { name: "Tabs", path: "/components/tabs" },
   { name: "Toggle Group", path: "/components/toggle-group" },
   { name: "Tooltip", path: "/components/tooltip" },
+];
+
+export const chartItems = [
+  { name: "View All Charts", path: "/charts" },
+  { name: "Chart (All Types)", path: "/components/chart" },
+  { name: "Area Chart", path: "/components/area-chart" },
+  { name: "Bar Chart", path: "/components/bar-chart" },
+  { name: "Line Chart", path: "/components/line-chart" },
+  { name: "Pie Chart", path: "/components/pie-chart" },
+  { name: "Radar Chart", path: "/components/radar-chart" },
+  { name: "Radial Chart", path: "/components/radial-chart" },
 ];
 
 export const blockItems = [
@@ -115,6 +123,7 @@ export function RegistrySidebar() {
 
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredComponents, setFilteredComponents] = useState(componentItems);
+  const [filteredCharts, setFilteredCharts] = useState(chartItems);
   const [filteredBlocks, setFilteredBlocks] = useState(blockItems);
   const [filteredStarters, setFilteredStarters] = useState(starterItems);
 
@@ -122,6 +131,11 @@ export function RegistrySidebar() {
     if (searchTerm) {
       setFilteredComponents(
         componentItems.filter((item) =>
+          item.name.toLowerCase().includes(searchTerm.toLowerCase()),
+        ),
+      );
+      setFilteredCharts(
+        chartItems.filter((item) =>
           item.name.toLowerCase().includes(searchTerm.toLowerCase()),
         ),
       );
@@ -137,6 +151,7 @@ export function RegistrySidebar() {
       );
     } else {
       setFilteredComponents(componentItems);
+      setFilteredCharts(chartItems);
       setFilteredBlocks(blockItems);
       setFilteredStarters(starterItems);
     }
@@ -343,6 +358,43 @@ export function RegistrySidebar() {
                 <SidebarGroupContent>
                   <SidebarMenu>
                     {filteredComponents.map((item) => (
+                      <SidebarMenuItem key={item.path}>
+                        <SidebarMenuButton
+                          asChild
+                          isActive={pathname === item.path}
+                        >
+                          <Link
+                            onClick={() => setOpenMobile(false)}
+                            href={item.path}
+                          >
+                            {item.name}
+                          </Link>
+                        </SidebarMenuButton>
+                      </SidebarMenuItem>
+                    ))}
+                  </SidebarMenu>
+                </SidebarGroupContent>
+              </CollapsibleContent>
+            </SidebarGroup>
+          </Collapsible>
+
+          <Collapsible defaultOpen={true} className="group/collapsible">
+            <SidebarGroup>
+              <CollapsibleTrigger className="w-full">
+                <SidebarGroupLabel className="flex cursor-pointer items-center justify-between">
+                  <div className="flex min-w-0 items-center">
+                    <BarChart3 className="size-4 flex-shrink-0" />
+                    <span className="ml-2 transition-all duration-200">
+                      Charts
+                    </span>
+                  </div>
+                  <ChevronDown className="size-4 flex-shrink-0 transition-all duration-200 group-data-[state=open]/collapsible:rotate-180" />
+                </SidebarGroupLabel>
+              </CollapsibleTrigger>
+              <CollapsibleContent>
+                <SidebarGroupContent>
+                  <SidebarMenu>
+                    {filteredCharts.map((item) => (
                       <SidebarMenuItem key={item.path}>
                         <SidebarMenuButton
                           asChild
