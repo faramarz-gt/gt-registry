@@ -1,10 +1,26 @@
 import { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import { kv } from "@vercel/kv";
-import crypto from "crypto";
+import { createClient } from "redis";
+import * as crypto from "crypto";
 
 // Company domain whitelist
 const ALLOWED_DOMAIN = "gtreasury.com";
+
+// Redis client connection
+let redisClient: ReturnType<typeof createClient> | null = null;
+
+async function getRedisClient() {
+  if (!redisClient) {
+    redisClient = createClient({
+      url: process.env.REDIS_URL
+    });
+    
+    redisClient.on('error', (err) => console.error('Redis Client Error', err));
+    await redisClient.connect();
+    console.log('📡 Connected to Redis');
+  }
+  return redisClient;
+}
 
 // Check if email is from allowed domain
 const isAllowedEmail = (email: string) => {
@@ -16,8 +32,9 @@ async function generateVerificationToken(email: string): Promise<string> {
   const token = crypto.randomBytes(32).toString('hex');
   const hash = crypto.createHash('sha256').update(token).digest('hex');
   
-  // Store in KV with 24 hour expiration
-  await kv.setex(`verification:${hash}`, 24 * 60 * 60, email);
+  // Store in Redis with 24 hour expiration
+  const redis = await getRedisClient();
+  await redis.setEx(`verification:${hash}`, 24 * 60 * 60, email);
   console.log(`🔐 Token stored: verification:${hash}`);
   
   return token;
@@ -26,15 +43,17 @@ async function generateVerificationToken(email: string): Promise<string> {
 // Verify token and get email
 async function verifyToken(token: string): Promise<string | null> {
   const hash = crypto.createHash('sha256').update(token).digest('hex');
-  const email = await kv.get(`verification:${hash}`) as string | null;
+  const redis = await getRedisClient();
+  const email = await redis.get(`verification:${hash}`);
   
   if (email) {
     // Delete token after use (one-time use)
-    await kv.del(`verification:${hash}`);
+    await redis.del(`verification:${hash}`);
     console.log(`✅ Token verified and deleted: verification:${hash}`);
+    return typeof email === 'string' ? email : email.toString();
   }
   
-  return email;
+  return null;
 }
 
 // Send magic link email via Zapier

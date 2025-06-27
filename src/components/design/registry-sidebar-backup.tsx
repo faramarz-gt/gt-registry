@@ -5,38 +5,24 @@ import {
   Blocks,
   BookOpen,
   ChevronDown,
-  ChevronUp,
   Code,
   Home,
-  LogOut,
   Rocket,
   Search,
-  Settings,
   ToyBrick,
-  User,
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { useSession, signOut } from "next-auth/react";
 
 import { RegistryLogo } from "@/components/design/registry-logo";
 import { ModeToggle } from "@/components/design/theme-toggle";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import {
@@ -114,14 +100,11 @@ export const gettingStartedItems = [
   { name: "Changelog", path: "/changelog" },
 ];
 
-export const developmentItems = [
-  { name: "MCP", path: "/mcp" },
-  { name: "Redis Test", path: "/redis-test" },
-];
+export const developmentItems = [{ name: "MCP", path: "/mcp" }];
 
 export function RegistrySidebar() {
   const pathname = usePathname();
-  const { data: session, status } = useSession();
+
   const { setOpenMobile } = useSidebar();
 
   const [searchTerm, setSearchTerm] = useState("");
@@ -159,21 +142,6 @@ export function RegistrySidebar() {
       setFilteredStarters(starterItems);
     }
   }, [searchTerm]);
-
-  // Get user initials for avatar fallback
-  const getUserInitials = (email: string) => {
-    if (!email) return "U";
-    const parts = email.split("@")[0].split(".");
-    if (parts.length >= 2) {
-      return (parts[0][0] + parts[1][0]).toUpperCase();
-    }
-    return email[0].toUpperCase();
-  };
-
-  // Handle sign out
-  const handleSignOut = async () => {
-    await signOut({ callbackUrl: "/auth/signin" });
-  };
 
   return (
     <Sidebar>
@@ -447,102 +415,8 @@ export function RegistrySidebar() {
         </ScrollArea>
       </SidebarContent>
 
-      <SidebarFooter className="border-t">
-        {session?.user ? (
-          <SidebarGroup>
-            <SidebarMenu>
-              <SidebarMenuItem>
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <SidebarMenuButton
-                      size="lg"
-                      className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
-                    >
-                      <Avatar className="h-8 w-8 rounded-lg">
-                        <AvatarImage 
-                          src={session.user.image || ""} 
-                          alt={session.user.name || session.user.email || ""} 
-                        />
-                        <AvatarFallback className="rounded-lg">
-                          {getUserInitials(session.user.email || "")}
-                        </AvatarFallback>
-                      </Avatar>
-                      <div className="grid flex-1 text-left text-sm leading-tight">
-                        <span className="truncate font-semibold">
-                          {session.user.name || session.user.email?.split("@")[0]}
-                        </span>
-                        <span className="truncate text-xs text-muted-foreground">
-                          {session.user.email}
-                        </span>
-                      </div>
-                      <ChevronUp className="ml-auto size-4" />
-                    </SidebarMenuButton>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent
-                    className="w-[--radix-dropdown-menu-trigger-width] min-w-56 rounded-lg"
-                    side="top"
-                    align="end"
-                    sideOffset={4}
-                  >
-                    <DropdownMenuLabel className="p-0 font-normal">
-                      <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
-                        <Avatar className="h-8 w-8 rounded-lg">
-                          <AvatarImage 
-                            src={session.user.image || ""} 
-                            alt={session.user.name || session.user.email || ""} 
-                          />
-                          <AvatarFallback className="rounded-lg">
-                            {getUserInitials(session.user.email || "")}
-                          </AvatarFallback>
-                        </Avatar>
-                        <div className="grid flex-1 text-left text-sm leading-tight">
-                          <span className="truncate font-semibold">
-                            {session.user.name || session.user.email?.split("@")[0]}
-                          </span>
-                          <span className="truncate text-xs text-muted-foreground">
-                            {session.user.email}
-                          </span>
-                        </div>
-                      </div>
-                    </DropdownMenuLabel>
-                    <DropdownMenuSeparator />
-                    <DropdownMenuItem disabled>
-                      <Settings className="mr-2 h-4 w-4" />
-                      Account Settings
-                    </DropdownMenuItem>
-                    <DropdownMenuSeparator />
-                    <DropdownMenuItem onClick={handleSignOut}>
-                      <LogOut className="mr-2 h-4 w-4" />
-                      Sign Out
-                    </DropdownMenuItem>
-                  </DropdownMenuContent>
-                </DropdownMenu>
-              </SidebarMenuItem>
-            </SidebarMenu>
-          </SidebarGroup>
-        ) : (
-          <SidebarGroup>
-            <SidebarMenu>
-              <SidebarMenuItem>
-                <SidebarMenuButton size="lg" asChild>
-                  <Link href="/auth/signin">
-                    <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
-                      <User className="size-4" />
-                    </div>
-                    <div className="grid flex-1 text-left text-sm leading-tight">
-                      <span className="truncate font-semibold">Sign In</span>
-                      <span className="truncate text-xs text-muted-foreground">
-                        Access GTreasury Registry
-                      </span>
-                    </div>
-                  </Link>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-            </SidebarMenu>
-          </SidebarGroup>
-        )}
-        
-        <div className="flex justify-end px-2">
+      <SidebarFooter>
+        <div className="flex justify-end">
           <ModeToggle />
         </div>
       </SidebarFooter>
