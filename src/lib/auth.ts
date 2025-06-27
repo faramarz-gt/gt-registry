@@ -1,6 +1,6 @@
 import { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import { createClient } from "redis";
+import { kv } from "@vercel/kv";
 import crypto from "crypto";
 
 // Company domain whitelist
@@ -11,60 +11,30 @@ const isAllowedEmail = (email: string) => {
   return email.endsWith(`@${ALLOWED_DOMAIN}`);
 };
 
-// Initialize Redis client
-let redisClient: any = null;
-
-async function getRedisClient() {
-  if (!redisClient) {
-    redisClient = createClient({
-      url: process.env.REDIS_URL
-    });
-    
-    redisClient.on('error', (err: any) => {
-      console.error('Redis Client Error:', err);
-    });
-    
-    await redisClient.connect();
-  }
-  return redisClient;
-}
-
 // Generate secure verification token
 async function generateVerificationToken(email: string): Promise<string> {
   const token = crypto.randomBytes(32).toString('hex');
   const hash = crypto.createHash('sha256').update(token).digest('hex');
   
-  try {
-    const client = await getRedisClient();
-    // Store in Redis with 24 hour expiration
-    await client.setEx(`verification:${hash}`, 24 * 60 * 60, email);
-    console.log(`🔐 Token stored: verification:${hash}`);
-    return token;
-  } catch (error) {
-    console.error('Failed to store verification token:', error);
-    throw error;
-  }
+  // Store in KV with 24 hour expiration
+  await kv.setex(`verification:${hash}`, 24 * 60 * 60, email);
+  console.log(`🔐 Token stored: verification:${hash}`);
+  
+  return token;
 }
 
 // Verify token and get email
 async function verifyToken(token: string): Promise<string | null> {
   const hash = crypto.createHash('sha256').update(token).digest('hex');
+  const email = await kv.get(`verification:${hash}`) as string | null;
   
-  try {
-    const client = await getRedisClient();
-    const email = await client.get(`verification:${hash}`);
-    
-    if (email) {
-      // Delete token after use (one-time use)
-      await client.del(`verification:${hash}`);
-      console.log(`✅ Token verified and deleted: verification:${hash}`);
-    }
-    
-    return email;
-  } catch (error) {
-    console.error('Failed to verify token:', error);
-    return null;
+  if (email) {
+    // Delete token after use (one-time use)
+    await kv.del(`verification:${hash}`);
+    console.log(`✅ Token verified and deleted: verification:${hash}`);
   }
+  
+  return email;
 }
 
 // Send magic link email via Zapier
