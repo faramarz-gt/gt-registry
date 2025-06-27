@@ -1,3 +1,3 @@
 import registryData from "../registry.json";
 
-export default registryData; 
+export default registryData;

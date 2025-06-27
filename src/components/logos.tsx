@@ -140,64 +140,73 @@ export function LogosGrid() {
         <div className="mb-6">
           <h2 className="mb-2 font-semibold text-xl">GTreasury Brand Logos</h2>
           <p className="text-muted-foreground">
-            Various versions of the GTreasury brand logo for different use cases and backgrounds.
+            Various versions of the GTreasury brand logo for different use cases
+            and backgrounds.
           </p>
         </div>
-        
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-          <div className="space-y-3">
-            <LogoFull />
-            <div>
-              <div className="font-medium text-sm">Full Logo (Color)</div>
-              <div className="text-muted-foreground text-xs mt-1">
-                Primary logo with full branding and color gradient
+
+        <div className="flex flex-wrap -mx-3">
+          <div className="w-full sm:w-1/2 lg:w-1/4 px-3 mb-6">
+            <div className="space-y-3">
+              <LogoFull />
+              <div>
+                <div className="font-medium text-sm">Full Logo (Color)</div>
+                <div className="text-muted-foreground text-xs mt-1">
+                  Primary logo with full branding and color gradient
+                </div>
+                <code className="font-mono text-muted-foreground text-xs mt-2 block">
+                  /assets/gtreasury/gtreasury-logo-rgb.svg
+                </code>
               </div>
-              <code className="font-mono text-muted-foreground text-xs mt-2 block">
-                /assets/gtreasury/gtreasury-logo-rgb.svg
-              </code>
             </div>
           </div>
-          
-          <div className="space-y-3">
-            <LogoFullWhite />
-            <div>
-              <div className="font-medium text-sm">Full Logo (White)</div>
-              <div className="text-muted-foreground text-xs mt-1">
-                White version for dark backgrounds and overlays
+
+          <div className="w-full sm:w-1/2 lg:w-1/4 px-3 mb-6">
+            <div className="space-y-3">
+              <LogoFullWhite />
+              <div>
+                <div className="font-medium text-sm">Full Logo (White)</div>
+                <div className="text-muted-foreground text-xs mt-1">
+                  White version for dark backgrounds and overlays
+                </div>
+                <code className="font-mono text-muted-foreground text-xs mt-2 block">
+                  /assets/gtreasury/GTreasury-Logo-Single-Color-White-RGB.svg
+                </code>
               </div>
-              <code className="font-mono text-muted-foreground text-xs mt-2 block">
-                /assets/gtreasury/GTreasury-Logo-Single-Color-White-RGB.svg
-              </code>
             </div>
           </div>
-          
-          <div className="space-y-3">
-            <LogoSymbol />
-            <div>
-              <div className="font-medium text-sm">Symbol Only</div>
-              <div className="text-muted-foreground text-xs mt-1">
-                Standalone symbol without text for compact spaces
+
+          <div className="w-full sm:w-1/2 lg:w-1/4 px-3 mb-6">
+            <div className="space-y-3">
+              <LogoSymbol />
+              <div>
+                <div className="font-medium text-sm">Symbol Only</div>
+                <div className="text-muted-foreground text-xs mt-1">
+                  Standalone symbol without text for compact spaces
+                </div>
+                <code className="font-mono text-muted-foreground text-xs mt-2 block">
+                  /assets/gtreasury/gtreasury-logo-rgb-symbol-only.svg
+                </code>
               </div>
-              <code className="font-mono text-muted-foreground text-xs mt-2 block">
-                /assets/gtreasury/gtreasury-logo-rgb-symbol-only.svg
-              </code>
             </div>
           </div>
-          
-          <div className="space-y-3">
-            <LogoMark />
-            <div>
-              <div className="font-medium text-sm">Logo Mark</div>
-              <div className="text-muted-foreground text-xs mt-1">
-                Simplified logo mark for icons and favicons
+
+          <div className="w-full sm:w-1/2 lg:w-1/4 px-3 mb-6">
+            <div className="space-y-3">
+              <LogoMark />
+              <div>
+                <div className="font-medium text-sm">Logo Mark</div>
+                <div className="text-muted-foreground text-xs mt-1">
+                  Simplified logo mark for icons and favicons
+                </div>
+                <code className="font-mono text-muted-foreground text-xs mt-2 block">
+                  /assets/gtreasury/gtreasury-logo-mark.svg
+                </code>
               </div>
-              <code className="font-mono text-muted-foreground text-xs mt-2 block">
-                /assets/gtreasury/gtreasury-logo-mark.svg
-              </code>
             </div>
           </div>
         </div>
       </div>
     </section>
   );
-} 
+}

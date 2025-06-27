@@ -3,17 +3,12 @@
   "type": "registry:component",
   "title": "Bar Chart with Custom Labels",
   "description": "A bar chart with custom data labels showing sales vs target comparison",
-  "registryDependencies": [
-    "card", 
-    "chart"
-  ],
-  "dependencies": [
-    "recharts"
-  ],
+  "registryDependencies": ["card", "chart"],
+  "dependencies": ["recharts"],
   "files": [
     {
-      "path": "components/charts/bar-chart-labeled.tsx", 
+      "path": "components/charts/bar-chart-labeled.tsx",
       "type": "registry:component"
     }
   ]
-} 
+}

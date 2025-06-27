@@ -17,16 +17,16 @@ export function Logo({ variant = "full", className = "" }: LogoProps) {
     setMounted(true);
     // Check for dark mode class on document element
     const checkDarkMode = () => {
-      setIsDark(document.documentElement.classList.contains('dark'));
+      setIsDark(document.documentElement.classList.contains("dark"));
     };
-    
+
     checkDarkMode();
-    
+
     // Listen for changes to dark mode
     const observer = new MutationObserver(checkDarkMode);
     observer.observe(document.documentElement, {
       attributes: true,
-      attributeFilter: ['class']
+      attributeFilter: ["class"],
     });
 
     return () => observer.disconnect();
@@ -34,7 +34,9 @@ export function Logo({ variant = "full", className = "" }: LogoProps) {
 
   // Fallback component if image fails to load
   const LogoFallback = ({ text }: { text: string }) => (
-    <div className={`flex items-center justify-center bg-primary text-primary-foreground font-bold rounded ${className}`}>
+    <div
+      className={`flex items-center justify-center bg-primary text-primary-foreground font-bold rounded ${className}`}
+    >
       <span className={variant === "mark" ? "text-xs" : "text-sm"}>{text}</span>
     </div>
   );

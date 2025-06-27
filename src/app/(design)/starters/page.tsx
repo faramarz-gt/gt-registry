@@ -6,30 +6,33 @@ import type React from "react";
 import { useState } from "react";
 
 import { ComponentCard } from "@/components/design/component-card";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
 
 const starters = [
   {
     title: "Blank",
     name: "blank",
-    description: "A minimal starter template with basic setup and clean foundation to build upon.",
+    description:
+      "A minimal starter template with basic setup and clean foundation to build upon.",
     previewUrl: "/starters/blank",
     tags: ["minimal", "template", "basic"],
   },
   {
     title: "Dashboard",
-    name: "dashboard", 
-    description: "Complete dashboard layout with navigation, sidebar, and responsive design patterns.",
+    name: "dashboard",
+    description:
+      "Complete dashboard layout with navigation, sidebar, and responsive design patterns.",
     previewUrl: "/starters/dashboard",
     tags: ["dashboard", "admin", "analytics"],
   },
   {
     title: "GT Navigation Header",
     name: "gt-navigation-header",
-    description: "GTreasury-branded navigation header with treasury-focused navigation items and user management.",
-    previewUrl: "/starters/gt-navigation-header", 
+    description:
+      "GTreasury-branded navigation header with treasury-focused navigation items and user management.",
+    previewUrl: "/starters/gt-navigation-header",
     tags: ["navigation", "header", "treasury", "navbar", "gtreasury"],
   },
 ];
@@ -39,25 +42,29 @@ export default function StartersPage() {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
   // Get all unique tags
-  const allTags = Array.from(new Set(starters.flatMap(starter => starter.tags || [])));
+  const allTags = Array.from(
+    new Set(starters.flatMap((starter) => starter.tags || [])),
+  );
 
   // Filter starters based on search term and selected tags
-  const filteredStarters = starters.filter(starter => {
-    const matchesSearch = starter.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+  const filteredStarters = starters.filter((starter) => {
+    const matchesSearch =
+      starter.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       starter.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      (starter.tags || []).some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
-    
-    const matchesTags = selectedTags.length === 0 || 
-      selectedTags.some(tag => (starter.tags || []).includes(tag));
-    
+      (starter.tags || []).some((tag) =>
+        tag.toLowerCase().includes(searchTerm.toLowerCase()),
+      );
+
+    const matchesTags =
+      selectedTags.length === 0 ||
+      selectedTags.some((tag) => (starter.tags || []).includes(tag));
+
     return matchesSearch && matchesTags;
   });
 
   const toggleTag = (tag: string) => {
-    setSelectedTags(prev => 
-      prev.includes(tag) 
-        ? prev.filter(t => t !== tag)
-        : [...prev, tag]
+    setSelectedTags((prev) =>
+      prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag],
     );
   };
 
@@ -77,7 +84,8 @@ export default function StartersPage() {
         </Button>
         <h1 className="font-bold text-3xl tracking-tight">Starter Templates</h1>
         <p className="mt-2 text-muted-foreground">
-          Complete starter templates to jumpstart your GTreasury applications with pre-built layouts and components.
+          Complete starter templates to jumpstart your GTreasury applications
+          with pre-built layouts and components.
         </p>
       </div>
 
@@ -99,9 +107,9 @@ export default function StartersPage() {
           <div className="flex items-center gap-2">
             <span className="text-sm font-medium">Filter by tags:</span>
             {selectedTags.length > 0 && (
-              <Button 
-                variant="ghost" 
-                size="sm" 
+              <Button
+                variant="ghost"
+                size="sm"
                 onClick={clearFilters}
                 className="h-6 px-2 text-xs"
               >
@@ -111,7 +119,7 @@ export default function StartersPage() {
             )}
           </div>
           <div className="flex flex-wrap gap-2">
-            {allTags.map(tag => (
+            {allTags.map((tag) => (
               <Badge
                 key={tag}
                 variant={selectedTags.includes(tag) ? "default" : "outline"}
@@ -137,7 +145,9 @@ export default function StartersPage() {
             <ComponentCard
               key={starter.name}
               name={starter.name}
-              baseUrl={process.env.VERCEL_BRANCH_URL ?? "gt-registry.vercel.app"}
+              baseUrl={
+                process.env.VERCEL_BRANCH_URL ?? "gt-registry.vercel.app"
+              }
               title={starter.title}
               description={starter.description}
               promptTitle={`${starter.title} Starter Kit`}
@@ -156,4 +166,4 @@ export default function StartersPage() {
       </div>
     </div>
   );
-} 
+}

@@ -2,15 +2,15 @@
 
 import {
   BasicBarChart,
-  HorizontalBarChart,
-  StackedBarChart,
-  LabeledBarChart,
-  NegativeBarChart,
-  MixedBarChart,
-  InteractiveBarChart,
   GroupedBarChart,
-  PercentageBarChart,
+  HorizontalBarChart,
+  InteractiveBarChart,
   KPIBarChart,
+  LabeledBarChart,
+  MixedBarChart,
+  NegativeBarChart,
+  PercentageBarChart,
+  StackedBarChart,
 } from "@/components/bar-charts";
 
 const chartExamples = [
@@ -70,13 +70,16 @@ export function BarChartShowcase() {
   return (
     <div className="space-y-8">
       <div className="text-center space-y-4">
-        <h1 className="text-4xl font-bold tracking-tight">Bar Chart Collection</h1>
+        <h1 className="text-4xl font-bold tracking-tight">
+          Bar Chart Collection
+        </h1>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-          A comprehensive collection of 10 different bar chart configurations built with Recharts and shadcn/ui. 
-          Each chart demonstrates different use cases and styling approaches for data visualization.
+          A comprehensive collection of 10 different bar chart configurations
+          built with Recharts and shadcn/ui. Each chart demonstrates different
+          use cases and styling approaches for data visualization.
         </p>
       </div>
-      
+
       <div className="grid gap-8 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-1">
         {chartExamples.map((example, index) => {
           const Component = example.component;
@@ -84,7 +87,9 @@ export function BarChartShowcase() {
             <div key={index} className="space-y-2">
               <div className="flex flex-col space-y-1">
                 <h3 className="text-lg font-semibold">{example.title}</h3>
-                <p className="text-sm text-muted-foreground">{example.description}</p>
+                <p className="text-sm text-muted-foreground">
+                  {example.description}
+                </p>
               </div>
               <Component />
             </div>
@@ -93,4 +98,4 @@ export function BarChartShowcase() {
       </div>
     </div>
   );
-} 
+}

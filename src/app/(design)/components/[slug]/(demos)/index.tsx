@@ -10,18 +10,18 @@ import { breadcrumb } from "@/app/(design)/components/[slug]/(demos)/breadcrumb"
 import { button } from "@/app/(design)/components/[slug]/(demos)/button";
 import { calendar } from "@/app/(design)/components/[slug]/(demos)/calendar";
 import { card } from "@/app/(design)/components/[slug]/(demos)/card";
-import { chart } from "@/app/(design)/components/[slug]/(demos)/chart";
+
 import { checkbox } from "@/app/(design)/components/[slug]/(demos)/checkbox";
 import { dataTable } from "@/app/(design)/components/[slug]/(demos)/data-table";
 import { datePicker } from "@/app/(design)/components/[slug]/(demos)/date-picker";
 import { dialog } from "@/app/(design)/components/[slug]/(demos)/dialog";
 import { dropdownMenu } from "@/app/(design)/components/[slug]/(demos)/dropdown-menu";
 import { input } from "@/app/(design)/components/[slug]/(demos)/input";
-import { LineChartComponent } from "@/app/(design)/components/[slug]/(demos)/line-chart";
+import LineChartDemo from "@/app/(design)/components/[slug]/(demos)/line-chart";
 import { menuBar } from "@/app/(design)/components/[slug]/(demos)/menu-bar";
 import PieChartDemo from "@/app/(design)/components/[slug]/(demos)/pie-chart";
-import { RadarChartComponent } from "@/app/(design)/components/[slug]/(demos)/radar-chart";
-import { RadialChartComponent } from "@/app/(design)/components/[slug]/(demos)/radial-chart";
+import RadarChartDemo from "@/app/(design)/components/[slug]/(demos)/radar-chart";
+import RadialChartDemo from "@/app/(design)/components/[slug]/(demos)/radial-chart";
 import { select } from "@/app/(design)/components/[slug]/(demos)/select";
 import { separator } from "@/app/(design)/components/[slug]/(demos)/separator";
 import { skeleton } from "@/app/(design)/components/[slug]/(demos)/skeleton";
@@ -58,7 +58,7 @@ const barChart: Demo = {
 const lineChart: Demo = {
   name: "line-chart",
   components: {
-    LineChart: <LineChartComponent />,
+    LineChart: <LineChartDemo />,
   },
 };
 
@@ -72,14 +72,27 @@ const pieChart: Demo = {
 const radarChart: Demo = {
   name: "radar-chart",
   components: {
-    RadarChart: <RadarChartComponent />,
+    RadarChart: <RadarChartDemo />,
   },
 };
 
 const radialChart: Demo = {
   name: "radial-chart",
   components: {
-    RadialChart: <RadialChartComponent />,
+    RadialChart: <RadialChartDemo />,
+  },
+};
+
+// Chart demo that showcases multiple chart types
+const chart: Demo = {
+  name: "chart",
+  components: {
+    AreaChart: <AreaChartDemo />,
+    BarChart: <BarChartDemo />,
+    LineChart: <LineChartDemo />,
+    PieChart: <PieChartDemo />,
+    RadarChart: <RadarChartDemo />,
+    RadialChart: <RadialChartDemo />,
   },
 };
 

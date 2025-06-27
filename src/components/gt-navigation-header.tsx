@@ -1,7 +1,6 @@
-import { Search, User, Settings, LogOut, Bell, Menu } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { Logo } from "@/components/logo";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,7 +9,8 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Logo } from "@/components/logo";
+import { Input } from "@/components/ui/input";
+import { Bell, LogOut, Menu, Search, Settings, User } from "lucide-react";
 import Link from "next/link";
 
 const navigationItems = [
@@ -58,7 +58,11 @@ export function GTNavigationHeader() {
           </div>
 
           {/* Notifications */}
-          <Button variant="ghost" size="icon" className="hidden sm:flex text-night-blue-20 hover:text-peppermint-green hover:bg-night-blue-80">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="hidden sm:flex text-night-blue-20 hover:text-peppermint-green hover:bg-night-blue-80"
+          >
             <Bell className="h-5 w-5" />
             <span className="sr-only">Notifications</span>
           </Button>
@@ -66,16 +70,27 @@ export function GTNavigationHeader() {
           {/* User Menu */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" className="relative h-8 w-8 rounded-full hover:bg-night-blue-80">
+              <Button
+                variant="ghost"
+                className="relative h-8 w-8 rounded-full hover:bg-night-blue-80"
+              >
                 <Avatar className="h-8 w-8">
-                  <AvatarFallback className="bg-sea-blue text-white">FH</AvatarFallback>
+                  <AvatarFallback className="bg-sea-blue text-white">
+                    FH
+                  </AvatarFallback>
                 </Avatar>
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-56 bg-night-blue-90 border-night-blue-70" align="end" forceMount>
+            <DropdownMenuContent
+              className="w-56 bg-night-blue-90 border-night-blue-70"
+              align="end"
+              forceMount
+            >
               <DropdownMenuLabel className="font-normal">
                 <div className="flex flex-col space-y-1">
-                  <p className="text-sm font-medium leading-none text-night-blue-10">GTreasury User</p>
+                  <p className="text-sm font-medium leading-none text-night-blue-10">
+                    GTreasury User
+                  </p>
                   <p className="text-xs leading-none text-night-blue-40">
                     user@gtreasury.com
                   </p>
@@ -99,7 +114,11 @@ export function GTNavigationHeader() {
           </DropdownMenu>
 
           {/* Mobile Menu Button */}
-          <Button variant="ghost" size="icon" className="md:hidden text-night-blue-20 hover:text-peppermint-green hover:bg-night-blue-80">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden text-night-blue-20 hover:text-peppermint-green hover:bg-night-blue-80"
+          >
             <Menu className="h-5 w-5" />
             <span className="sr-only">Toggle menu</span>
           </Button>
@@ -107,4 +126,4 @@ export function GTNavigationHeader() {
       </div>
     </header>
   );
-} 
+}

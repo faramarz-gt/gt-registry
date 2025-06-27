@@ -3,18 +3,12 @@
   "type": "registry:component",
   "title": "KPI Dashboard Bar Chart",
   "description": "A KPI dashboard bar chart displaying key performance indicators vs targets with icons",
-  "registryDependencies": [
-    "card",
-    "chart"
-  ],
-  "dependencies": [
-    "recharts",
-    "lucide-react"
-  ],
+  "registryDependencies": ["card", "chart"],
+  "dependencies": ["recharts", "lucide-react"],
   "files": [
     {
       "path": "components/charts/bar-chart-kpi.tsx",
       "type": "registry:component"
     }
   ]
-} 
+}

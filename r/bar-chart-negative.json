@@ -3,18 +3,12 @@
   "type": "registry:component",
   "title": "Bar Chart with Negative Values",
   "description": "A bar chart displaying positive and negative values with reference line at zero",
-  "registryDependencies": [
-    "card",
-    "chart"
-  ],
-  "dependencies": [
-    "recharts",
-    "lucide-react"
-  ],
+  "registryDependencies": ["card", "chart"],
+  "dependencies": ["recharts", "lucide-react"],
   "files": [
     {
       "path": "components/charts/bar-chart-negative.tsx",
       "type": "registry:component"
     }
   ]
-} 
+}

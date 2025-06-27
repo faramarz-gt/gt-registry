@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { TrendingUp, TrendingDown } from "lucide-react"
-import { Area, AreaChart, CartesianGrid, XAxis, YAxis } from "recharts"
+import { TrendingDown, TrendingUp } from "lucide-react";
+import { Area, AreaChart, CartesianGrid, XAxis, YAxis } from "recharts";
 
 import {
   Card,
@@ -10,15 +10,15 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
+} from "@/components/ui/card";
 import {
-  ChartConfig,
+  type ChartConfig,
   ChartContainer,
   ChartLegend,
   ChartLegendContent,
   ChartTooltip,
   ChartTooltipContent,
-} from "@/components/ui/chart"
+} from "@/components/ui/chart";
 
 // 1. Basic Stacked Area Chart with Gradient
 const basicData = [
@@ -28,18 +28,18 @@ const basicData = [
   { month: "April", desktop: 73, mobile: 190 },
   { month: "May", desktop: 209, mobile: 130 },
   { month: "June", desktop: 214, mobile: 140 },
-]
+];
 
 const basicConfig = {
   desktop: {
     label: "Desktop",
-    color: "var(--chart-3)", // Peppermint Green - GTreasury primary
+    color: "hsl(var(--chart-2))", // Sea Blue - GTreasury primary
   },
   mobile: {
     label: "Mobile",
-    color: "var(--chart-2)", // Sea Blue - GTreasury primary
+    color: "hsl(var(--chart-3))", // Peppermint Green - GTreasury primary
   },
-} satisfies ChartConfig
+} satisfies ChartConfig;
 
 export function BasicAreaChart() {
   return (
@@ -127,7 +127,7 @@ export function BasicAreaChart() {
         </div>
       </CardFooter>
     </Card>
-  )
+  );
 }
 
 // 2. Revenue Trend Area Chart
@@ -136,18 +136,18 @@ const revenueData = [
   { quarter: "Q2", revenue: 22000, target: 24000 },
   { quarter: "Q3", revenue: 28000, target: 26000 },
   { quarter: "Q4", revenue: 35000, target: 32000 },
-]
+];
 
 const revenueConfig = {
   revenue: {
     label: "Revenue",
-    color: "var(--chart-3)", // Peppermint Green - GTreasury primary
+    color: "hsl(var(--chart-2))", // Sea Blue - GTreasury primary
   },
   target: {
     label: "Target",
-    color: "var(--chart-2)", // Sea Blue - GTreasury primary
+    color: "hsl(var(--chart-3))", // Peppermint Green - GTreasury primary
   },
-} satisfies ChartConfig
+} satisfies ChartConfig;
 
 export function RevenueAreaChart() {
   return (
@@ -226,7 +226,8 @@ export function RevenueAreaChart() {
         <div className="flex w-full items-start gap-2 text-sm">
           <div className="grid gap-2">
             <div className="flex items-center gap-2 leading-none font-medium">
-              Revenue exceeded target by 12% in Q4 <TrendingUp className="h-4 w-4" />
+              Revenue exceeded target by 12% in Q4{" "}
+              <TrendingUp className="h-4 w-4" />
             </div>
             <div className="text-muted-foreground flex items-center gap-2 leading-none">
               Showing quarterly performance for 2024
@@ -235,7 +236,7 @@ export function RevenueAreaChart() {
         </div>
       </CardFooter>
     </Card>
-  )
+  );
 }
 
 // 3. Single Metric Area Chart
@@ -246,14 +247,14 @@ const metricsData = [
   { week: "Week 4", users: 1180 },
   { week: "Week 5", users: 1055 },
   { week: "Week 6", users: 1220 },
-]
+];
 
 const metricsConfig = {
   users: {
     label: "Active Users",
-    color: "var(--chart-3)", // Peppermint Green - GTreasury primary
+    color: "hsl(var(--chart-3))", // Peppermint Green - GTreasury primary
   },
-} satisfies ChartConfig
+} satisfies ChartConfig;
 
 export function MetricsAreaChart() {
   return (
@@ -321,7 +322,7 @@ export function MetricsAreaChart() {
         </div>
       </CardFooter>
     </Card>
-  )
+  );
 }
 
 // 4. Multi-Layer Area Chart
@@ -332,22 +333,22 @@ const layerData = [
   { month: "Apr", organic: 200, paid: 220, social: 140 },
   { month: "May", organic: 240, paid: 190, social: 160 },
   { month: "Jun", organic: 280, paid: 250, social: 180 },
-]
+];
 
 const layerConfig = {
   organic: {
     label: "Organic",
-    color: "var(--chart-3)", // Peppermint Green - GTreasury primary
+    color: "hsl(var(--chart-2))", // Sea Blue - GTreasury primary
   },
   paid: {
     label: "Paid",
-    color: "var(--chart-2)", // Sea Blue - GTreasury primary
+    color: "hsl(var(--chart-3))", // Peppermint Green - GTreasury primary
   },
   social: {
     label: "Social",
-    color: "var(--chart-4)", // Monsoon Green - GTreasury primary
+    color: "hsl(var(--chart-4))", // Monsoon Green - GTreasury primary
   },
-} satisfies ChartConfig
+} satisfies ChartConfig;
 
 export function LayeredAreaChart() {
   return (
@@ -446,7 +447,8 @@ export function LayeredAreaChart() {
         <div className="flex w-full items-start gap-2 text-sm">
           <div className="grid gap-2">
             <div className="flex items-center gap-2 leading-none font-medium">
-              Organic traffic growing faster than paid <TrendingUp className="h-4 w-4" />
+              Organic traffic growing faster than paid{" "}
+              <TrendingUp className="h-4 w-4" />
             </div>
             <div className="text-muted-foreground flex items-center gap-2 leading-none">
               Showing 6 months of traffic data
@@ -455,5 +457,5 @@ export function LayeredAreaChart() {
         </div>
       </CardFooter>
     </Card>
-  )
+  );
 }

@@ -1,10 +1,7 @@
 import { SidebarProvider } from "@/components/ui/sidebar";
 import type { ReactNode } from "react";
 
-import {
-  MobileSidebarTrigger,
-  RegistrySidebar,
-} from "@/components/design/registry-sidebar";
+import { RegistrySidebar } from "@/components/design/registry-sidebar";
 import { Toaster } from "@/components/ui/sonner";
 
 export default function RegistryLayout({
@@ -14,7 +11,6 @@ export default function RegistryLayout({
 }>) {
   return (
     <SidebarProvider>
-      <MobileSidebarTrigger />
       <RegistrySidebar />
       <main className="flex w-full justify-center">{children}</main>
       <Toaster />

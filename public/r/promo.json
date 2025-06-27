@@ -3,7 +3,7 @@
   "name": "promo",
   "type": "registry:component",
   "title": "Promo",
-  "description": "Attention-grabbing section to display the current promotional deal.",
+  "description": "Eye-catching promotional section with feature highlights, pricing information, and conversion elements.",
   "registryDependencies": [
     "button",
     "https://gt-registry.vercel.app/r/theme.json"

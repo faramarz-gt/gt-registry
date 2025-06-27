@@ -2,7 +2,7 @@
   "name": "variance-bar-chart",
   "type": "registry:component",
   "title": "Variance Bar Chart",
-  "description": "Interactive bar chart showing positive and negative variances with regional forecast analysis",
+  "description": "Interactive bar chart showing positive and negative variances with regional forecast analysis and horizontal bar chart designs",
   "registryDependencies": [
     "card",
     "chart",
@@ -12,6 +12,10 @@
     {
       "path": "src/components/variance-bar-chart.tsx",
       "type": "registry:component"
+    },
+    {
+      "path": "src/components/horizontal-bar-charts.tsx",
+      "type": "registry:component"
     }
   ]
-} 
+}

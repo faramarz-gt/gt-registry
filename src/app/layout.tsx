@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Montserrat } from "next/font/google";
 import type { ReactNode } from "react";
 
+import { AuthSessionProvider } from "@/components/auth/session-provider";
 import { cn } from "@/lib/utils";
 
 import "@/app/tokens.css";
@@ -50,7 +51,9 @@ export default function RootLayout({
         content="noindex, nofollow, noarchive, nosnippet, noimageindex"
       />
       <body className="flex grow">
-        {children}
+        <AuthSessionProvider>
+          {children}
+        </AuthSessionProvider>
         <Analytics />
         <SpeedInsights />
       </body>

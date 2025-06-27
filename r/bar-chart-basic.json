@@ -1,16 +1,10 @@
 {
-  "name": "bar-chart-basic", 
+  "name": "bar-chart-basic",
   "type": "registry:component",
   "title": "Basic Multi-Series Bar Chart",
   "description": "A basic bar chart showing desktop vs mobile visitors with legend and tooltip",
-  "registryDependencies": [
-    "card",
-    "chart"
-  ],
-  "dependencies": [
-    "recharts",
-    "lucide-react"
-  ],
+  "registryDependencies": ["card", "chart"],
+  "dependencies": ["recharts", "lucide-react"],
   "files": [
     {
       "path": "components/charts/bar-chart-basic.tsx",
@@ -18,4 +12,4 @@
       "content": "\"use client\";\n\nimport { TrendingUp } from \"lucide-react\";\nimport { Bar, BarChart, CartesianGrid, XAxis } from \"recharts\";\n\nimport {\n  Card,\n  CardContent,\n  CardDescription,\n  CardHeader,\n  CardTitle,\n} from \"@/components/ui/card\";\nimport {\n  type ChartConfig,\n  ChartContainer,\n  ChartLegend,\n  ChartLegendContent,\n  ChartTooltip,\n  ChartTooltipContent,\n} from \"@/components/ui/chart\";\n\nconst chartData = [\n  { month: \"January\", desktop: 186, mobile: 80 },\n  { month: \"February\", desktop: 305, mobile: 200 },\n  { month: \"March\", desktop: 237, mobile: 120 },\n  { month: \"April\", desktop: 73, mobile: 190 },\n  { month: \"May\", desktop: 209, mobile: 130 },\n  { month: \"June\", desktop: 214, mobile: 140 },\n];\n\nconst chartConfig = {\n  desktop: {\n    label: \"Desktop\",\n    color: \"hsl(var(--chart-1))\",\n  },\n  mobile: {\n    label: \"Mobile\",\n    color: \"hsl(var(--chart-2))\",\n  },\n} satisfies ChartConfig;\n\nexport function BasicBarChart() {\n  return (\n    <Card>\n      <CardHeader>\n        <CardTitle>Basic Multi-Series Bar Chart</CardTitle>\n        <CardDescription>Desktop vs Mobile visitors</CardDescription>\n      </CardHeader>\n      <CardContent>\n        <ChartContainer config={chartConfig}>\n          <BarChart accessibilityLayer data={chartData}>\n            <CartesianGrid vertical={false} />\n            <XAxis\n              dataKey=\"month\"\n              tickMargin={10}\n              tickFormatter={(value) => value.slice(0, 3)}\n            />\n            <ChartTooltip content={<ChartTooltipContent />} />\n            <ChartLegend content={<ChartLegendContent />} />\n            <Bar dataKey=\"desktop\" fill=\"var(--color-desktop)\" radius={4} />\n            <Bar dataKey=\"mobile\" fill=\"var(--color-mobile)\" radius={4} />\n          </BarChart>\n        </ChartContainer>\n      </CardContent>\n    </Card>\n  );\n}"
     }
   ]
-} 
+}

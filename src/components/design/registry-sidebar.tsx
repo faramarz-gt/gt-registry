@@ -1,16 +1,15 @@
 "use client";
 
 import {
+  BarChart3,
   Blocks,
+  BookOpen,
   ChevronDown,
+  Code,
   Home,
-  Menu,
+  Rocket,
   Search,
   ToyBrick,
-  X,
-  Code,
-  Rocket,
-  BarChart3,
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -98,23 +97,10 @@ export const gettingStartedItems = [
   { name: "Home", path: "/" },
   { name: "Design Tokens", path: "/tokens" },
   { name: "Starters", path: "/starters" },
+  { name: "Changelog", path: "/changelog" },
 ];
 
-export const developmentItems = [
-  { name: "MCP", path: "/mcp" },
-];
-
-export function MobileSidebarTrigger() {
-  const { setOpenMobile } = useSidebar();
-
-  return (
-    <div className="absolute top-8 right-4 md:hidden">
-      <Button aria-label="Open menu" onClick={() => setOpenMobile(true)}>
-        <Menu className="size-5" />
-      </Button>
-    </div>
-  );
-}
+export const developmentItems = [{ name: "MCP", path: "/mcp" }];
 
 export function RegistrySidebar() {
   const pathname = usePathname();
@@ -158,22 +144,14 @@ export function RegistrySidebar() {
   }, [searchTerm]);
 
   return (
-    <Sidebar collapsible="icon">
+    <Sidebar>
       <SidebarHeader className="border-b">
         <div className="flex items-center justify-between px-2 py-2">
           <Link href="/" className="flex min-w-0 items-center gap-2">
             <RegistryLogo />
           </Link>
-
-          <Button
-            variant="ghost"
-            className="md:hidden"
-            onClick={() => setOpenMobile(false)}
-          >
-            <X />
-          </Button>
         </div>
-        <div className="px-2 py-2 opacity-100 transition-all duration-200">
+        <div className="px-2 py-2">
           <div className="relative">
             <Search className="absolute top-2.5 left-2.5 size-4 text-muted-foreground" />
             <Input
@@ -226,6 +204,26 @@ export function RegistrySidebar() {
               </CollapsibleContent>
             </SidebarGroup>
           </Collapsible>
+
+          <SidebarGroup>
+            <SidebarMenu>
+              <SidebarMenuItem>
+                <SidebarMenuButton
+                  asChild
+                  isActive={pathname === "/docs"}
+                >
+                  <Link
+                    onClick={() => setOpenMobile(false)}
+                    href="/docs"
+                    className="flex items-center"
+                  >
+                    <BookOpen className="size-4 flex-shrink-0" />
+                    <span className="ml-2">Documentation</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            </SidebarMenu>
+          </SidebarGroup>
 
           <Collapsible defaultOpen={true} className="group/collapsible">
             <SidebarGroup>

@@ -1,16 +1,25 @@
 "use client";
 
-import { TrendingUp, TrendingDown, DollarSign, Users, ShoppingCart, Target, ArrowUp, ArrowDown } from "lucide-react";
-import { 
-  Bar, 
-  BarChart, 
-  CartesianGrid, 
-  XAxis, 
-  YAxis, 
-  Cell, 
-  LabelList, 
+import {
+  ArrowDown,
+  ArrowUp,
+  DollarSign,
+  ShoppingCart,
+  Target,
+  TrendingDown,
+  TrendingUp,
+  Users,
+} from "lucide-react";
+import {
+  Bar,
+  BarChart,
+  CartesianGrid,
+  Cell,
+  LabelList,
   ReferenceLine,
-  ResponsiveContainer 
+  ResponsiveContainer,
+  XAxis,
+  YAxis,
 } from "recharts";
 
 import {
@@ -44,11 +53,11 @@ const basicData = [
 const basicConfig = {
   desktop: {
     label: "Desktop",
-    color: "var(--chart-3)", // Peppermint Green - GTreasury primary
+    color: "hsl(var(--chart-2))", // Sea Blue - GTreasury primary
   },
   mobile: {
-    label: "Mobile", 
-    color: "var(--chart-2)", // Sea Blue - GTreasury primary
+    label: "Mobile",
+    color: "hsl(var(--chart-3))", // Peppermint Green - GTreasury primary
   },
 } satisfies ChartConfig;
 
@@ -91,7 +100,7 @@ const horizontalData = [
 const horizontalConfig = {
   value: {
     label: "Revenue (K)",
-    color: "var(--chart-3)", // Peppermint Green - GTreasury primary
+    color: "hsl(var(--chart-2))", // Sea Blue - GTreasury primary
   },
 } satisfies ChartConfig;
 
@@ -140,15 +149,15 @@ const stackedData = [
 const stackedConfig = {
   sales: {
     label: "Sales",
-    color: "var(--chart-3)", // Peppermint Green - GTreasury primary
+    color: "hsl(var(--chart-2))", // Sea Blue - GTreasury primary
   },
   returns: {
-    label: "Returns", 
-    color: "var(--chart-2)", // Sea Blue - GTreasury primary
+    label: "Returns",
+    color: "hsl(var(--chart-3))", // Peppermint Green - GTreasury primary
   },
   profit: {
     label: "Profit",
-    color: "var(--chart-4)", // Monsoon Green - GTreasury primary (lighter green for profit)
+    color: "hsl(var(--chart-4))", // Monsoon Green - GTreasury primary
   },
 } satisfies ChartConfig;
 
@@ -200,11 +209,11 @@ const labelData = [
 const labelConfig = {
   sales: {
     label: "Sales",
-    color: "var(--chart-3)", // Peppermint Green - GTreasury primary
+    color: "hsl(var(--chart-2))", // Sea Blue - GTreasury primary
   },
   target: {
     label: "Target",
-    color: "var(--chart-2)", // Sea Blue - GTreasury primary
+    color: "hsl(var(--chart-3))", // Peppermint Green - GTreasury primary
   },
 } satisfies ChartConfig;
 
@@ -223,10 +232,20 @@ export function LabeledBarChart() {
             <ChartTooltip content={<ChartTooltipContent />} />
             <ChartLegend content={<ChartLegendContent />} />
             <Bar dataKey="sales" fill="var(--color-sales)">
-              <LabelList dataKey="sales" position="top" className="fill-foreground" fontSize={12} />
+              <LabelList
+                dataKey="sales"
+                position="top"
+                className="fill-foreground"
+                fontSize={12}
+              />
             </Bar>
             <Bar dataKey="target" fill="var(--color-target)">
-              <LabelList dataKey="target" position="top" className="fill-foreground" fontSize={12} />
+              <LabelList
+                dataKey="target"
+                position="top"
+                className="fill-foreground"
+                fontSize={12}
+              />
             </Bar>
           </BarChart>
         </ChartContainer>
@@ -246,11 +265,11 @@ const negativeData = [
 const negativeConfig = {
   profit: {
     label: "Profit",
-    color: "var(--chart-3)", // Peppermint Green - GTreasury primary (positive values)
+    color: "hsl(var(--chart-4))", // Monsoon Green - GTreasury primary (positive)
   },
   loss: {
     label: "Loss",
-    color: "var(--chart-2)", // Sea Blue - GTreasury primary (negative values)
+    color: "hsl(var(--chart-1))", // Night Blue - GTreasury primary (negative)
   },
 } satisfies ChartConfig;
 
@@ -301,11 +320,11 @@ const mixedData = [
 const mixedConfig = {
   revenue: {
     label: "Revenue",
-    color: "var(--chart-3)", // Peppermint Green - GTreasury primary
+    color: "hsl(var(--chart-2))", // Sea Blue - GTreasury primary
   },
   orders: {
     label: "Orders",
-    color: "var(--chart-2)", // Sea Blue - GTreasury primary
+    color: "hsl(var(--chart-3))", // Peppermint Green - GTreasury primary
   },
 } satisfies ChartConfig;
 
@@ -344,11 +363,11 @@ const interactiveData = [
 const interactiveConfig = {
   budget: {
     label: "Budget",
-    color: "var(--chart-3)", // Peppermint Green - GTreasury primary
+    color: "hsl(var(--chart-3))", // Peppermint Green - GTreasury primary
   },
   spent: {
     label: "Spent",
-    color: "var(--chart-2)", // Sea Blue - GTreasury primary  
+    color: "hsl(var(--chart-2))", // Sea Blue - GTreasury primary
   },
 } satisfies ChartConfig;
 
@@ -359,7 +378,9 @@ export function InteractiveBarChart() {
     <Card>
       <CardHeader>
         <CardTitle>Interactive Bar Chart</CardTitle>
-        <CardDescription>Budget vs Actual spending by department</CardDescription>
+        <CardDescription>
+          Budget vs Actual spending by department
+        </CardDescription>
       </CardHeader>
       <CardContent>
         <ChartContainer config={interactiveConfig}>
@@ -393,19 +414,19 @@ const groupedData = [
 const groupedConfig = {
   q1: {
     label: "Q1",
-    color: "var(--chart-3)", // Peppermint Green - GTreasury primary
+    color: "hsl(var(--chart-2))", // Sea Blue - GTreasury primary
   },
   q2: {
     label: "Q2",
-    color: "var(--chart-2)", // Sea Blue - GTreasury primary
+    color: "hsl(var(--chart-3))", // Peppermint Green - GTreasury primary
   },
   q3: {
     label: "Q3",
-    color: "var(--chart-4)", // Monsoon Green - GTreasury primary (light green)
+    color: "hsl(var(--chart-4))", // Monsoon Green - GTreasury primary
   },
   q4: {
     label: "Q4",
-    color: "var(--chart-6)", // Sea Blue tint - additional shade
+    color: "hsl(var(--chart-5))", // Lime Green - GTreasury secondary
   },
 } satisfies ChartConfig;
 
@@ -444,7 +465,7 @@ const percentageData = [
 const percentageConfig = {
   percentage: {
     label: "Percentage",
-    color: "var(--chart-3)", // Peppermint Green - GTreasury primary
+    color: "hsl(var(--chart-2))", // Sea Blue - GTreasury primary
   },
 } satisfies ChartConfig;
 
@@ -462,7 +483,11 @@ export function PercentageBarChart() {
             <XAxis dataKey="segment" tickMargin={10} />
             <YAxis tickFormatter={(value) => `${value}%`} />
             <ChartTooltip
-              content={<ChartTooltipContent formatter={(value) => [`${value}%`, "Share"]} />}
+              content={
+                <ChartTooltipContent
+                  formatter={(value) => [`${value}%`, "Share"]}
+                />
+              }
             />
             <Bar dataKey="percentage" fill="var(--color-percentage)">
               <LabelList
@@ -500,11 +525,11 @@ const kpiData = [
 const kpiConfig = {
   current: {
     label: "Current",
-    color: "var(--chart-3)", // Peppermint Green - GTreasury primary
+    color: "hsl(var(--chart-3))", // Peppermint Green - GTreasury primary
   },
   target: {
     label: "Target",
-    color: "var(--chart-2)", // Sea Blue - GTreasury primary
+    color: "hsl(var(--chart-2))", // Sea Blue - GTreasury primary
   },
 } satisfies ChartConfig;
 

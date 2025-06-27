@@ -1,4 +1,4 @@
-import { ArrowRight, Blocks, ToyBrick, Rocket, BarChart3 } from "lucide-react";
+import { ArrowRight, BarChart3, Blocks, Rocket, ToyBrick } from "lucide-react";
 import Link from "next/link";
 
 import {
@@ -33,35 +33,89 @@ const blockItems = [
 ];
 
 const starterItems = [
-  { 
-    name: "Blank", 
+  {
+    name: "Blank",
     path: "/starters/blank",
-    description: "A minimal starter template with basic setup"
+    description: "A minimal starter template with basic setup",
   },
-  { 
-    name: "Dashboard", 
+  {
+    name: "Dashboard",
     path: "/starters/dashboard",
-    description: "Complete dashboard layout with navigation"
+    description: "Complete dashboard layout with navigation",
   },
-  { 
-    name: "GT Navigation", 
+  {
+    name: "GT Navigation",
     path: "/starters/gt-navigation-header",
-    description: "GTreasury navigation header template"
+    description: "GTreasury navigation header template",
   },
 ];
 
 export default function Home() {
   return (
     <main className="container mt-4 p-5 md:mt-8 md:p-10">
-      <div className="mb-8">
-        <div className="space-y-2">
-          <h1 className="font-bold text-3xl tracking-tight md:text-4xl">
-            Registry
+      <div className="space-y-8">
+        {/* Welcome Section */}
+        <div className="space-y-6">
+        <div className="space-y-4">
+          <h1 className="font-bold text-4xl tracking-tight md:text-5xl">
+            Welcome to the Design Registry
           </h1>
-          <p className="text-muted-foreground">
-            Distribute your design system tokens, custom components, hooks,
-            pages, and other files to any React project.
+          <p className="text-lg text-muted-foreground max-w-3xl">
+            Your central hub for distributing design system tokens, UI components, blocks, and starter templates 
+            to any React project. Build faster, maintain consistency, and scale your design system effortlessly.
           </p>
+        </div>
+
+        {/* What is this section */}
+        <div className="rounded-lg border bg-card/50 p-6 space-y-4">
+          <h2 className="font-semibold text-xl">How It Works</h2>
+          <div className="grid gap-4 md:grid-cols-3">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2">
+                <div className="rounded-md bg-primary p-1">
+                  <ToyBrick className="size-4 text-primary-foreground" />
+                </div>
+                <h3 className="font-medium">Components</h3>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                Individual UI elements like buttons, inputs, and cards. These are the building blocks 
+                of your interface - reusable, customizable, and ready to drop into any project.
+              </p>
+            </div>
+            
+            <div className="space-y-2">
+              <div className="flex items-center gap-2">
+                <div className="rounded-md bg-foreground p-1">
+                  <Blocks className="size-4 text-primary-foreground" />
+                </div>
+                <h3 className="font-medium">Blocks</h3>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                Pre-composed sections that combine multiple components into common patterns like 
+                hero sections, login forms, or navigation bars. Copy and customize for quick layouts.
+              </p>
+            </div>
+            
+            <div className="space-y-2">
+              <div className="flex items-center gap-2">
+                <div className="rounded-md bg-blue-500 p-1">
+                  <Rocket className="size-4 text-white" />
+                </div>
+                <h3 className="font-medium">Starters</h3>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                Complete page templates and application shells. Perfect starting points for new 
+                projects with navigation, layouts, and common functionality already wired up.
+              </p>
+            </div>
+          </div>
+          
+          <div className="pt-4 border-t">
+            <p className="text-sm text-muted-foreground">
+              <strong>Getting Started:</strong> Browse the categories below, preview components in action, 
+              and use the "Open in v0" button to instantly start building with any template or component.
+            </p>
+          </div>
         </div>
       </div>
 
@@ -123,7 +177,10 @@ export default function Home() {
                 </div>
               ))}
               <div className="pt-2 border-t">
-                <Link href="/charts" className="text-sm font-medium text-primary hover:underline">
+                <Link
+                  href="/charts"
+                  className="text-sm font-medium text-primary hover:underline"
+                >
                   View all charts
                 </Link>
               </div>
@@ -179,7 +236,10 @@ export default function Home() {
               {starterItems.map((item) => (
                 <div key={item.name} className="space-y-1">
                   <div className="flex items-center justify-between">
-                    <Link href={item.path} className="text-sm font-medium hover:underline">
+                    <Link
+                      href={item.path}
+                      className="text-sm font-medium hover:underline"
+                    >
                       {item.name}
                     </Link>
                     <ArrowRight className="size-4 text-muted-foreground" />
@@ -190,7 +250,10 @@ export default function Home() {
                 </div>
               ))}
               <div className="pt-2 border-t">
-                <Link href="/starters" className="text-sm font-medium text-primary hover:underline">
+                <Link
+                  href="/starters"
+                  className="text-sm font-medium text-primary hover:underline"
+                >
                   View all starters
                 </Link>
               </div>
@@ -240,6 +303,7 @@ export default function Home() {
             </a>
           </p>
         </div>
+      </div>
       </div>
     </main>
   );

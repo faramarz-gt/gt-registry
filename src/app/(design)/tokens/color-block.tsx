@@ -22,15 +22,17 @@ export function ColorBlock({ name, className }: SimpleColorBlockProps) {
 // Utility function to calculate contrast ratio
 function hexToRgb(hex: string): { r: number; g: number; b: number } | null {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  return result ? {
-    r: parseInt(result[1], 16),
-    g: parseInt(result[2], 16),
-    b: parseInt(result[3], 16)
-  } : null;
+  return result
+    ? {
+        r: Number.parseInt(result[1], 16),
+        g: Number.parseInt(result[2], 16),
+        b: Number.parseInt(result[3], 16),
+      }
+    : null;
 }
 
 function getLuminance(r: number, g: number, b: number): number {
-  const [rs, gs, bs] = [r, g, b].map(c => {
+  const [rs, gs, bs] = [r, g, b].map((c) => {
     c = c / 255;
     return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
   });
@@ -40,27 +42,42 @@ function getLuminance(r: number, g: number, b: number): number {
 function getContrastRatio(color1: string, color2: string): number {
   const rgb1 = hexToRgb(color1);
   const rgb2 = hexToRgb(color2);
-  
+
   if (!rgb1 || !rgb2) return 1;
-  
+
   const lum1 = getLuminance(rgb1.r, rgb1.g, rgb1.b);
   const lum2 = getLuminance(rgb2.r, rgb2.g, rgb2.b);
-  
+
   const brightest = Math.max(lum1, lum2);
   const darkest = Math.min(lum1, lum2);
-  
+
   return (brightest + 0.05) / (darkest + 0.05);
 }
 
-function getAccessibilityBadge(contrastRatio: number): { level: string; className: string } {
+function getAccessibilityBadge(contrastRatio: number): {
+  level: string;
+  className: string;
+} {
   if (contrastRatio >= 7.0) {
-    return { level: "AAA", className: "bg-green-100 text-green-800 border-green-200" };
+    return {
+      level: "AAA",
+      className: "bg-green-100 text-green-800 border-green-200",
+    };
   } else if (contrastRatio >= 4.5) {
-    return { level: "AA", className: "bg-blue-100 text-blue-800 border-blue-200" };
+    return {
+      level: "AA",
+      className: "bg-blue-100 text-blue-800 border-blue-200",
+    };
   } else if (contrastRatio >= 3.0) {
-    return { level: "AA Large", className: "bg-yellow-100 text-yellow-800 border-yellow-200" };
+    return {
+      level: "AA Large",
+      className: "bg-yellow-100 text-yellow-800 border-yellow-200",
+    };
   } else {
-    return { level: "Fail", className: "bg-red-100 text-red-800 border-red-200" };
+    return {
+      level: "Fail",
+      className: "bg-red-100 text-red-800 border-red-200",
+    };
   }
 }
 
@@ -74,16 +91,30 @@ interface GTColorBlockProps {
   isPrimary?: boolean;
 }
 
-export function GTColorBlock({ name, token, hex, description, usage, style, isPrimary = false }: GTColorBlockProps) {
+export function GTColorBlock({
+  name,
+  token,
+  hex,
+  description,
+  usage,
+  style,
+  isPrimary = false,
+}: GTColorBlockProps) {
   const whiteContrast = getContrastRatio(hex, "#FFFFFF");
   const blackContrast = getContrastRatio(hex, "#000000");
-  const bestContrast = whiteContrast > blackContrast ? whiteContrast : blackContrast;
+  const bestContrast =
+    whiteContrast > blackContrast ? whiteContrast : blackContrast;
   const bestTextColor = whiteContrast > blackContrast ? "#FFFFFF" : "#000000";
-  
+
   const accessibilityBadge = getAccessibilityBadge(bestContrast);
 
   return (
-    <div className={cn("rounded-lg border bg-card p-4", isPrimary && "ring-2 ring-blue-200 bg-blue-50/10")}>
+    <div
+      className={cn(
+        "rounded-lg border bg-card p-4",
+        isPrimary && "ring-2 ring-blue-200 bg-blue-50/10",
+      )}
+    >
       {isPrimary && (
         <div className="mb-2">
           <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800 border border-blue-200">
@@ -92,12 +123,12 @@ export function GTColorBlock({ name, token, hex, description, usage, style, isPr
         </div>
       )}
       <div className="flex items-center gap-4 mb-3">
-        <div 
+        <div
           className="size-16 rounded-lg border shadow-sm relative overflow-hidden"
           style={{ backgroundColor: hex, ...style }}
         >
           {/* Sample text overlay to show contrast */}
-          <div 
+          <div
             className="absolute inset-0 flex items-center justify-center text-xs font-medium"
             style={{ color: bestTextColor }}
           >
@@ -114,7 +145,12 @@ export function GTColorBlock({ name, token, hex, description, usage, style, isPr
           </code>
           {/* Accessibility information */}
           <div className="flex items-center gap-2 mt-2">
-            <span className={cn("inline-flex items-center px-2 py-1 rounded-full text-xs font-medium border", accessibilityBadge.className)}>
+            <span
+              className={cn(
+                "inline-flex items-center px-2 py-1 rounded-full text-xs font-medium border",
+                accessibilityBadge.className,
+              )}
+            >
               {accessibilityBadge.level}
             </span>
             <span className="text-xs text-muted-foreground">
@@ -158,12 +194,14 @@ interface GTTintBlockProps {
 export function GTTintBlock({ name, token, hex, intensity }: GTTintBlockProps) {
   return (
     <div className="flex items-center gap-3 p-3 rounded-lg border bg-card">
-      <div 
+      <div
         className="size-10 rounded border shadow-sm"
         style={{ backgroundColor: hex }}
       />
       <div className="flex-1">
-        <div className="font-medium text-sm">{name} {intensity}</div>
+        <div className="font-medium text-sm">
+          {name} {intensity}
+        </div>
         <code className="font-mono text-muted-foreground text-xs block">
           {token}
         </code>
@@ -211,7 +249,12 @@ interface LogoBlockProps {
   className?: string;
 }
 
-export function LogoBlock({ name, src, description, className }: LogoBlockProps) {
+export function LogoBlock({
+  name,
+  src,
+  description,
+  className,
+}: LogoBlockProps) {
   return (
     <div className="rounded-lg border p-6 bg-card">
       <div className="mb-4 flex min-h-[80px] items-center justify-center bg-background p-4 rounded border">

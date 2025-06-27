@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Auth Status</title>
+</head>
+<body>
+    <h1>Authentication Test</h1>
+    <div id="status">Loading...</div>
+    
+    <script>
+        async function testAuth() {
+            try {
+                // Test session endpoint
+                const sessionResponse = await fetch('http://localhost:3001/api/auth/session');
+                const sessionStatus = sessionResponse.ok ? 'Session endpoint OK' : `Session error: ${sessionResponse.status}`;
+                
+                // Test providers endpoint  
+                const providersResponse = await fetch('http://localhost:3001/api/auth/providers');
+                const providersStatus = providersResponse.ok ? 'Providers endpoint OK' : `Providers error: ${providersResponse.status}`;
+                
+                // Test signin page
+                const signinResponse = await fetch('http://localhost:3001/auth/signin');
+                const signinStatus = signinResponse.ok ? 'Signin page OK' : `Signin error: ${signinResponse.status}`;
+                
+                document.getElementById('status').innerHTML = `
+                    <p>${sessionStatus}</p>
+                    <p>${providersStatus}</p>
+                    <p>${signinStatus}</p>
+                    <p>Test completed at: ${new Date().toLocaleTimeString()}</p>
+                `;
+            } catch (error) {
+                document.getElementById('status').innerHTML = `Error: ${error.message}`;
+            }
+        }
+        
+        testAuth();
+        // Test every 5 seconds
+        setInterval(testAuth, 5000);
+    </script>
+</body>
+</html> 

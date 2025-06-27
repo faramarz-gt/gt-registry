@@ -127,9 +127,7 @@
       "type": "registry:block",
       "title": "Brand Logos",
       "description": "Complete collection of GTreasury brand logos and assets for different use cases",
-      "registryDependencies": [
-        "https://gt-registry.vercel.app/r/theme.json"
-      ],
+      "registryDependencies": ["https://gt-registry.vercel.app/r/theme.json"],
       "files": [
         {
           "path": "src/components/logos.tsx",
@@ -240,9 +238,7 @@
       "type": "registry:component",
       "title": "Brand Logo",
       "description": "A styled, simple, reusable logo",
-      "registryDependencies": [
-        "https://gt-registry.vercel.app/r/theme.json"
-      ],
+      "registryDependencies": ["https://gt-registry.vercel.app/r/theme.json"],
       "files": [
         {
           "path": "src/components/logo.tsx",
@@ -265,9 +261,7 @@
       "type": "registry:component",
       "title": "Logo Full Color",
       "description": "Primary logo with full branding and color gradient",
-      "registryDependencies": [
-        "https://gt-registry.vercel.app/r/theme.json"
-      ],
+      "registryDependencies": ["https://gt-registry.vercel.app/r/theme.json"],
       "files": [
         {
           "path": "src/components/logos.tsx",
@@ -290,9 +284,7 @@
       "type": "registry:component",
       "title": "Logo Full White",
       "description": "White version for dark backgrounds and overlays",
-      "registryDependencies": [
-        "https://gt-registry.vercel.app/r/theme.json"
-      ],
+      "registryDependencies": ["https://gt-registry.vercel.app/r/theme.json"],
       "files": [
         {
           "path": "src/components/logos.tsx",
@@ -315,9 +307,7 @@
       "type": "registry:component",
       "title": "Logo Symbol Only",
       "description": "Standalone symbol without text for compact spaces",
-      "registryDependencies": [
-        "https://gt-registry.vercel.app/r/theme.json"
-      ],
+      "registryDependencies": ["https://gt-registry.vercel.app/r/theme.json"],
       "files": [
         {
           "path": "src/components/logos.tsx",
@@ -340,9 +330,7 @@
       "type": "registry:component",
       "title": "Logo Mark",
       "description": "Simplified logo mark for icons and favicons",
-      "registryDependencies": [
-        "https://gt-registry.vercel.app/r/theme.json"
-      ],
+      "registryDependencies": ["https://gt-registry.vercel.app/r/theme.json"],
       "files": [
         {
           "path": "src/components/logos.tsx",
@@ -388,6 +376,88 @@
       ]
     },
     {
+      "name": "promo",
+      "type": "registry:component",
+      "title": "Promo",
+      "description": "Eye-catching promotional section with feature highlights, pricing information, and conversion elements.",
+      "registryDependencies": [
+        "button",
+        "https://gt-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/promo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/app/starters/(minimal)/v0-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/app/starters/(minimal)/blank/page.tsx",
+          "type": "registry:page",
+          "target": "app/page.tsx"
+        }
+      ]
+    },
+    {
+      "name": "insights-panel",
+      "type": "registry:component",
+      "title": "Insights Panel",
+      "description": "A comprehensive analytics panel displaying key metrics, trends, and actionable insights for business intelligence.",
+      "registryDependencies": [
+        "card",
+        "button",
+        "badge",
+        "https://gt-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/insights-panel.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/app/starters/(minimal)/v0-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/app/starters/(minimal)/blank/page.tsx",
+          "type": "registry:page",
+          "target": "app/page.tsx"
+        }
+      ]
+    },
+    {
+      "name": "product-grid",
+      "type": "registry:component",
+      "title": "Product Grid",
+      "description": "A responsive grid layout showcasing products or services with cards, pricing, and call-to-action elements.",
+      "registryDependencies": [
+        "card",
+        "button",
+        "badge",
+        "https://gt-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/product-grid.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/app/starters/(minimal)/v0-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/app/starters/(minimal)/blank/page.tsx",
+          "type": "registry:page",
+          "target": "app/page.tsx"
+        }
+      ]
+    },
+    {
       "name": "variance-bar-chart",
       "type": "registry:component",
       "title": "Variance Bar Chart",
@@ -400,6 +470,72 @@
       "files": [
         {
           "path": "src/components/variance-bar-chart.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/app/starters/(minimal)/v0-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        }
+      ]
+    },
+    {
+      "name": "financial-comparison",
+      "type": "registry:component",
+      "title": "Financial Comparison Charts",
+      "description": "Comprehensive financial analysis charts for comparison reporting including variances, forecasts, and accuracy metrics",
+      "registryDependencies": [
+        "card",
+        "chart",
+        "https://gt-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/financial-charts.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/app/starters/(minimal)/v0-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        }
+      ]
+    },
+    {
+      "name": "financial-consolidation",
+      "type": "registry:component",
+      "title": "Financial Consolidation Charts",
+      "description": "Enterprise-level financial consolidation charts for cash management, runway analysis, and forecast tracking",
+      "registryDependencies": [
+        "card",
+        "chart",
+        "https://gt-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/financial-charts.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/app/starters/(minimal)/v0-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        }
+      ]
+    },
+    {
+      "name": "horizontal-bar-charts",
+      "type": "registry:component",
+      "title": "Horizontal Bar Charts",
+      "description": "Professional horizontal bar charts for financial analysis including revenue, cash flow, profitability, and cost center reporting",
+      "registryDependencies": [
+        "card",
+        "chart",
+        "https://gt-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/horizontal-bar-charts.tsx",
           "type": "registry:component"
         },
         {
@@ -549,19 +685,16 @@
       "name": "chart",
       "type": "registry:ui",
       "title": "Chart",
-      "description": "Beautiful charts. Built using Recharts. Copy and paste into your apps.",
-      "registryDependencies": [
-        "chart",
-        "https://gt-registry.vercel.app/r/theme.json"
-      ],
+      "description": "Chart components built using Recharts for data visualization.",
+      "registryDependencies": ["https://gt-registry.vercel.app/r/theme.json"],
       "files": [
         {
-          "path": "src/app/starters/(minimal)/v0-layout.tsx",
-          "type": "registry:file",
-          "target": "app/layout.tsx"
+          "path": "src/components/ui/chart.tsx",
+          "type": "registry:ui"
         }
       ]
     },
+
     {
       "name": "area-chart",
       "type": "registry:ui",

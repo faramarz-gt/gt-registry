@@ -1,10 +1,10 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Download, Copy } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { ArrowLeft, Copy, Download } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
-import { cn } from "@/lib/utils";
 
 interface LogoCardProps {
   name: string;
@@ -14,7 +14,13 @@ interface LogoCardProps {
   downloadName?: string;
 }
 
-function LogoCard({ name, src, description, className, downloadName }: LogoCardProps) {
+function LogoCard({
+  name,
+  src,
+  description,
+  className,
+  downloadName,
+}: LogoCardProps) {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
@@ -24,7 +30,7 @@ function LogoCard({ name, src, description, className, downloadName }: LogoCardP
   };
 
   const handleDownload = () => {
-    const link = document.createElement('a');
+    const link = document.createElement("a");
     link.href = src;
     link.download = downloadName || name;
     document.body.appendChild(link);
@@ -34,8 +40,17 @@ function LogoCard({ name, src, description, className, downloadName }: LogoCardP
 
   return (
     <div className="group rounded-lg border bg-card p-6 transition-all hover:shadow-md">
-      <div className={cn("mb-4 flex h-32 items-center justify-center rounded-lg border bg-background p-4", className)}>
-        <img src={src} alt={name} className="max-h-full max-w-full object-contain" />
+      <div
+        className={cn(
+          "mb-4 flex h-32 items-center justify-center rounded-lg border bg-background p-4",
+          className,
+        )}
+      >
+        <img
+          src={src}
+          alt={name}
+          className="max-h-full max-w-full object-contain"
+        />
       </div>
       <div className="space-y-3">
         <div>
@@ -62,7 +77,9 @@ function LogoCard({ name, src, description, className, downloadName }: LogoCardP
             Download
           </Button>
         </div>
-        <code className="block text-xs text-muted-foreground break-all">{src}</code>
+        <code className="block text-xs text-muted-foreground break-all">
+          {src}
+        </code>
       </div>
     </div>
   );
@@ -74,54 +91,56 @@ const gtreasury = {
     {
       name: "GTreasury Full Logo (Color)",
       src: "/assets/gtreasury/gtreasury-logo-rgb.svg",
-      description: "Primary logo with full branding and color gradient. Use for main branding.",
-      downloadName: "gtreasury-logo-color.svg"
+      description:
+        "Primary logo with full branding and color gradient. Use for main branding.",
+      downloadName: "gtreasury-logo-color.svg",
     },
     {
       name: "GTreasury Full Logo (White)",
       src: "/assets/gtreasury/gtreasury-logo-rgb-white.svg",
       description: "White version for dark backgrounds and overlays.",
-      downloadName: "gtreasury-logo-white.svg"
+      downloadName: "gtreasury-logo-white.svg",
     },
     {
       name: "GTreasury Symbol Only",
       src: "/assets/gtreasury/gtreasury-logo-rgb-symbol-only.svg",
-      description: "Standalone symbol without text for compact spaces and icons.",
-      downloadName: "gtreasury-symbol.svg"
+      description:
+        "Standalone symbol without text for compact spaces and icons.",
+      downloadName: "gtreasury-symbol.svg",
     },
     {
       name: "GTreasury Logo Mark",
       src: "/assets/gtreasury/gtreasury-logo-mark.svg",
       description: "Simplified logo mark for favicons and small applications.",
-      downloadName: "gtreasury-mark.svg"
-    }
+      downloadName: "gtreasury-mark.svg",
+    },
   ],
   extended: [
     {
       name: "GTreasury Logo (RGB)",
       src: "/assets/gtreasury/GTreasury-Logo-RGB.svg",
       description: "Standard horizontal logo in full color.",
-      downloadName: "GTreasury-Logo-RGB.svg"
+      downloadName: "GTreasury-Logo-RGB.svg",
     },
     {
       name: "GTreasury Logo (White)",
       src: "/assets/gtreasury/GTreasury-Logo-White-RGB.svg",
       description: "White version for dark backgrounds.",
-      downloadName: "GTreasury-Logo-White.svg"
+      downloadName: "GTreasury-Logo-White.svg",
     },
     {
       name: "GTreasury Stacked Logo",
       src: "/assets/gtreasury/GTreasury-Logo-Stacked-RGB.svg",
       description: "Vertical stacked version for narrow spaces.",
-      downloadName: "GTreasury-Logo-Stacked.svg"
+      downloadName: "GTreasury-Logo-Stacked.svg",
     },
     {
       name: "GTreasury Stacked (White)",
       src: "/assets/gtreasury/GTreasury-Logo-Stacked-White-RGB.svg",
       description: "White stacked version for dark backgrounds.",
-      downloadName: "GTreasury-Logo-Stacked-White.svg"
-    }
-  ]
+      downloadName: "GTreasury-Logo-Stacked-White.svg",
+    },
+  ],
 };
 
 // GSmart Logos Data
@@ -130,60 +149,55 @@ const gsmart = {
     {
       name: "GSmart Logo (Gradient on White)",
       src: "/assets/gsmart/GSmart logo (Gradient on White).svg",
-      description: "Primary GSmart logo with signature gradient on white background.",
-      downloadName: "gsmart-logo-gradient.svg"
+      description:
+        "Primary GSmart logo with signature gradient on white background.",
+      downloadName: "gsmart-logo-gradient.svg",
     },
     {
       name: "GSmart Logo (Hot Pink on White)",
       src: "/assets/gsmart/GSmart logo (Hot Pink on White).svg",
       description: "GSmart logo in hot pink for single-color applications.",
-      downloadName: "gsmart-logo-pink.svg"
+      downloadName: "gsmart-logo-pink.svg",
     },
     {
       name: "GSmart Logo (White on Gradient)",
       src: "/assets/gsmart/GSmart logo (White on Gradient).svg",
       description: "White logo on gradient background for dark themes.",
-      downloadName: "gsmart-logo-white-gradient.svg"
+      downloadName: "gsmart-logo-white-gradient.svg",
     },
     {
       name: "GSmart Symbol (Hot Pink)",
       src: "/assets/gsmart/GSmart Symbol Hot Pink.svg",
       description: "GSmart symbol only in hot pink for icons and compact uses.",
-      downloadName: "gsmart-symbol.svg"
-    }
+      downloadName: "gsmart-symbol.svg",
+    },
   ],
   products: [
     {
       name: "GSmart Risk (Gradient)",
       src: "/assets/gsmart/GSmart logo - Risk (White on Gradient).svg",
       description: "GSmart Risk product logo with gradient background.",
-      downloadName: "gsmart-risk-gradient.svg"
+      downloadName: "gsmart-risk-gradient.svg",
     },
     {
       name: "GSmart Liquidity (Gradient)",
       src: "/assets/gsmart/GSmart logo - Liquidity (White on Gradient).svg",
       description: "GSmart Liquidity product logo with gradient background.",
-      downloadName: "gsmart-liquidity-gradient.svg"
+      downloadName: "gsmart-liquidity-gradient.svg",
     },
     {
       name: "GSmart Ledger (Gradient)",
       src: "/assets/gsmart/GSmart logo - Ledger (White on Gradient).svg",
       description: "GSmart Ledger product logo with gradient background.",
-      downloadName: "gsmart-ledger-gradient.svg"
+      downloadName: "gsmart-ledger-gradient.svg",
     },
     {
       name: "GSmart Forecast (Gradient)",
       src: "/assets/gsmart/GSmart logo - Forecast (White on Gradient).svg",
       description: "GSmart Forecast product logo with gradient background.",
-      downloadName: "gsmart-forecast-gradient.svg"
+      downloadName: "gsmart-forecast-gradient.svg",
     },
-    {
-      name: "GSmart Connectivity (Gradient)",
-      src: "/assets/gsmart/GSmart logo - Connectivity (White on Gradient).svg",
-      description: "GSmart Connectivity product logo with gradient background.",
-      downloadName: "gsmart-connectivity-gradient.svg"
-    }
-  ]
+  ],
 };
 
 export default function LogosPage() {
@@ -197,9 +211,12 @@ export default function LogosPage() {
           </Link>
         </Button>
 
-        <h1 className="font-bold text-3xl tracking-tight">Brand Assets & Logos</h1>
+        <h1 className="font-bold text-3xl tracking-tight">
+          Brand Assets & Logos
+        </h1>
         <p className="mt-1 text-muted-foreground">
-          Complete collection of GTreasury and GSmart brand assets for various use cases and applications
+          Complete collection of GTreasury and GSmart brand assets for various
+          use cases and applications
         </p>
       </div>
 
@@ -234,7 +251,8 @@ export default function LogosPage() {
       <section className="mb-12">
         <h2 className="mb-4 font-semibold text-xl">GTreasury Primary Logos</h2>
         <p className="mb-6 text-muted-foreground">
-          Core GTreasury brand assets for primary use cases and general branding applications.
+          Core GTreasury brand assets for primary use cases and general branding
+          applications.
         </p>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
           {gtreasury.primary.map((logo) => (
@@ -252,9 +270,12 @@ export default function LogosPage() {
 
       {/* GTreasury Extended Collection */}
       <section className="mb-12">
-        <h2 className="mb-4 font-semibold text-xl">GTreasury Extended Collection</h2>
+        <h2 className="mb-4 font-semibold text-xl">
+          GTreasury Extended Collection
+        </h2>
         <p className="mb-6 text-muted-foreground">
-          Additional GTreasury logo variations including stacked versions and alternative formats.
+          Additional GTreasury logo variations including stacked versions and
+          alternative formats.
         </p>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
           {gtreasury.extended.map((logo) => (
@@ -274,7 +295,8 @@ export default function LogosPage() {
       <section className="mb-12">
         <h2 className="mb-4 font-semibold text-xl">GSmart Primary Logos</h2>
         <p className="mb-6 text-muted-foreground">
-          Core GSmart brand assets featuring the signature gradient and primary brand variations.
+          Core GSmart brand assets featuring the signature gradient and primary
+          brand variations.
         </p>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
           {gsmart.primary.map((logo) => (
@@ -294,7 +316,8 @@ export default function LogosPage() {
       <section className="mb-12">
         <h2 className="mb-4 font-semibold text-xl">GSmart Product Logos</h2>
         <p className="mb-6 text-muted-foreground">
-          Product-specific GSmart logos for individual modules and specialized applications.
+          Product-specific GSmart logos for individual modules and specialized
+          applications.
         </p>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {gsmart.products.map((logo) => (
@@ -321,17 +344,30 @@ export default function LogosPage() {
             <div>
               <h4 className="font-medium mb-2">File Formats Available:</h4>
               <ul className="space-y-1 text-muted-foreground">
-                <li>• <strong>SVG:</strong> Vector format for web and print</li>
-                <li>• <strong>PNG:</strong> High-resolution raster images</li>
-                <li>• <strong>Multiple sizes:</strong> Optimized for different uses</li>
+                <li>
+                  • <strong>SVG:</strong> Vector format for web and print
+                </li>
+                <li>
+                  • <strong>PNG:</strong> High-resolution raster images
+                </li>
+                <li>
+                  • <strong>Multiple sizes:</strong> Optimized for different
+                  uses
+                </li>
               </ul>
             </div>
             <div>
               <h4 className="font-medium mb-2">Quick Actions:</h4>
               <ul className="space-y-1 text-muted-foreground">
-                <li>• <strong>Copy Path:</strong> Get file path for development</li>
-                <li>• <strong>Download:</strong> Save logo to your device</li>
-                <li>• <strong>View Code:</strong> See the file path reference</li>
+                <li>
+                  • <strong>Copy Path:</strong> Get file path for development
+                </li>
+                <li>
+                  • <strong>Download:</strong> Save logo to your device
+                </li>
+                <li>
+                  • <strong>View Code:</strong> See the file path reference
+                </li>
               </ul>
             </div>
           </div>
@@ -339,4 +375,4 @@ export default function LogosPage() {
       </section>
     </div>
   );
-} 
+}

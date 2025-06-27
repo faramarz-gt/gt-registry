@@ -3,92 +3,92 @@
 :root {
   /* GTreasury Primary Colors */
   --night-blue: #012030;
-  --sea-blue: #115D7E;
-  --peppermint-green: #45C4B0;
-  --monsoon-green: #9AEBA3;
-  --white: #FFFFFF;
+  --sea-blue: #115d7e;
+  --peppermint-green: #45c4b0;
+  --monsoon-green: #9aeba3;
+  --white: #ffffff;
 
   /* GTreasury Secondary Colors */
-  --lime-green: #BAEB4F;
-  --sage-green: #D9FCBA;
-  --pale-yellow: #FFFAD6;
+  --lime-green: #baeb4f;
+  --sage-green: #d9fcba;
+  --pale-yellow: #fffad6;
 
   /* GSmart Colors */
-  --gsmart-primary: #E33277;
-  --gsmart-secondary: #F4C548;
-  --gsmart-gradient-start: #E33277;
-  --gsmart-gradient-end: #F4C548;
-  
+  --gsmart-primary: #e33277;
+  --gsmart-secondary: #f4c548;
+  --gsmart-gradient-start: #e33277;
+  --gsmart-gradient-end: #f4c548;
+
   /* GSmart Gradient Stops */
-  --gsmart-gradient-31: #E33277; /* 31% stop */
-  --gsmart-gradient-100: #F4C548; /* 100% stop */
-  
+  --gsmart-gradient-31: #e33277; /* 31% stop */
+  --gsmart-gradient-100: #f4c548; /* 100% stop */
+
   /* GSmart Tints and Shades */
-  --gsmart-primary-dark: #C12A66;
-  --gsmart-primary-light: #E85C95;
-  --gsmart-secondary-dark: #E6B73A;
-  --gsmart-secondary-light: #F7D066;
+  --gsmart-primary-dark: #c12a66;
+  --gsmart-primary-light: #e85c95;
+  --gsmart-secondary-dark: #e6b73a;
+  --gsmart-secondary-light: #f7d066;
 
   /* Night Blue Tints */
   --night-blue-100: #012030;
-  --night-blue-90: #1A3645;
-  --night-blue-80: #344D59;
-  --night-blue-70: #4D636E;
+  --night-blue-90: #1a3645;
+  --night-blue-80: #344d59;
+  --night-blue-70: #4d636e;
   --night-blue-60: #677983;
   --night-blue-50: #809098;
-  --night-blue-40: #99A6AC;
-  --night-blue-30: #B3BCC1;
-  --night-blue-20: #CCD2D6;
-  --night-blue-10: #E6E9EA;
+  --night-blue-40: #99a6ac;
+  --night-blue-30: #b3bcc1;
+  --night-blue-20: #ccd2d6;
+  --night-blue-10: #e6e9ea;
 
   /* Sea Blue Tints */
-  --sea-blue-130: #0C4158;
-  --sea-blue-120: #0E4A65;
-  --sea-blue-110: #0F5471;
-  --sea-blue-100: #115D7E;
-  --sea-blue-90: #296D8B;
-  --sea-blue-80: #417D98;
-  --sea-blue-70: #588EA5;
-  --sea-blue-60: #709EB2;
-  --sea-blue-50: #88AEBF;
-  --sea-blue-40: #A0BEC8;
-  --sea-blue-30: #B8CED8;
-  --sea-blue-20: #CFDFE5;
-  --sea-blue-10: #E7EFF2;
+  --sea-blue-130: #0c4158;
+  --sea-blue-120: #0e4a65;
+  --sea-blue-110: #0f5471;
+  --sea-blue-100: #115d7e;
+  --sea-blue-90: #296d8b;
+  --sea-blue-80: #417d98;
+  --sea-blue-70: #588ea5;
+  --sea-blue-60: #709eb2;
+  --sea-blue-50: #88aebf;
+  --sea-blue-40: #a0bec8;
+  --sea-blue-30: #b8ced8;
+  --sea-blue-20: #cfdfe5;
+  --sea-blue-10: #e7eff2;
 
   /* Peppermint Green Tints */
   --peppermint-green-150: #236258;
-  --peppermint-green-140: #29766A;
-  --peppermint-green-130: #30897B;
-  --peppermint-green-120: #379B8D;
-  --peppermint-green-110: #3EB09E;
-  --peppermint-green-100: #45C4B0;
-  --peppermint-green-90: #58CAB8;
-  --peppermint-green-80: #6AD0C0;
-  --peppermint-green-70: #7DD6C8;
-  --peppermint-green-60: #8FDCD0;
-  --peppermint-green-50: #A2E2D8;
-  --peppermint-green-40: #B5E7DF;
-  --peppermint-green-30: #C7EDE7;
-  --peppermint-green-20: #DAF3EF;
-  --peppermint-green-10: #ECF9F7;
+  --peppermint-green-140: #29766a;
+  --peppermint-green-130: #30897b;
+  --peppermint-green-120: #379b8d;
+  --peppermint-green-110: #3eb09e;
+  --peppermint-green-100: #45c4b0;
+  --peppermint-green-90: #58cab8;
+  --peppermint-green-80: #6ad0c0;
+  --peppermint-green-70: #7dd6c8;
+  --peppermint-green-60: #8fdcd0;
+  --peppermint-green-50: #a2e2d8;
+  --peppermint-green-40: #b5e7df;
+  --peppermint-green-30: #c7ede7;
+  --peppermint-green-20: #daf3ef;
+  --peppermint-green-10: #ecf9f7;
 
   /* Monsoon Green Tints */
-  --monsoon-green-150: #4D7652;
-  --monsoon-green-140: #5C8D62;
-  --monsoon-green-130: #6CA572;
-  --monsoon-green-120: #7BBC82;
-  --monsoon-green-110: #8BD493;
-  --monsoon-green-100: #9AEBA3;
-  --monsoon-green-90: #A4EDAC;
-  --monsoon-green-80: #AEEFB5;
-  --monsoon-green-70: #B8F1BF;
-  --monsoon-green-60: #C2F3C8;
-  --monsoon-green-50: #CDF5D1;
-  --monsoon-green-40: #D7F7DA;
-  --monsoon-green-30: #E1F9E3;
-  --monsoon-green-20: #EBFBED;
-  --monsoon-green-10: #F5FDF6;
+  --monsoon-green-150: #4d7652;
+  --monsoon-green-140: #5c8d62;
+  --monsoon-green-130: #6ca572;
+  --monsoon-green-120: #7bbc82;
+  --monsoon-green-110: #8bd493;
+  --monsoon-green-100: #9aeba3;
+  --monsoon-green-90: #a4edac;
+  --monsoon-green-80: #aeefb5;
+  --monsoon-green-70: #b8f1bf;
+  --monsoon-green-60: #c2f3c8;
+  --monsoon-green-50: #cdf5d1;
+  --monsoon-green-40: #d7f7da;
+  --monsoon-green-30: #e1f9e3;
+  --monsoon-green-20: #ebfbed;
+  --monsoon-green-10: #f5fdf6;
 
   /* Theme Colors - Mapped to GTreasury Primary Colors for AA Compliance */
   --background: var(--white); /* #FFFFFF - Pure white background */
@@ -134,13 +134,13 @@
   --chart-9: var(--night-blue-70); /* #4D636E - Night Blue shade */
   --chart-10: var(--sage-green); /* #D9FCBA - SECONDARY Sage Green */
 
-  --sidebar: oklch(0.9320 0.0035 219.5341);
+  --sidebar: oklch(0.932 0.0035 219.5341);
   --sidebar-foreground: oklch(0.2302 0.0476 235.2985);
   --sidebar-primary: oklch(0.4839 0.0927 232.2901);
-  --sidebar-primary-foreground: oklch(1.0000 0 0);
-  --sidebar-accent: oklch(0.9448 0.0267 185.1630);
+  --sidebar-primary-foreground: oklch(1.0 0 0);
+  --sidebar-accent: oklch(0.9448 0.0267 185.163);
   --sidebar-accent-foreground: oklch(0.3791 0.1378 265.5222);
-  --sidebar-border: oklch(0.9470 0.0095 222.0590);
+  --sidebar-border: oklch(0.947 0.0095 222.059);
   --sidebar-ring: oklch(0.8696 0.1268 147.0805);
 
   --font-sans: Inter, sans-serif;
@@ -149,103 +149,108 @@
   --radius: 0.375rem;
   --shadow-2xs: 0px 2px 3px 0px hsl(200.4255 95.9184% 9.6078% / 0.04);
   --shadow-xs: 0px 2px 3px 0px hsl(200.4255 95.9184% 9.6078% / 0.04);
-  --shadow-sm: 0px 2px 3px 0px hsl(200.4255 95.9184% 9.6078% / 0.09), 0px 1px 2px -1px hsl(200.4255 95.9184% 9.6078% / 0.09);
-  --shadow: 0px 2px 3px 0px hsl(200.4255 95.9184% 9.6078% / 0.09), 0px 1px 2px -1px hsl(200.4255 95.9184% 9.6078% / 0.09);
-  --shadow-md: 0px 2px 3px 0px hsl(200.4255 95.9184% 9.6078% / 0.09), 0px 2px 4px -1px hsl(200.4255 95.9184% 9.6078% / 0.09);
-  --shadow-lg: 0px 2px 3px 0px hsl(200.4255 95.9184% 9.6078% / 0.09), 0px 4px 6px -1px hsl(200.4255 95.9184% 9.6078% / 0.09);
-  --shadow-xl: 0px 2px 3px 0px hsl(200.4255 95.9184% 9.6078% / 0.09), 0px 8px 10px -1px hsl(200.4255 95.9184% 9.6078% / 0.09);
+  --shadow-sm: 0px 2px 3px 0px hsl(200.4255 95.9184% 9.6078% / 0.09), 0px 1px
+    2px -1px hsl(200.4255 95.9184% 9.6078% / 0.09);
+  --shadow: 0px 2px 3px 0px hsl(200.4255 95.9184% 9.6078% / 0.09), 0px 1px 2px
+    -1px hsl(200.4255 95.9184% 9.6078% / 0.09);
+  --shadow-md: 0px 2px 3px 0px hsl(200.4255 95.9184% 9.6078% / 0.09), 0px 2px
+    4px -1px hsl(200.4255 95.9184% 9.6078% / 0.09);
+  --shadow-lg: 0px 2px 3px 0px hsl(200.4255 95.9184% 9.6078% / 0.09), 0px 4px
+    6px -1px hsl(200.4255 95.9184% 9.6078% / 0.09);
+  --shadow-xl: 0px 2px 3px 0px hsl(200.4255 95.9184% 9.6078% / 0.09), 0px 8px
+    10px -1px hsl(200.4255 95.9184% 9.6078% / 0.09);
   --shadow-2xl: 0px 2px 3px 0px hsl(200.4255 95.9184% 9.6078% / 0.22);
 }
 
 .dark {
   /* GTreasury Primary Colors - Same for dark mode */
   --night-blue: #012030;
-  --sea-blue: #115D7E;
-  --peppermint-green: #45C4B0;
-  --monsoon-green: #9AEBA3;
-  --white: #FFFFFF;
+  --sea-blue: #115d7e;
+  --peppermint-green: #45c4b0;
+  --monsoon-green: #9aeba3;
+  --white: #ffffff;
 
   /* GTreasury Secondary Colors - Same for dark mode */
-  --lime-green: #BAEB4F;
-  --sage-green: #D9FCBA;
-  --pale-yellow: #FFFAD6;
+  --lime-green: #baeb4f;
+  --sage-green: #d9fcba;
+  --pale-yellow: #fffad6;
 
   /* GSmart Colors - Same for dark mode */
-  --gsmart-primary: #E33277;
-  --gsmart-secondary: #F4C548;
-  --gsmart-gradient-start: #E33277;
-  --gsmart-gradient-end: #F4C548;
-  
+  --gsmart-primary: #e33277;
+  --gsmart-secondary: #f4c548;
+  --gsmart-gradient-start: #e33277;
+  --gsmart-gradient-end: #f4c548;
+
   /* GSmart Gradient Stops */
-  --gsmart-gradient-31: #E33277; /* 31% stop */
-  --gsmart-gradient-100: #F4C548; /* 100% stop */
-  
+  --gsmart-gradient-31: #e33277; /* 31% stop */
+  --gsmart-gradient-100: #f4c548; /* 100% stop */
+
   /* GSmart Tints and Shades */
-  --gsmart-primary-dark: #C12A66;
-  --gsmart-primary-light: #E85C95;
-  --gsmart-secondary-dark: #E6B73A;
-  --gsmart-secondary-light: #F7D066;
+  --gsmart-primary-dark: #c12a66;
+  --gsmart-primary-light: #e85c95;
+  --gsmart-secondary-dark: #e6b73a;
+  --gsmart-secondary-light: #f7d066;
 
   /* Night Blue Tints - Same for dark mode */
   --night-blue-100: #012030;
-  --night-blue-90: #1A3645;
-  --night-blue-80: #344D59;
-  --night-blue-70: #4D636E;
+  --night-blue-90: #1a3645;
+  --night-blue-80: #344d59;
+  --night-blue-70: #4d636e;
   --night-blue-60: #677983;
   --night-blue-50: #809098;
-  --night-blue-40: #99A6AC;
-  --night-blue-30: #B3BCC1;
-  --night-blue-20: #CCD2D6;
-  --night-blue-10: #E6E9EA;
+  --night-blue-40: #99a6ac;
+  --night-blue-30: #b3bcc1;
+  --night-blue-20: #ccd2d6;
+  --night-blue-10: #e6e9ea;
 
   /* Sea Blue Tints - Same for dark mode */
-  --sea-blue-130: #0C4158;
-  --sea-blue-120: #0E4A65;
-  --sea-blue-110: #0F5471;
-  --sea-blue-100: #115D7E;
-  --sea-blue-90: #296D8B;
-  --sea-blue-80: #417D98;
-  --sea-blue-70: #588EA5;
-  --sea-blue-60: #709EB2;
-  --sea-blue-50: #88AEBF;
-  --sea-blue-40: #A0BEC8;
-  --sea-blue-30: #B8CED8;
-  --sea-blue-20: #CFDFE5;
-  --sea-blue-10: #E7EFF2;
+  --sea-blue-130: #0c4158;
+  --sea-blue-120: #0e4a65;
+  --sea-blue-110: #0f5471;
+  --sea-blue-100: #115d7e;
+  --sea-blue-90: #296d8b;
+  --sea-blue-80: #417d98;
+  --sea-blue-70: #588ea5;
+  --sea-blue-60: #709eb2;
+  --sea-blue-50: #88aebf;
+  --sea-blue-40: #a0bec8;
+  --sea-blue-30: #b8ced8;
+  --sea-blue-20: #cfdfe5;
+  --sea-blue-10: #e7eff2;
 
   /* Peppermint Green Tints - Same for dark mode */
   --peppermint-green-150: #236258;
-  --peppermint-green-140: #29766A;
-  --peppermint-green-130: #30897B;
-  --peppermint-green-120: #379B8D;
-  --peppermint-green-110: #3EB09E;
-  --peppermint-green-100: #45C4B0;
-  --peppermint-green-90: #58CAB8;
-  --peppermint-green-80: #6AD0C0;
-  --peppermint-green-70: #7DD6C8;
-  --peppermint-green-60: #8FDCD0;
-  --peppermint-green-50: #A2E2D8;
-  --peppermint-green-40: #B5E7DF;
-  --peppermint-green-30: #C7EDE7;
-  --peppermint-green-20: #DAF3EF;
-  --peppermint-green-10: #ECF9F7;
+  --peppermint-green-140: #29766a;
+  --peppermint-green-130: #30897b;
+  --peppermint-green-120: #379b8d;
+  --peppermint-green-110: #3eb09e;
+  --peppermint-green-100: #45c4b0;
+  --peppermint-green-90: #58cab8;
+  --peppermint-green-80: #6ad0c0;
+  --peppermint-green-70: #7dd6c8;
+  --peppermint-green-60: #8fdcd0;
+  --peppermint-green-50: #a2e2d8;
+  --peppermint-green-40: #b5e7df;
+  --peppermint-green-30: #c7ede7;
+  --peppermint-green-20: #daf3ef;
+  --peppermint-green-10: #ecf9f7;
 
   /* Monsoon Green Tints - Same for dark mode */
-  --monsoon-green-150: #4D7652;
-  --monsoon-green-140: #5C8D62;
-  --monsoon-green-130: #6CA572;
-  --monsoon-green-120: #7BBC82;
-  --monsoon-green-110: #8BD493;
-  --monsoon-green-100: #9AEBA3;
-  --monsoon-green-90: #A4EDAC;
-  --monsoon-green-80: #AEEFB5;
-  --monsoon-green-70: #B8F1BF;
-  --monsoon-green-60: #C2F3C8;
-  --monsoon-green-50: #CDF5D1;
-  --monsoon-green-40: #D7F7DA;
-  --monsoon-green-30: #E1F9E3;
-  --monsoon-green-20: #EBFBED;
-  --monsoon-green-10: #F5FDF6;
+  --monsoon-green-150: #4d7652;
+  --monsoon-green-140: #5c8d62;
+  --monsoon-green-130: #6ca572;
+  --monsoon-green-120: #7bbc82;
+  --monsoon-green-110: #8bd493;
+  --monsoon-green-100: #9aeba3;
+  --monsoon-green-90: #a4edac;
+  --monsoon-green-80: #aeefb5;
+  --monsoon-green-70: #b8f1bf;
+  --monsoon-green-60: #c2f3c8;
+  --monsoon-green-50: #cdf5d1;
+  --monsoon-green-40: #d7f7da;
+  --monsoon-green-30: #e1f9e3;
+  --monsoon-green-20: #ebfbed;
+  --monsoon-green-10: #f5fdf6;
 
   /* Dark Theme Colors - GTreasury Primary Colors for AA Compliance */
   --background: var(--night-blue-100); /* #012030 - Night Blue background for dark theme */
@@ -294,7 +299,7 @@
   --sidebar: oklch(0.2302 0.0476 235.2985);
   --sidebar-foreground: oklch(0.9219 0 0);
   --sidebar-primary: oklch(0.4839 0.0927 232.2901);
-  --sidebar-primary-foreground: oklch(1.0000 0 0);
+  --sidebar-primary-foreground: oklch(1.0 0 0);
   --sidebar-accent: oklch(0.8696 0.1268 147.0805);
   --sidebar-accent-foreground: oklch(0.2302 0.0476 235.2985);
   --sidebar-border: oklch(0.3715 0 0);
@@ -306,11 +311,16 @@
   --radius: 0.375rem;
   --shadow-2xs: 0px 2px 3px 0px hsl(0 0% 0% / 0.04);
   --shadow-xs: 0px 2px 3px 0px hsl(0 0% 0% / 0.04);
-  --shadow-sm: 0px 2px 3px 0px hsl(0 0% 0% / 0.09), 0px 1px 2px -1px hsl(0 0% 0% / 0.09);
-  --shadow: 0px 2px 3px 0px hsl(0 0% 0% / 0.09), 0px 1px 2px -1px hsl(0 0% 0% / 0.09);
-  --shadow-md: 0px 2px 3px 0px hsl(0 0% 0% / 0.09), 0px 2px 4px -1px hsl(0 0% 0% / 0.09);
-  --shadow-lg: 0px 2px 3px 0px hsl(0 0% 0% / 0.09), 0px 4px 6px -1px hsl(0 0% 0% / 0.09);
-  --shadow-xl: 0px 2px 3px 0px hsl(0 0% 0% / 0.09), 0px 8px 10px -1px hsl(0 0% 0% / 0.09);
+  --shadow-sm: 0px 2px 3px 0px hsl(0 0% 0% / 0.09), 0px 1px 2px -1px
+    hsl(0 0% 0% / 0.09);
+  --shadow: 0px 2px 3px 0px hsl(0 0% 0% / 0.09), 0px 1px 2px -1px
+    hsl(0 0% 0% / 0.09);
+  --shadow-md: 0px 2px 3px 0px hsl(0 0% 0% / 0.09), 0px 2px 4px -1px
+    hsl(0 0% 0% / 0.09);
+  --shadow-lg: 0px 2px 3px 0px hsl(0 0% 0% / 0.09), 0px 4px 6px -1px
+    hsl(0 0% 0% / 0.09);
+  --shadow-xl: 0px 2px 3px 0px hsl(0 0% 0% / 0.09), 0px 8px 10px -1px
+    hsl(0 0% 0% / 0.09);
   --shadow-2xl: 0px 2px 3px 0px hsl(0 0% 0% / 0.22);
 }
 
@@ -454,24 +464,44 @@
 
 /* GSmart Gradient Utilities */
 .gsmart-gradient {
-  background: linear-gradient(135deg, var(--gsmart-gradient-start) 31%, var(--gsmart-gradient-end) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--gsmart-gradient-start) 31%,
+    var(--gsmart-gradient-end) 100%
+  );
 }
 
 .gsmart-gradient-horizontal {
-  background: linear-gradient(90deg, var(--gsmart-gradient-start) 31%, var(--gsmart-gradient-end) 100%);
+  background: linear-gradient(
+    90deg,
+    var(--gsmart-gradient-start) 31%,
+    var(--gsmart-gradient-end) 100%
+  );
 }
 
 .gsmart-gradient-vertical {
-  background: linear-gradient(180deg, var(--gsmart-gradient-start) 31%, var(--gsmart-gradient-end) 100%);
+  background: linear-gradient(
+    180deg,
+    var(--gsmart-gradient-start) 31%,
+    var(--gsmart-gradient-end) 100%
+  );
 }
 
 .gsmart-gradient-radial {
-  background: radial-gradient(circle, var(--gsmart-gradient-start) 31%, var(--gsmart-gradient-end) 100%);
+  background: radial-gradient(
+    circle,
+    var(--gsmart-gradient-start) 31%,
+    var(--gsmart-gradient-end) 100%
+  );
 }
 
 /* GSmart Text Gradients */
 .gsmart-text-gradient {
-  background: linear-gradient(135deg, var(--gsmart-gradient-start) 31%, var(--gsmart-gradient-end) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--gsmart-gradient-start) 31%,
+    var(--gsmart-gradient-end) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -481,5 +511,10 @@
 .gsmart-border-gradient {
   border: 2px solid transparent;
   background: linear-gradient(white, white) padding-box,
-              linear-gradient(135deg, var(--gsmart-gradient-start) 31%, var(--gsmart-gradient-end) 100%) border-box;
+    linear-gradient(
+      135deg,
+      var(--gsmart-gradient-start) 31%,
+      var(--gsmart-gradient-end) 100%
+    )
+    border-box;
 }

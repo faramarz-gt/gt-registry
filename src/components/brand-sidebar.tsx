@@ -117,7 +117,12 @@ export function BrandSidebar({
   return (
     <Sidebar variant="sidebar" collapsible="icon" className="mt-16">
       <SidebarHeader>
-        <div className={cn("flex items-center gap-2", isCollapsed ? "py-2 justify-center" : "p-2")}>
+        <div
+          className={cn(
+            "flex items-center gap-2",
+            isCollapsed ? "py-2 justify-center" : "p-2",
+          )}
+        >
           {isCollapsed && (
             <Link href="/" className="flex items-center justify-center">
               <Logo variant="mark" />

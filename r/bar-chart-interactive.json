@@ -3,18 +3,12 @@
   "type": "registry:component",
   "title": "Interactive Bar Chart",
   "description": "An interactive bar chart with hover states showing budget vs actual spending",
-  "registryDependencies": [
-    "card",
-    "chart"
-  ],
-  "dependencies": [
-    "recharts",
-    "react"
-  ],
+  "registryDependencies": ["card", "chart"],
+  "dependencies": ["recharts", "react"],
   "files": [
     {
       "path": "components/charts/bar-chart-interactive.tsx",
       "type": "registry:component"
     }
   ]
-} 
+}

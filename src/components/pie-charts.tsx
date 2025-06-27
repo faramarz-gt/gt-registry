@@ -1,8 +1,16 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { TrendingUp, TrendingDown } from "lucide-react"
-import { Cell, LabelList, Pie, PieChart, ResponsiveContainer, Sector, Label } from "recharts"
+import { TrendingDown, TrendingUp } from "lucide-react";
+import * as React from "react";
+import {
+  Cell,
+  Label,
+  LabelList,
+  Pie,
+  PieChart,
+  ResponsiveContainer,
+  Sector,
+} from "recharts";
 
 import {
   Card,
@@ -11,24 +19,24 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
+} from "@/components/ui/card";
 import {
-  ChartConfig,
+  type ChartConfig,
   ChartContainer,
-  ChartTooltip,
-  ChartTooltipContent,
   ChartLegend,
   ChartLegendContent,
-} from "@/components/ui/chart"
+  ChartTooltip,
+  ChartTooltipContent,
+} from "@/components/ui/chart";
 
 // 1. Basic Pie Chart
 const basicPieData = [
-  { browser: "chrome", visitors: 275, fill: "var(--chart-3)" },
-  { browser: "safari", visitors: 200, fill: "var(--chart-2)" },
-  { browser: "firefox", visitors: 187, fill: "var(--chart-4)" },
-  { browser: "edge", visitors: 173, fill: "var(--chart-5)" },
-  { browser: "other", visitors: 90, fill: "var(--chart-1)" },
-]
+  { browser: "chrome", visitors: 275, fill: "hsl(var(--chart-2))" },
+  { browser: "safari", visitors: 200, fill: "hsl(var(--chart-3))" },
+  { browser: "firefox", visitors: 187, fill: "hsl(var(--chart-4))" },
+  { browser: "edge", visitors: 173, fill: "hsl(var(--chart-5))" },
+  { browser: "other", visitors: 90, fill: "hsl(var(--chart-1))" },
+];
 
 const basicPieConfig = {
   visitors: {
@@ -36,25 +44,25 @@ const basicPieConfig = {
   },
   chrome: {
     label: "Chrome",
-    color: "var(--chart-3)", // Peppermint Green
+    color: "hsl(var(--chart-2))", // Sea Blue - GTreasury primary
   },
   safari: {
     label: "Safari",
-    color: "var(--chart-2)", // Sea Blue
+    color: "hsl(var(--chart-3))", // Peppermint Green - GTreasury primary
   },
   firefox: {
     label: "Firefox",
-    color: "var(--chart-4)", // Monsoon Green
+    color: "hsl(var(--chart-4))", // Monsoon Green - GTreasury primary
   },
   edge: {
     label: "Edge",
-    color: "var(--chart-5)", // Lime Green
+    color: "hsl(var(--chart-5))", // Lime Green - GTreasury secondary
   },
   other: {
     label: "Other",
-    color: "var(--chart-1)", // Night Blue
+    color: "hsl(var(--chart-1))", // Night Blue - GTreasury primary
   },
-} satisfies ChartConfig
+} satisfies ChartConfig;
 
 export function BasicPieChart() {
   return (
@@ -66,18 +74,14 @@ export function BasicPieChart() {
       <CardContent className="flex-1 pb-0">
         <ChartContainer
           config={basicPieConfig}
-          className="mx-auto aspect-square max-h-[250px]"
+          className="mx-auto aspect-square max-h-[350px]"
         >
           <PieChart>
             <ChartTooltip
               cursor={false}
               content={<ChartTooltipContent hideLabel />}
             />
-            <Pie
-              data={basicPieData}
-              dataKey="visitors"
-              nameKey="browser"
-            />
+            <Pie data={basicPieData} dataKey="visitors" nameKey="browser" />
           </PieChart>
         </ChartContainer>
       </CardContent>
@@ -90,17 +94,17 @@ export function BasicPieChart() {
         </div>
       </CardFooter>
     </Card>
-  )
+  );
 }
 
 // 2. Pie Chart with Labels
 const labeledPieData = [
-  { browser: "chrome", visitors: 280, fill: "var(--chart-3)" },
-  { browser: "safari", visitors: 195, fill: "var(--chart-2)" },
-  { browser: "firefox", visitors: 190, fill: "var(--chart-4)" },
-  { browser: "edge", visitors: 170, fill: "var(--chart-5)" },
-  { browser: "other", visitors: 85, fill: "var(--chart-1)" },
-]
+  { browser: "chrome", visitors: 280, fill: "hsl(var(--primary))" },
+  { browser: "safari", visitors: 195, fill: "hsl(var(--secondary))" },
+  { browser: "firefox", visitors: 190, fill: "hsl(var(--chart-1))" },
+  { browser: "edge", visitors: 170, fill: "hsl(var(--chart-2))" },
+  { browser: "other", visitors: 85, fill: "hsl(var(--chart-3))" },
+];
 
 const labeledPieConfig = {
   visitors: {
@@ -108,25 +112,25 @@ const labeledPieConfig = {
   },
   chrome: {
     label: "Chrome",
-    color: "var(--chart-3)",
+    color: "hsl(var(--chart-2))",
   },
   safari: {
     label: "Safari",
-    color: "var(--chart-2)",
+    color: "hsl(var(--chart-3))",
   },
   firefox: {
     label: "Firefox",
-    color: "var(--chart-4)",
+    color: "hsl(var(--chart-4))",
   },
   edge: {
     label: "Edge",
-    color: "var(--chart-5)",
+    color: "hsl(var(--chart-5))",
   },
   other: {
     label: "Other",
-    color: "var(--chart-1)",
+    color: "hsl(var(--chart-1))",
   },
-} satisfies ChartConfig
+} satisfies ChartConfig;
 
 export function LabeledPieChart() {
   return (
@@ -138,7 +142,7 @@ export function LabeledPieChart() {
       <CardContent className="flex-1 pb-0">
         <ChartContainer
           config={labeledPieConfig}
-          className="mx-auto aspect-square max-h-[250px]"
+          className="mx-auto aspect-square max-h-[350px]"
         >
           <PieChart>
             <ChartTooltip
@@ -164,17 +168,17 @@ export function LabeledPieChart() {
         </div>
       </CardFooter>
     </Card>
-  )
+  );
 }
 
 // 3. Pie Chart with Custom Labels
 const customLabelPieData = [
-  { browser: "chrome", visitors: 270, fill: "var(--chart-3)" },
-  { browser: "safari", visitors: 185, fill: "var(--chart-2)" },
-  { browser: "firefox", visitors: 195, fill: "var(--chart-4)" },
-  { browser: "edge", visitors: 165, fill: "var(--chart-5)" },
-  { browser: "other", visitors: 75, fill: "var(--chart-1)" },
-]
+  { browser: "chrome", visitors: 270, fill: "hsl(var(--primary))" },
+  { browser: "safari", visitors: 185, fill: "hsl(var(--secondary))" },
+  { browser: "firefox", visitors: 195, fill: "hsl(var(--chart-1))" },
+  { browser: "edge", visitors: 165, fill: "hsl(var(--chart-2))" },
+  { browser: "other", visitors: 75, fill: "hsl(var(--chart-3))" },
+];
 
 export function CustomLabelPieChart() {
   return (
@@ -210,7 +214,7 @@ export function CustomLabelPieChart() {
                   >
                     {`${payload.browser} (${payload.visitors})`}
                   </text>
-                )
+                );
               }}
               labelLine={false}
             />
@@ -226,17 +230,17 @@ export function CustomLabelPieChart() {
         </div>
       </CardFooter>
     </Card>
-  )
+  );
 }
 
 // 4. Pie Chart with Label List
 const labelListPieData = [
-  { browser: "chrome", visitors: 260, fill: "var(--chart-3)" },
-  { browser: "safari", visitors: 215, fill: "var(--chart-2)" },
-  { browser: "firefox", visitors: 175, fill: "var(--chart-4)" },
-  { browser: "edge", visitors: 155, fill: "var(--chart-5)" },
-  { browser: "other", visitors: 70, fill: "var(--chart-1)" },
-]
+  { browser: "chrome", visitors: 260, fill: "hsl(var(--primary))" },
+  { browser: "safari", visitors: 215, fill: "hsl(var(--secondary))" },
+  { browser: "firefox", visitors: 175, fill: "hsl(var(--chart-1))" },
+  { browser: "edge", visitors: 155, fill: "hsl(var(--chart-2))" },
+  { browser: "other", visitors: 70, fill: "hsl(var(--chart-3))" },
+];
 
 const labelListPieConfig = {
   visitors: {
@@ -244,25 +248,25 @@ const labelListPieConfig = {
   },
   chrome: {
     label: "Chrome",
-    color: "var(--chart-3)",
+    color: "hsl(var(--primary))",
   },
   safari: {
     label: "Safari",
-    color: "var(--chart-2)",
+    color: "hsl(var(--secondary))",
   },
   firefox: {
     label: "Firefox",
-    color: "var(--chart-4)",
+    color: "hsl(var(--chart-1))",
   },
   edge: {
     label: "Edge",
-    color: "var(--chart-5)",
+    color: "hsl(var(--chart-2))",
   },
   other: {
     label: "Other",
-    color: "var(--chart-1)",
+    color: "hsl(var(--chart-3))",
   },
-} satisfies ChartConfig
+} satisfies ChartConfig;
 
 export function LabelListPieChart() {
   return (
@@ -304,17 +308,17 @@ export function LabelListPieChart() {
         </div>
       </CardFooter>
     </Card>
-  )
+  );
 }
 
 // 5. Pie Chart with Legend
 const legendPieData = [
-  { browser: "chrome", visitors: 290, fill: "var(--chart-3)" },
-  { browser: "safari", visitors: 210, fill: "var(--chart-2)" },
-  { browser: "firefox", visitors: 180, fill: "var(--chart-4)" },
-  { browser: "edge", visitors: 160, fill: "var(--chart-5)" },
-  { browser: "other", visitors: 80, fill: "var(--chart-1)" },
-]
+  { browser: "chrome", visitors: 290, fill: "hsl(var(--primary))" },
+  { browser: "safari", visitors: 210, fill: "hsl(var(--secondary))" },
+  { browser: "firefox", visitors: 180, fill: "hsl(var(--chart-1))" },
+  { browser: "edge", visitors: 160, fill: "hsl(var(--chart-2))" },
+  { browser: "other", visitors: 80, fill: "hsl(var(--chart-3))" },
+];
 
 const legendPieConfig = {
   visitors: {
@@ -322,25 +326,25 @@ const legendPieConfig = {
   },
   chrome: {
     label: "Chrome",
-    color: "var(--chart-3)",
+    color: "hsl(var(--primary))",
   },
   safari: {
     label: "Safari",
-    color: "var(--chart-2)",
+    color: "hsl(var(--secondary))",
   },
   firefox: {
     label: "Firefox",
-    color: "var(--chart-4)",
+    color: "hsl(var(--chart-1))",
   },
   edge: {
     label: "Edge",
-    color: "var(--chart-5)",
+    color: "hsl(var(--chart-2))",
   },
   other: {
     label: "Other",
-    color: "var(--chart-1)",
+    color: "hsl(var(--chart-3))",
   },
-} satisfies ChartConfig
+} satisfies ChartConfig;
 
 export function LegendPieChart() {
   return (
@@ -368,17 +372,17 @@ export function LegendPieChart() {
         </ChartContainer>
       </CardContent>
     </Card>
-  )
+  );
 }
 
 // 6. Donut Chart
 const donutData = [
-  { browser: "chrome", visitors: 285, fill: "var(--chart-3)" },
-  { browser: "safari", visitors: 205, fill: "var(--chart-2)" },
-  { browser: "firefox", visitors: 185, fill: "var(--chart-4)" },
-  { browser: "edge", visitors: 175, fill: "var(--chart-5)" },
-  { browser: "other", visitors: 95, fill: "var(--chart-1)" },
-]
+  { browser: "chrome", visitors: 285, fill: "hsl(var(--primary))" },
+  { browser: "safari", visitors: 205, fill: "hsl(var(--secondary))" },
+  { browser: "firefox", visitors: 185, fill: "hsl(var(--chart-1))" },
+  { browser: "edge", visitors: 175, fill: "hsl(var(--chart-2))" },
+  { browser: "other", visitors: 95, fill: "hsl(var(--chart-3))" },
+];
 
 const donutConfig = {
   visitors: {
@@ -386,25 +390,25 @@ const donutConfig = {
   },
   chrome: {
     label: "Chrome",
-    color: "var(--chart-3)",
+    color: "hsl(var(--primary))",
   },
   safari: {
     label: "Safari",
-    color: "var(--chart-2)",
+    color: "hsl(var(--secondary))",
   },
   firefox: {
     label: "Firefox",
-    color: "var(--chart-4)",
+    color: "hsl(var(--chart-1))",
   },
   edge: {
     label: "Edge",
-    color: "var(--chart-5)",
+    color: "hsl(var(--chart-2))",
   },
   other: {
     label: "Other",
-    color: "var(--chart-1)",
+    color: "hsl(var(--chart-3))",
   },
-} satisfies ChartConfig
+} satisfies ChartConfig;
 
 export function DonutChart() {
   return (
@@ -441,14 +445,14 @@ export function DonutChart() {
         </div>
       </CardFooter>
     </Card>
-  )
+  );
 }
 
 // 7. Donut Chart with Text
 export function DonutWithTextChart() {
   const totalVisitors = React.useMemo(() => {
-    return donutData.reduce((acc, curr) => acc + curr.visitors, 0)
-  }, [])
+    return donutData.reduce((acc, curr) => acc + curr.visitors, 0);
+  }, []);
 
   return (
     <Card className="flex flex-col">
@@ -498,7 +502,7 @@ export function DonutWithTextChart() {
                           Visitors
                         </tspan>
                       </text>
-                    )
+                    );
                   }
                 }}
               />
@@ -515,18 +519,15 @@ export function DonutWithTextChart() {
         </div>
       </CardFooter>
     </Card>
-  )
+  );
 }
 
 // 8. Donut Active Chart
 export function DonutActiveChart() {
-  const id = "pie-donut-active-interactive"
-  const [activeIndex, setActiveIndex] = React.useState(-1)
+  const id = "pie-donut-active-interactive";
+  const [activeIndex, setActiveIndex] = React.useState(-1);
 
-  const activeItem = React.useMemo(
-    () => donutData[activeIndex],
-    [activeIndex]
-  )
+  const activeItem = React.useMemo(() => donutData[activeIndex], [activeIndex]);
 
   return (
     <Card data-chart={id} className="flex flex-col">
@@ -566,10 +567,7 @@ export function DonutActiveChart() {
               innerRadius={60}
               strokeWidth={5}
               activeIndex={activeIndex}
-              activeShape={({
-                outerRadius = 0,
-                ...props
-              }: any) => (
+              activeShape={({ outerRadius = 0, ...props }: any) => (
                 <g>
                   <Sector {...props} outerRadius={outerRadius + 10} />
                   <Sector
@@ -594,7 +592,7 @@ export function DonutActiveChart() {
         </div>
       </CardFooter>
     </Card>
-  )
+  );
 }
 
 // 9. Stacked Pie Chart (Nested Donuts)
@@ -605,22 +603,22 @@ const stackedData = [
   { month: "apr", desktop: 73, mobile: 190 },
   { month: "may", desktop: 209, mobile: 130 },
   { month: "jun", desktop: 214, mobile: 140 },
-]
+];
 
 export function StackedPieChart() {
   const desktopData = stackedData.map((item, index) => ({
-    month: item.month,
+    month: `${item.month}-desktop`,
     desktop: item.desktop,
-    fill: "var(--chart-3)",
+    fill: "hsl(var(--primary))",
     key: `desktop-${index}`,
-  }))
-  
+  }));
+
   const mobileData = stackedData.map((item, index) => ({
-    month: item.month,
+    month: `${item.month}-mobile`,
     mobile: item.mobile,
-    fill: "var(--chart-2)",
+    fill: "hsl(var(--secondary))",
     key: `mobile-${index}`,
-  }))
+  }));
 
   return (
     <Card className="flex flex-col">
@@ -633,11 +631,11 @@ export function StackedPieChart() {
           config={{
             desktop: {
               label: "Desktop",
-              color: "var(--chart-3)",
+              color: "hsl(var(--primary))",
             },
             mobile: {
-              label: "Mobile", 
-              color: "var(--chart-2)",
+              label: "Mobile",
+              color: "hsl(var(--secondary))",
             },
           }}
           className="mx-auto aspect-square max-h-[250px]"
@@ -690,17 +688,17 @@ export function StackedPieChart() {
         </div>
       </CardFooter>
     </Card>
-  )
+  );
 }
 
 // 10. Interactive Pie Chart
 const interactivePieData = [
-  { browser: "chrome", visitors: 265, fill: "var(--chart-3)" },
-  { browser: "safari", visitors: 220, fill: "var(--chart-2)" },
-  { browser: "firefox", visitors: 170, fill: "var(--chart-4)" },
-  { browser: "edge", visitors: 150, fill: "var(--chart-5)" },
-  { browser: "other", visitors: 65, fill: "var(--chart-1)" },
-]
+  { browser: "chrome", visitors: 265, fill: "hsl(var(--primary))" },
+  { browser: "safari", visitors: 220, fill: "hsl(var(--secondary))" },
+  { browser: "firefox", visitors: 170, fill: "hsl(var(--chart-1))" },
+  { browser: "edge", visitors: 150, fill: "hsl(var(--chart-2))" },
+  { browser: "other", visitors: 65, fill: "hsl(var(--chart-3))" },
+];
 
 const interactivePieConfig = {
   visitors: {
@@ -708,28 +706,28 @@ const interactivePieConfig = {
   },
   chrome: {
     label: "Chrome",
-    color: "var(--chart-3)",
+    color: "hsl(var(--primary))",
   },
   safari: {
     label: "Safari",
-    color: "var(--chart-2)",
+    color: "hsl(var(--secondary))",
   },
   firefox: {
     label: "Firefox",
-    color: "var(--chart-4)",
+    color: "hsl(var(--chart-1))",
   },
   edge: {
     label: "Edge",
-    color: "var(--chart-5)",
+    color: "hsl(var(--chart-2))",
   },
   other: {
     label: "Other",
-    color: "var(--chart-1)",
+    color: "hsl(var(--chart-3))",
   },
-} satisfies ChartConfig
+} satisfies ChartConfig;
 
 export function InteractivePieChart() {
-  const [activeIndex, setActiveIndex] = React.useState(-1)
+  const [activeIndex, setActiveIndex] = React.useState(-1);
 
   return (
     <Card className="flex flex-col">
@@ -759,7 +757,9 @@ export function InteractivePieChart() {
                   key={`interactive-cell-${entry.browser}-${index}`}
                   fill={entry.fill}
                   fillOpacity={index === activeIndex ? 0.8 : 0.6}
-                  stroke={index === activeIndex ? "var(--chart-3)" : "none"}
+                  stroke={
+                    index === activeIndex ? "hsl(var(--primary))" : "none"
+                  }
                   strokeWidth={index === activeIndex ? 2 : 0}
                 />
               ))}
@@ -776,5 +776,5 @@ export function InteractivePieChart() {
         </div>
       </CardFooter>
     </Card>
-  )
-} 
+  );
+}

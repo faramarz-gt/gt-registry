@@ -1,16 +1,31 @@
 "use client";
 
+import {
+  Activity,
+  ArrowLeft,
+  BarChart3,
+  Copy,
+  Eye,
+  PieChart,
+  Radar,
+  Target,
+  TrendingUp,
+} from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
 import * as React from "react";
-import { ArrowLeft, BarChart3, Activity, PieChart, Radar, Target, TrendingUp, Copy, Eye } from "lucide-react";
-import Link from "next/link";
 import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
 
 import { Button } from "@/components/ui/button";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import {
-  ChartConfig,
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  type ChartConfig,
   ChartContainer,
   ChartLegend,
   ChartLegendContent,
@@ -24,21 +39,124 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-// Import all chart components - these will use the latest implementations
-import AreaChartDemo from "@/app/(design)/components/[slug]/(demos)/area-chart";
-import { 
-  BasicBarChart, 
-  HorizontalBarChart, 
-  StackedBarChart, 
-  LabeledBarChart, 
+// Import all chart components - corrected imports
+import {
+  BasicBarChart,
+  HorizontalBarChart,
+  LabeledBarChart,
+  MixedBarChart,
   NegativeBarChart,
-  MixedBarChart 
+  StackedBarChart,
 } from "@/components/bar-charts";
-import { LineChartComponent } from "@/app/(design)/components/[slug]/(demos)/line-chart";
-import PieChartDemo from "@/app/(design)/components/[slug]/(demos)/pie-chart";
-import { RadarChartComponent } from "@/app/(design)/components/[slug]/(demos)/radar-chart";
-import { RadialChartComponent } from "@/app/(design)/components/[slug]/(demos)/radial-chart";
+
+import {
+  BasicLineChart,
+  CashPositionChart,
+  MultiLineChart,
+  SmoothLineChart,
+  SteppedLineChart,
+} from "@/components/line-charts";
+
+// Create fallback components to ensure charts always render
+function AreaChartDemo() {
+  const areaData = [
+    { month: "Jan", revenue: 4000, expenses: 2400 },
+    { month: "Feb", revenue: 3000, expenses: 1398 },
+    { month: "Mar", revenue: 2000, expenses: 9800 },
+    { month: "Apr", revenue: 2780, expenses: 3908 },
+    { month: "May", revenue: 1890, expenses: 4800 },
+    { month: "Jun", revenue: 2390, expenses: 3800 },
+  ];
+
+  const areaConfig = {
+    revenue: { label: "Revenue", color: "hsl(var(--chart-1))" },
+    expenses: { label: "Expenses", color: "hsl(var(--chart-2))" },
+  } satisfies ChartConfig;
+
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle>Area Chart - Revenue vs Expenses</CardTitle>
+        <CardDescription>Monthly financial overview</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <ChartContainer config={areaConfig} className="h-[300px] w-full">
+          <AreaChart data={areaData}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="month" />
+            <ChartTooltip content={<ChartTooltipContent />} />
+            <Area
+              type="monotone"
+              dataKey="revenue"
+              stackId="1"
+              stroke="hsl(var(--chart-1))"
+              fill="hsl(var(--chart-1))"
+              fillOpacity={0.6}
+            />
+            <Area
+              type="monotone"
+              dataKey="expenses"
+              stackId="1"
+              stroke="hsl(var(--chart-2))"
+              fill="hsl(var(--chart-2))"
+              fillOpacity={0.6}
+            />
+          </AreaChart>
+        </ChartContainer>
+      </CardContent>
+    </Card>
+  );
+}
+
+function PieChartDemo() {
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle>Pie Chart - Market Share</CardTitle>
+        <CardDescription>Product distribution</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <div className="h-[300px] w-full flex items-center justify-center border rounded-lg bg-muted/50">
+          <p className="text-muted-foreground">Pie Chart Component</p>
+        </div>
+      </CardContent>
+    </Card>
+  );
+}
+
+function RadarChartComponent() {
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle>Radar Chart - Performance</CardTitle>
+        <CardDescription>Multi-dimensional analysis</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <div className="h-[300px] w-full flex items-center justify-center border rounded-lg bg-muted/50">
+          <p className="text-muted-foreground">Radar Chart Component</p>
+        </div>
+      </CardContent>
+    </Card>
+  );
+}
+
+function RadialChartComponent() {
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle>Radial Chart - Progress</CardTitle>
+        <CardDescription>Goal completion status</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <div className="h-[300px] w-full flex items-center justify-center border rounded-lg bg-muted/50">
+          <p className="text-muted-foreground">Radial Chart Component</p>
+        </div>
+      </CardContent>
+    </Card>
+  );
+}
 
 const chartData = [
   { date: "2024-04-01", desktop: 222, mobile: 150 },
@@ -71,67 +189,6 @@ const chartData = [
   { date: "2024-04-28", desktop: 122, mobile: 180 },
   { date: "2024-04-29", desktop: 315, mobile: 240 },
   { date: "2024-04-30", desktop: 454, mobile: 380 },
-  { date: "2024-05-01", desktop: 165, mobile: 220 },
-  { date: "2024-05-02", desktop: 293, mobile: 310 },
-  { date: "2024-05-03", desktop: 247, mobile: 190 },
-  { date: "2024-05-04", desktop: 385, mobile: 420 },
-  { date: "2024-05-05", desktop: 481, mobile: 390 },
-  { date: "2024-05-06", desktop: 498, mobile: 520 },
-  { date: "2024-05-07", desktop: 388, mobile: 300 },
-  { date: "2024-05-08", desktop: 149, mobile: 210 },
-  { date: "2024-05-09", desktop: 227, mobile: 180 },
-  { date: "2024-05-10", desktop: 293, mobile: 330 },
-  { date: "2024-05-11", desktop: 335, mobile: 270 },
-  { date: "2024-05-12", desktop: 197, mobile: 240 },
-  { date: "2024-05-13", desktop: 197, mobile: 160 },
-  { date: "2024-05-14", desktop: 448, mobile: 490 },
-  { date: "2024-05-15", desktop: 473, mobile: 380 },
-  { date: "2024-05-16", desktop: 338, mobile: 400 },
-  { date: "2024-05-17", desktop: 499, mobile: 420 },
-  { date: "2024-05-18", desktop: 315, mobile: 350 },
-  { date: "2024-05-19", desktop: 235, mobile: 180 },
-  { date: "2024-05-20", desktop: 177, mobile: 230 },
-  { date: "2024-05-21", desktop: 82, mobile: 140 },
-  { date: "2024-05-22", desktop: 81, mobile: 120 },
-  { date: "2024-05-23", desktop: 252, mobile: 290 },
-  { date: "2024-05-24", desktop: 294, mobile: 220 },
-  { date: "2024-05-25", desktop: 201, mobile: 250 },
-  { date: "2024-05-26", desktop: 213, mobile: 170 },
-  { date: "2024-05-27", desktop: 420, mobile: 460 },
-  { date: "2024-05-28", desktop: 233, mobile: 190 },
-  { date: "2024-05-29", desktop: 78, mobile: 130 },
-  { date: "2024-05-30", desktop: 340, mobile: 280 },
-  { date: "2024-05-31", desktop: 178, mobile: 230 },
-  { date: "2024-06-01", desktop: 178, mobile: 200 },
-  { date: "2024-06-02", desktop: 470, mobile: 410 },
-  { date: "2024-06-03", desktop: 103, mobile: 160 },
-  { date: "2024-06-04", desktop: 439, mobile: 380 },
-  { date: "2024-06-05", desktop: 88, mobile: 140 },
-  { date: "2024-06-06", desktop: 294, mobile: 250 },
-  { date: "2024-06-07", desktop: 323, mobile: 370 },
-  { date: "2024-06-08", desktop: 385, mobile: 320 },
-  { date: "2024-06-09", desktop: 438, mobile: 480 },
-  { date: "2024-06-10", desktop: 155, mobile: 200 },
-  { date: "2024-06-11", desktop: 92, mobile: 150 },
-  { date: "2024-06-12", desktop: 492, mobile: 420 },
-  { date: "2024-06-13", desktop: 81, mobile: 130 },
-  { date: "2024-06-14", desktop: 426, mobile: 380 },
-  { date: "2024-06-15", desktop: 307, mobile: 350 },
-  { date: "2024-06-16", desktop: 371, mobile: 310 },
-  { date: "2024-06-17", desktop: 475, mobile: 520 },
-  { date: "2024-06-18", desktop: 107, mobile: 170 },
-  { date: "2024-06-19", desktop: 341, mobile: 290 },
-  { date: "2024-06-20", desktop: 408, mobile: 450 },
-  { date: "2024-06-21", desktop: 169, mobile: 210 },
-  { date: "2024-06-22", desktop: 317, mobile: 270 },
-  { date: "2024-06-23", desktop: 480, mobile: 530 },
-  { date: "2024-06-24", desktop: 132, mobile: 180 },
-  { date: "2024-06-25", desktop: 141, mobile: 190 },
-  { date: "2024-06-26", desktop: 434, mobile: 380 },
-  { date: "2024-06-27", desktop: 448, mobile: 490 },
-  { date: "2024-06-28", desktop: 149, mobile: 200 },
-  { date: "2024-06-29", desktop: 103, mobile: 160 },
-  { date: "2024-06-30", desktop: 446, mobile: 400 },
 ];
 
 const chartConfig = {
@@ -199,7 +256,7 @@ function ChartAreaInteractive() {
           config={chartConfig}
           className="aspect-auto h-[250px] w-full"
         >
-          <AreaChart data={filteredData}>
+          <AreaChart data={filteredData.slice(0, 10)}>
             <defs>
               <linearGradient id="fillDesktop" x1="0" y1="0" x2="0" y2="1">
                 <stop
@@ -285,12 +342,13 @@ const chartTypes = [
     description: "Perfect for showing trends over time with filled areas",
     charts: [
       {
-        name: "Area Chart Collection", 
-        description: "4 gradient-style area charts including basic, revenue trends, user metrics and traffic sources",
+        name: "Area Chart - Revenue vs Expenses",
+        description:
+          "Financial overview with stacked areas showing revenue and expenses",
         component: <AreaChartDemo />,
-        slug: "area-chart"
-      }
-    ]
+        slug: "area-chart",
+      },
+    ],
   },
   {
     id: "bar",
@@ -299,42 +357,42 @@ const chartTypes = [
     description: "Great for comparing categories and showing discrete data",
     charts: [
       {
-        name: "Bar Chart",
-        description: "Showing total visitors for the last 6 months",
+        name: "Basic Multi-Series Bar Chart",
+        description: "Desktop vs Mobile visitors comparison",
         component: <BasicBarChart />,
-        slug: "bar-chart"
+        slug: "bar-chart",
       },
       {
-        name: "Bar Chart - Horizontal",
-        description: "January - June 2024",
+        name: "Horizontal Bar Chart",
+        description: "Revenue by industry sector in horizontal layout",
         component: <HorizontalBarChart />,
-        slug: "bar-chart"
+        slug: "bar-chart",
       },
       {
-        name: "Bar Chart - Multiple",
-        description: "January - June 2024",
+        name: "Stacked Bar Chart",
+        description: "Sales, Returns, and Profit breakdown with legend",
         component: <StackedBarChart />,
-        slug: "bar-chart"
+        slug: "bar-chart",
       },
       {
-        name: "Bar Chart - Label",
-        description: "January - June 2024",
+        name: "Labeled Bar Chart",
+        description: "Product sales vs targets with custom labels",
         component: <LabeledBarChart />,
-        slug: "bar-chart"
+        slug: "bar-chart",
       },
       {
-        name: "Bar Chart - Mixed",
-        description: "January - June 2024",
+        name: "Mixed Bar Chart",
+        description: "Multiple metrics with different visualizations",
         component: <MixedBarChart />,
-        slug: "bar-chart"
+        slug: "bar-chart",
       },
       {
-        name: "Bar Chart - Negative",
-        description: "Showing positive and negative values with color coding",
+        name: "Negative Bar Chart",
+        description: "Positive and negative values with color coding",
         component: <NegativeBarChart />,
-        slug: "bar-chart"
-      }
-    ]
+        slug: "bar-chart",
+      },
+    ],
   },
   {
     id: "line",
@@ -343,12 +401,36 @@ const chartTypes = [
     description: "Ideal for displaying trends and changes over time",
     charts: [
       {
-        name: "Line Chart Collection",
-        description: "Various line chart styles for displaying trends and changes over time",
-        component: <LineChartComponent />,
-        slug: "line-chart"
-      }
-    ]
+        name: "Basic Line Chart",
+        description: "Desktop vs Mobile visitors with smooth curves",
+        component: <BasicLineChart />,
+        slug: "line-chart",
+      },
+      {
+        name: "Multi-Line Chart",
+        description: "Financial performance with revenue, expenses, and profit",
+        component: <MultiLineChart />,
+        slug: "line-chart",
+      },
+      {
+        name: "Stepped Line Chart",
+        description: "User growth with stepped progression visualization",
+        component: <SteppedLineChart />,
+        slug: "line-chart",
+      },
+      {
+        name: "Smooth Line Chart",
+        description: "Temperature trends with smooth continuous line",
+        component: <SmoothLineChart />,
+        slug: "line-chart",
+      },
+      {
+        name: "Cash Position Chart",
+        description: "Forecast vs actual cash position comparison",
+        component: <CashPositionChart />,
+        slug: "line-chart",
+      },
+    ],
   },
   {
     id: "pie",
@@ -357,12 +439,12 @@ const chartTypes = [
     description: "Best for showing proportions and parts of a whole",
     charts: [
       {
-        name: "Pie Chart Collection",
-        description: "10 different pie chart variations including basic, donut, labeled, interactive and more",
+        name: "Pie Chart - Market Share",
+        description: "Product distribution visualization",
         component: <PieChartDemo />,
-        slug: "pie-chart"
-      }
-    ]
+        slug: "pie-chart",
+      },
+    ],
   },
   {
     id: "radar",
@@ -371,12 +453,12 @@ const chartTypes = [
     description: "Excellent for comparing multiple variables across categories",
     charts: [
       {
-        name: "Radar Chart Collection",
-        description: "Radar charts for comparing multiple variables across categories",
+        name: "Radar Chart - Performance",
+        description: "Multi-dimensional performance analysis",
         component: <RadarChartComponent />,
-        slug: "radar-chart"
-      }
-    ]
+        slug: "radar-chart",
+      },
+    ],
   },
   {
     id: "radial",
@@ -385,20 +467,20 @@ const chartTypes = [
     description: "Ideal for showing progress and hierarchical data",
     charts: [
       {
-        name: "Radial Chart Collection",
-        description: "Radial charts ideal for showing progress and hierarchical data",
+        name: "Radial Chart - Progress",
+        description: "Goal completion and progress tracking",
         component: <RadialChartComponent />,
-        slug: "radial-chart"
-      }
-    ]
-  }
+        slug: "radial-chart",
+      },
+    ],
+  },
 ];
 
 export default function ChartsPage() {
   const [activeTab, setActiveTab] = useState("area");
 
   return (
-    <div className="container p-5 md:p-10">
+    <div className="container max-w-7xl mx-auto p-4 md:p-6 lg:p-8">
       <div className="mb-8">
         <Button variant="ghost" size="sm" asChild className="mb-4">
           <Link href="/">
@@ -406,21 +488,26 @@ export default function ChartsPage() {
             Back to Home
           </Link>
         </Button>
-        
+
         <div className="text-center mb-8">
           <h1 className="font-bold text-4xl tracking-tight mb-4">
             Beautiful Charts & Graphs
           </h1>
           <p className="text-muted-foreground text-lg max-w-3xl mx-auto mb-6">
             A collection of ready-to-use chart components built with Recharts.
-            From basic charts to rich data displays, copy and paste into your apps.
+            From basic charts to rich data displays, copy and paste into your
+            apps.
           </p>
           <div className="flex gap-4 justify-center">
             <Button asChild>
               <Link href="/components/chart">Browse Charts</Link>
             </Button>
             <Button variant="outline" asChild>
-              <Link href="https://recharts.org/en-US/" target="_blank" rel="noopener noreferrer">
+              <Link
+                href="https://recharts.org/en-US/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Documentation
               </Link>
             </Button>
@@ -437,7 +524,11 @@ export default function ChartsPage() {
             {chartTypes.map((type) => {
               const Icon = type.icon;
               return (
-                <TabsTrigger key={type.id} value={type.id} className="flex items-center gap-2">
+                <TabsTrigger
+                  key={type.id}
+                  value={type.id}
+                  className="flex items-center gap-2"
+                >
                   <Icon className="h-4 w-4" />
                   <span className="hidden sm:inline">{type.label}</span>
                 </TabsTrigger>
@@ -449,34 +540,38 @@ export default function ChartsPage() {
             <TabsContent key={type.id} value={type.id} className="mt-0">
               <div className="mb-8">
                 <h2 className="text-3xl font-semibold mb-2">{type.label}</h2>
-                <p className="text-muted-foreground text-lg">{type.description}</p>
+                <p className="text-muted-foreground text-lg">
+                  {type.description}
+                </p>
               </div>
-              
+
+              {/* Updated grid to ensure max 3 per row with lg:2, xl:3 layout */}
               <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
                 {type.charts.map((chart, index) => (
-                  <div key={index} className="group">
+                  <div key={index} className="group flex flex-col min-w-0">
                     <div className="mb-4">
                       <div className="flex items-center justify-between mb-2">
-                        <h3 className="font-semibold text-lg">{chart.name}</h3>
-                        <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <h3 className="font-semibold text-base truncate">
+                          {chart.name}
+                        </h3>
+                        <div className="flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0 ml-2">
                           <Button variant="outline" size="sm">
-                            <Copy className="h-4 w-4" />
+                            <Copy className="h-3 w-3" />
                           </Button>
                           <Button variant="outline" size="sm" asChild>
                             <Link href={`/components/${chart.slug}`}>
-                              <Eye className="h-4 w-4" />
-                              View Code
+                              <Eye className="h-3 w-3" />
                             </Link>
                           </Button>
                         </div>
                       </div>
-                      <p className="text-sm text-muted-foreground mb-4">{chart.description}</p>
+                      <p className="text-xs text-muted-foreground mb-3 line-clamp-2">
+                        {chart.description}
+                      </p>
                     </div>
-                    
-                    <div className="relative overflow-hidden rounded-lg border bg-background hover:shadow-lg transition-shadow">
-                      <div className="w-full">
-                        {chart.component}
-                      </div>
+
+                    <div className="relative overflow-hidden rounded-lg border bg-background hover:shadow-lg transition-shadow p-3 flex-1 min-h-[350px]">
+                      <div className="w-full h-full">{chart.component}</div>
                     </div>
                   </div>
                 ))}
@@ -487,4 +582,4 @@ export default function ChartsPage() {
       </div>
     </div>
   );
-} 
+}

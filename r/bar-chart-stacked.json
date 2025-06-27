@@ -1,20 +1,14 @@
 {
   "name": "bar-chart-stacked",
   "type": "registry:component",
-  "title": "Stacked Bar Chart", 
+  "title": "Stacked Bar Chart",
   "description": "A stacked bar chart showing sales, returns, and profit breakdown with legend",
-  "registryDependencies": [
-    "card",
-    "chart"
-  ],
-  "dependencies": [
-    "recharts",
-    "lucide-react"
-  ],
+  "registryDependencies": ["card", "chart"],
+  "dependencies": ["recharts", "lucide-react"],
   "files": [
     {
       "path": "components/charts/bar-chart-stacked.tsx",
       "type": "registry:component"
     }
   ]
-} 
+}

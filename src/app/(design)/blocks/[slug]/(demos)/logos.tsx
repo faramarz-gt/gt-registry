@@ -1,16 +1,16 @@
-import { 
-  LogosGrid, 
-  LogoFull, 
-  LogoFullWhite, 
-  LogoSymbol, 
-  LogoMark,
+import {
   GSmartConnectivity,
   GSmartConnectivityGradient,
   GSmartForecast,
   GSmartLedger,
   GSmartLiquidity,
   GSmartRisk,
-  GSmartSymbol
+  GSmartSymbol,
+  LogoFull,
+  LogoFullWhite,
+  LogoMark,
+  LogoSymbol,
+  LogosGrid,
 } from "@/components/logos";
 
 export const logos = {
@@ -29,4 +29,4 @@ export const logos = {
     "GSmart Risk": <GSmartRisk />,
     "GSmart Symbol": <GSmartSymbol />,
   },
-}; 
+};
