@@ -84,7 +84,6 @@ export const blockItems = [
   { name: "Hero", path: "/blocks/hero" },
   { name: "Login", path: "/blocks/login" },
   { name: "Logos", path: "/blocks/logos" },
-  { name: "Product Grid", path: "/blocks/product-grid" },
 ];
 
 export const starterItems = [

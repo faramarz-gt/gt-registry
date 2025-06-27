@@ -6,6 +6,52 @@ import Link from "next/link";
 import type React from "react";
 import { ColorBlock, LogoBlock, GTColorBlock, GTTintFamily } from "./color-block";
 
+// GSmart Color Data
+const gsmartColors = [
+  {
+    name: "GSmart Primary",
+    token: "--gsmart-primary",
+    hex: "#E33277",
+    description: "Primary GSmart brand color for key UI elements and branding.",
+    usage: "Primary buttons, brand accents, important highlights"
+  },
+  {
+    name: "GSmart Secondary",
+    token: "--gsmart-secondary", 
+    hex: "#F4C548",
+    description: "Secondary GSmart brand color that complements the primary color.",
+    usage: "Secondary buttons, accent elements, complementary highlights"
+  },
+  {
+    name: "GSmart Primary Dark",
+    token: "--gsmart-primary-dark",
+    hex: "#C12A66",
+    description: "Darker variant of GSmart primary for hover states and depth.",
+    usage: "Hover states, pressed buttons, darker accents"
+  },
+  {
+    name: "GSmart Primary Light",
+    token: "--gsmart-primary-light",
+    hex: "#E85C95",
+    description: "Lighter variant of GSmart primary for subtle backgrounds.",
+    usage: "Light backgrounds, subtle highlights, disabled states"
+  },
+  {
+    name: "GSmart Secondary Dark",
+    token: "--gsmart-secondary-dark",
+    hex: "#E6B73A",
+    description: "Darker variant of GSmart secondary for enhanced contrast.",
+    usage: "Hover states, active elements, enhanced visibility"
+  },
+  {
+    name: "GSmart Secondary Light",
+    token: "--gsmart-secondary-light",
+    hex: "#F7D066",
+    description: "Lighter variant of GSmart secondary for gentle accents.",
+    usage: "Soft backgrounds, gentle highlights, light overlays"
+  }
+];
+
 // GTreasury Color Data
 const primaryColors = [
   {
@@ -160,23 +206,23 @@ export default function TokensPage() {
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
           <LogoBlock
             name="Full Logo (Color)"
-            src="/assets/gtreasury-logo-rgb.svg"
+            src="/assets/gtreasury/gtreasury-logo-rgb.svg"
             description="Primary logo with full branding and color gradient"
           />
           <LogoBlock
             name="Full Logo (White)"
-            src="/assets/gtreasury-logo-rgb-white.svg"
+            src="/assets/gtreasury/gtreasury-logo-rgb-white.svg"
             description="White version for dark backgrounds and overlays"
             className="bg-slate-800 p-4 rounded"
           />
           <LogoBlock
             name="Symbol Only"
-            src="/assets/gtreasury-logo-rgb-symbol-only.svg"
+            src="/assets/gtreasury/gtreasury-logo-rgb-symbol-only.svg"
             description="Standalone symbol without text for compact spaces"
           />
           <LogoBlock
             name="Logo Mark"
-            src="/assets/gtreasury-logo-mark.svg"
+            src="/assets/gtreasury/gtreasury-logo-mark.svg"
             description="Simplified logo mark for icons and favicons"
           />
         </div>
@@ -220,6 +266,116 @@ export default function TokensPage() {
               usage={color.usage}
             />
           ))}
+        </div>
+      </section>
+
+      {/* GSmart Color Palette */}
+      <section className="mb-12">
+        <h2 className="mb-4 font-semibold text-xl">GSmart Color Palette</h2>
+        <p className="mb-6 text-muted-foreground">
+          The GSmart brand color system featuring the signature gradient colors from pink to yellow, with supporting tints for comprehensive UI design.
+        </p>
+        
+        {/* GSmart Gradient Showcase */}
+        <div className="mb-8 rounded-lg border bg-card p-6">
+          <h3 className="font-semibold text-lg mb-4">GSmart Signature Gradient</h3>
+          <div className="space-y-4">
+            <div className="h-20 rounded-lg gsmart-gradient relative overflow-hidden">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <span className="text-white font-semibold text-lg drop-shadow-lg">
+                  GSmart Gradient (31% → 100%)
+                </span>
+              </div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+              <div className="flex items-center gap-3 p-3 rounded border bg-white">
+                <div className="w-4 h-4 rounded" style={{ backgroundColor: "#E33277" }}></div>
+                <div>
+                  <span className="font-medium">Start (31%)</span>
+                  <code className="block text-xs text-muted-foreground">#E33277</code>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 p-3 rounded border bg-white">
+                <div className="w-4 h-4 rounded gsmart-gradient"></div>
+                <div>
+                  <span className="font-medium">Gradient</span>
+                  <code className="block text-xs text-muted-foreground">135deg</code>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 p-3 rounded border bg-white">
+                <div className="w-4 h-4 rounded" style={{ backgroundColor: "#F4C548" }}></div>
+                <div>
+                  <span className="font-medium">End (100%)</span>
+                  <code className="block text-xs text-muted-foreground">#F4C548</code>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* GSmart Color Grid */}
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {gsmartColors.map((color) => (
+            <GTColorBlock
+              key={color.token}
+              name={color.name}
+              token={color.token}
+              hex={color.hex}
+              description={color.description}
+              usage={color.usage}
+              isPrimary={color.token === "--gsmart-primary" || color.token === "--gsmart-secondary"}
+            />
+          ))}
+        </div>
+
+        {/* GSmart Gradient Utilities */}
+        <div className="mt-8 rounded-lg border bg-gradient-to-r from-purple-50 to-orange-50 p-6">
+          <h3 className="font-semibold text-lg mb-4">GSmart Gradient Utilities</h3>
+          <p className="text-muted-foreground mb-4">
+            Pre-built CSS classes for applying GSmart gradients in different orientations and contexts.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="space-y-3">
+              <h4 className="font-medium">Background Gradients</h4>
+              <div className="space-y-2 text-sm">
+                <div className="flex items-center gap-3 p-2 rounded border bg-white">
+                  <div className="w-8 h-4 rounded gsmart-gradient"></div>
+                  <code className="text-xs">.gsmart-gradient</code>
+                  <span className="text-xs text-muted-foreground">135° diagonal</span>
+                </div>
+                <div className="flex items-center gap-3 p-2 rounded border bg-white">
+                  <div className="w-8 h-4 rounded gsmart-gradient-horizontal"></div>
+                  <code className="text-xs">.gsmart-gradient-horizontal</code>
+                  <span className="text-xs text-muted-foreground">90° horizontal</span>
+                </div>
+                <div className="flex items-center gap-3 p-2 rounded border bg-white">
+                  <div className="w-8 h-4 rounded gsmart-gradient-vertical"></div>
+                  <code className="text-xs">.gsmart-gradient-vertical</code>
+                  <span className="text-xs text-muted-foreground">180° vertical</span>
+                </div>
+              </div>
+            </div>
+            <div className="space-y-3">
+              <h4 className="font-medium">Special Effects</h4>
+              <div className="space-y-2 text-sm">
+                <div className="flex items-center gap-3 p-2 rounded border bg-white">
+                  <span className="gsmart-text-gradient font-semibold">Text</span>
+                  <code className="text-xs">.gsmart-text-gradient</code>
+                  <span className="text-xs text-muted-foreground">Gradient text</span>
+                </div>
+                <div className="flex items-center gap-3 p-2 rounded border bg-white">
+                  <div className="w-8 h-4 rounded gsmart-border-gradient bg-white"></div>
+                  <code className="text-xs">.gsmart-border-gradient</code>
+                  <span className="text-xs text-muted-foreground">Gradient border</span>
+                </div>
+                <div className="flex items-center gap-3 p-2 rounded border bg-white">
+                  <div className="w-8 h-4 rounded gsmart-gradient-radial"></div>
+                  <code className="text-xs">.gsmart-gradient-radial</code>
+                  <span className="text-xs text-muted-foreground">Radial gradient</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

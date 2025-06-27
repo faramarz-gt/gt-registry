@@ -46,7 +46,7 @@ export function Logo({ variant = "full", className = "" }: LogoProps) {
         <LogoFallback text="GT" />
       ) : (
         <Image
-          src="/assets/gtreasury-logo-mark.svg"
+          src="/assets/gtreasury/gtreasury-logo-mark.svg"
           alt="GTreasury"
           width={32}
           height={32}
@@ -61,7 +61,7 @@ export function Logo({ variant = "full", className = "" }: LogoProps) {
       <LogoFallback text="GTreasury" />
     ) : (
       <Image
-        src="/assets/gtreasury-logo-rgb.svg"
+        src="/assets/gtreasury/gtreasury-logo-rgb.svg"
         alt="GTreasury"
         width={120}
         height={29}
@@ -77,7 +77,7 @@ export function Logo({ variant = "full", className = "" }: LogoProps) {
       <LogoFallback text="GT" />
     ) : (
       <Image
-        src="/assets/gtreasury-logo-mark.svg"
+        src="/assets/gtreasury/gtreasury-logo-mark.svg"
         alt="GTreasury"
         width={32}
         height={32}
@@ -90,8 +90,8 @@ export function Logo({ variant = "full", className = "" }: LogoProps) {
 
   // For full logo, use appropriate color variant based on theme
   const logoSrc = isDark
-    ? "/assets/gtreasury-logo-rgb-white.svg"
-    : "/assets/gtreasury-logo-rgb.svg";
+    ? "/assets/gtreasury/gtreasury-logo-rgb-white.svg"
+    : "/assets/gtreasury/gtreasury-logo-rgb.svg";
 
   return imageError ? (
     <LogoFallback text="GTreasury" />

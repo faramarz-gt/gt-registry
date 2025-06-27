@@ -7,7 +7,6 @@
   "registryDependencies": [
     "https://gt-registry.vercel.app/r/brand-header.json",
     "https://gt-registry.vercel.app/r/brand-sidebar.json",
-    "https://gt-registry.vercel.app/r/product-grid.json",
     "https://gt-registry.vercel.app/r/theme.json"
   ],
   "files": [

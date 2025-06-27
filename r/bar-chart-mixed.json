@@ -1,0 +1,19 @@
+{
+  "name": "bar-chart-mixed",
+  "type": "registry:component",
+  "title": "Mixed Bar Chart",
+  "description": "A mixed bar chart showing revenue and order volume correlation",
+  "registryDependencies": [
+    "card",
+    "chart"
+  ],
+  "dependencies": [
+    "recharts"
+  ],
+  "files": [
+    {
+      "path": "components/charts/bar-chart-mixed.tsx",
+      "type": "registry:component"
+    }
+  ]
+} 

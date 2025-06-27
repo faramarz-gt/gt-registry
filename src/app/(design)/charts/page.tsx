@@ -26,10 +26,17 @@ import {
 } from "@/components/ui/select";
 
 // Import all chart components - these will use the latest implementations
-import { AreaChartComponent } from "@/app/(design)/components/[slug]/(demos)/area-chart";
-import { BarChartComponent, BarChartNegative } from "@/app/(design)/components/[slug]/(demos)/bar-chart";
+import AreaChartDemo from "@/app/(design)/components/[slug]/(demos)/area-chart";
+import { 
+  BasicBarChart, 
+  HorizontalBarChart, 
+  StackedBarChart, 
+  LabeledBarChart, 
+  NegativeBarChart,
+  MixedBarChart 
+} from "@/components/bar-charts";
 import { LineChartComponent } from "@/app/(design)/components/[slug]/(demos)/line-chart";
-import { PieChartComponent } from "@/app/(design)/components/[slug]/(demos)/pie-chart";
+import PieChartDemo from "@/app/(design)/components/[slug]/(demos)/pie-chart";
 import { RadarChartComponent } from "@/app/(design)/components/[slug]/(demos)/radar-chart";
 import { RadialChartComponent } from "@/app/(design)/components/[slug]/(demos)/radial-chart";
 
@@ -278,63 +285,9 @@ const chartTypes = [
     description: "Perfect for showing trends over time with filled areas",
     charts: [
       {
-        name: "Area Chart",
-        description: "Showing total visitors for the last 3 months",
-        component: <AreaChartComponent />,
-        slug: "area-chart"
-      },
-      {
-        name: "Area Chart - Stacked",
-        description: "January - June 2024",
-        component: <AreaChartComponent />,
-        slug: "area-chart"
-      },
-      {
-        name: "Area Chart - Gradient",
-        description: "January - June 2024",
-        component: <AreaChartComponent />,
-        slug: "area-chart"
-      },
-      {
-        name: "Area Chart - Axis",
-        description: "January - June 2024",
-        component: <AreaChartComponent />,
-        slug: "area-chart"
-      },
-      {
-        name: "Area Chart - Legend",
-        description: "January - June 2024",
-        component: <AreaChartComponent />,
-        slug: "area-chart"
-      },
-      {
-        name: "Area Chart - Icons",
-        description: "January - June 2024",
-        component: <AreaChartComponent />,
-        slug: "area-chart"
-      },
-      {
-        name: "Area Chart - Linear",
-        description: "January - June 2024",
-        component: <AreaChartComponent />,
-        slug: "area-chart"
-      },
-      {
-        name: "Area Chart - Step",
-        description: "January - June 2024",
-        component: <AreaChartComponent />,
-        slug: "area-chart"
-      },
-      {
-        name: "Area Chart - Interactive",
-        description: "January - June 2024",
-        component: <AreaChartComponent />,
-        slug: "area-chart"
-      },
-      {
-        name: "Area Chart - Custom Tooltip",
-        description: "January - June 2024",
-        component: <AreaChartComponent />,
+        name: "Area Chart Collection", 
+        description: "4 gradient-style area charts including basic, revenue trends, user metrics and traffic sources",
+        component: <AreaChartDemo />,
         slug: "area-chart"
       }
     ]
@@ -348,37 +301,37 @@ const chartTypes = [
       {
         name: "Bar Chart",
         description: "Showing total visitors for the last 6 months",
-        component: <BarChartComponent />,
+        component: <BasicBarChart />,
         slug: "bar-chart"
       },
       {
         name: "Bar Chart - Horizontal",
         description: "January - June 2024",
-        component: <BarChartComponent />,
+        component: <HorizontalBarChart />,
         slug: "bar-chart"
       },
       {
         name: "Bar Chart - Multiple",
         description: "January - June 2024",
-        component: <BarChartComponent />,
+        component: <StackedBarChart />,
         slug: "bar-chart"
       },
       {
         name: "Bar Chart - Label",
         description: "January - June 2024",
-        component: <BarChartComponent />,
+        component: <LabeledBarChart />,
         slug: "bar-chart"
       },
       {
         name: "Bar Chart - Mixed",
         description: "January - June 2024",
-        component: <BarChartComponent />,
+        component: <MixedBarChart />,
         slug: "bar-chart"
       },
       {
         name: "Bar Chart - Negative",
         description: "Showing positive and negative values with color coding",
-        component: <BarChartNegative />,
+        component: <NegativeBarChart />,
         slug: "bar-chart"
       }
     ]
@@ -390,32 +343,8 @@ const chartTypes = [
     description: "Ideal for displaying trends and changes over time",
     charts: [
       {
-        name: "Line Chart",
-        description: "Showing total visitors for the last 6 months",
-        component: <LineChartComponent />,
-        slug: "line-chart"
-      },
-      {
-        name: "Line Chart - Multiple",
-        description: "January - June 2024",
-        component: <LineChartComponent />,
-        slug: "line-chart"
-      },
-      {
-        name: "Line Chart - Dots",
-        description: "January - June 2024",
-        component: <LineChartComponent />,
-        slug: "line-chart"
-      },
-      {
-        name: "Line Chart - Custom",
-        description: "January - June 2024",
-        component: <LineChartComponent />,
-        slug: "line-chart"
-      },
-      {
-        name: "Line Chart - Label",
-        description: "January - June 2024",
+        name: "Line Chart Collection",
+        description: "Various line chart styles for displaying trends and changes over time",
         component: <LineChartComponent />,
         slug: "line-chart"
       }
@@ -428,51 +357,9 @@ const chartTypes = [
     description: "Best for showing proportions and parts of a whole",
     charts: [
       {
-        name: "Pie Chart",
-        description: "January - June 2024",
-        component: <PieChartComponent />,
-        slug: "pie-chart"
-      },
-      {
-        name: "Pie Chart - Donut",
-        description: "January - June 2024",
-        component: <PieChartComponent />,
-        slug: "pie-chart"
-      },
-      {
-        name: "Pie Chart - Donut with Text",
-        description: "January - June 2024",
-        component: <PieChartComponent />,
-        slug: "pie-chart"
-      },
-      {
-        name: "Pie Chart - Label",
-        description: "January - June 2024",
-        component: <PieChartComponent />,
-        slug: "pie-chart"
-      },
-      {
-        name: "Pie Chart - Legend",
-        description: "January - June 2024",
-        component: <PieChartComponent />,
-        slug: "pie-chart"
-      },
-      {
-        name: "Pie Chart - Separator",
-        description: "January - June 2024",
-        component: <PieChartComponent />,
-        slug: "pie-chart"
-      },
-      {
-        name: "Pie Chart - Simple",
-        description: "January - June 2024",
-        component: <PieChartComponent />,
-        slug: "pie-chart"
-      },
-      {
-        name: "Pie Chart - Interactive",
-        description: "January - June 2024",
-        component: <PieChartComponent />,
+        name: "Pie Chart Collection",
+        description: "10 different pie chart variations including basic, donut, labeled, interactive and more",
+        component: <PieChartDemo />,
         slug: "pie-chart"
       }
     ]
@@ -484,38 +371,8 @@ const chartTypes = [
     description: "Excellent for comparing multiple variables across categories",
     charts: [
       {
-        name: "Radar Chart",
-        description: "Showing total visitors for the last 6 months",
-        component: <RadarChartComponent />,
-        slug: "radar-chart"
-      },
-      {
-        name: "Radar Chart - Dots",
-        description: "January - June 2024",
-        component: <RadarChartComponent />,
-        slug: "radar-chart"
-      },
-      {
-        name: "Radar Chart - Multiple",
-        description: "January - June 2024",
-        component: <RadarChartComponent />,
-        slug: "radar-chart"
-      },
-      {
-        name: "Radar Chart - Lines Only",
-        description: "January - June 2024",
-        component: <RadarChartComponent />,
-        slug: "radar-chart"
-      },
-      {
-        name: "Radar Chart - Label",
-        description: "January - June 2024",
-        component: <RadarChartComponent />,
-        slug: "radar-chart"
-      },
-      {
-        name: "Radar Chart - Grid",
-        description: "January - June 2024",
+        name: "Radar Chart Collection",
+        description: "Radar charts for comparing multiple variables across categories",
         component: <RadarChartComponent />,
         slug: "radar-chart"
       }
@@ -528,38 +385,8 @@ const chartTypes = [
     description: "Ideal for showing progress and hierarchical data",
     charts: [
       {
-        name: "Radial Chart",
-        description: "January - June 2024",
-        component: <RadialChartComponent />,
-        slug: "radial-chart"
-      },
-      {
-        name: "Radial Chart - Label",
-        description: "January - June 2024",
-        component: <RadialChartComponent />,
-        slug: "radial-chart"
-      },
-      {
-        name: "Radial Chart - Grid",
-        description: "January - June 2024",
-        component: <RadialChartComponent />,
-        slug: "radial-chart"
-      },
-      {
-        name: "Radial Chart - Text",
-        description: "January - June 2024",
-        component: <RadialChartComponent />,
-        slug: "radial-chart"
-      },
-      {
-        name: "Radial Chart - Shape",
-        description: "January - June 2024",
-        component: <RadialChartComponent />,
-        slug: "radial-chart"
-      },
-      {
-        name: "Radial Chart - Stacked",
-        description: "January - June 2024",
+        name: "Radial Chart Collection",
+        description: "Radial charts ideal for showing progress and hierarchical data",
         component: <RadialChartComponent />,
         slug: "radial-chart"
       }

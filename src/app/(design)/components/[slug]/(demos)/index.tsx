@@ -2,10 +2,10 @@ import type { ReactElement, ReactNode } from "react";
 
 import { accordion } from "@/app/(design)/components/[slug]/(demos)/accordion";
 import { alert } from "@/app/(design)/components/[slug]/(demos)/alert";
-import { AreaChartComponent } from "@/app/(design)/components/[slug]/(demos)/area-chart";
+import AreaChartDemo from "@/app/(design)/components/[slug]/(demos)/area-chart";
 import { avatar } from "@/app/(design)/components/[slug]/(demos)/avatar";
 import { badge } from "@/app/(design)/components/[slug]/(demos)/badge";
-import { BarChartComponent } from "@/app/(design)/components/[slug]/(demos)/bar-chart";
+import BarChartDemo from "@/app/(design)/components/[slug]/(demos)/bar-chart";
 import { breadcrumb } from "@/app/(design)/components/[slug]/(demos)/breadcrumb";
 import { button } from "@/app/(design)/components/[slug]/(demos)/button";
 import { calendar } from "@/app/(design)/components/[slug]/(demos)/calendar";
@@ -19,7 +19,7 @@ import { dropdownMenu } from "@/app/(design)/components/[slug]/(demos)/dropdown-
 import { input } from "@/app/(design)/components/[slug]/(demos)/input";
 import { LineChartComponent } from "@/app/(design)/components/[slug]/(demos)/line-chart";
 import { menuBar } from "@/app/(design)/components/[slug]/(demos)/menu-bar";
-import { PieChartComponent } from "@/app/(design)/components/[slug]/(demos)/pie-chart";
+import PieChartDemo from "@/app/(design)/components/[slug]/(demos)/pie-chart";
 import { RadarChartComponent } from "@/app/(design)/components/[slug]/(demos)/radar-chart";
 import { RadialChartComponent } from "@/app/(design)/components/[slug]/(demos)/radial-chart";
 import { select } from "@/app/(design)/components/[slug]/(demos)/select";
@@ -44,14 +44,14 @@ interface Demo {
 const areaChart: Demo = {
   name: "area-chart",
   components: {
-    AreaChart: <AreaChartComponent />,
+    AreaChart: <AreaChartDemo />,
   },
 };
 
 const barChart: Demo = {
   name: "bar-chart",
   components: {
-    BarChart: <BarChartComponent />,
+    BarChart: <BarChartDemo />,
   },
 };
 
@@ -65,7 +65,7 @@ const lineChart: Demo = {
 const pieChart: Demo = {
   name: "pie-chart",
   components: {
-    PieChart: <PieChartComponent />,
+    PieChart: <PieChartDemo />,
   },
 };
 

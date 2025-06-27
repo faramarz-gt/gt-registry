@@ -13,6 +13,22 @@
   --sage-green: #D9FCBA;
   --pale-yellow: #FFFAD6;
 
+  /* GSmart Colors */
+  --gsmart-primary: #E33277;
+  --gsmart-secondary: #F4C548;
+  --gsmart-gradient-start: #E33277;
+  --gsmart-gradient-end: #F4C548;
+  
+  /* GSmart Gradient Stops */
+  --gsmart-gradient-31: #E33277; /* 31% stop */
+  --gsmart-gradient-100: #F4C548; /* 100% stop */
+  
+  /* GSmart Tints and Shades */
+  --gsmart-primary-dark: #C12A66;
+  --gsmart-primary-light: #E85C95;
+  --gsmart-secondary-dark: #E6B73A;
+  --gsmart-secondary-light: #F7D066;
+
   /* Night Blue Tints */
   --night-blue-100: #012030;
   --night-blue-90: #1A3645;
@@ -154,6 +170,22 @@
   --sage-green: #D9FCBA;
   --pale-yellow: #FFFAD6;
 
+  /* GSmart Colors - Same for dark mode */
+  --gsmart-primary: #E33277;
+  --gsmart-secondary: #F4C548;
+  --gsmart-gradient-start: #E33277;
+  --gsmart-gradient-end: #F4C548;
+  
+  /* GSmart Gradient Stops */
+  --gsmart-gradient-31: #E33277; /* 31% stop */
+  --gsmart-gradient-100: #F4C548; /* 100% stop */
+  
+  /* GSmart Tints and Shades */
+  --gsmart-primary-dark: #C12A66;
+  --gsmart-primary-light: #E85C95;
+  --gsmart-secondary-dark: #E6B73A;
+  --gsmart-secondary-light: #F7D066;
+
   /* Night Blue Tints - Same for dark mode */
   --night-blue-100: #012030;
   --night-blue-90: #1A3645;
@@ -294,6 +326,18 @@
   --color-sage-green: var(--sage-green);
   --color-pale-yellow: var(--pale-yellow);
 
+  /* GSmart Color Tokens for Tailwind */
+  --color-gsmart-primary: var(--gsmart-primary);
+  --color-gsmart-secondary: var(--gsmart-secondary);
+  --color-gsmart-gradient-start: var(--gsmart-gradient-start);
+  --color-gsmart-gradient-end: var(--gsmart-gradient-end);
+  --color-gsmart-gradient-31: var(--gsmart-gradient-31);
+  --color-gsmart-gradient-100: var(--gsmart-gradient-100);
+  --color-gsmart-primary-dark: var(--gsmart-primary-dark);
+  --color-gsmart-primary-light: var(--gsmart-primary-light);
+  --color-gsmart-secondary-dark: var(--gsmart-secondary-dark);
+  --color-gsmart-secondary-light: var(--gsmart-secondary-light);
+
   /* Night Blue Tints */
   --color-night-blue-100: var(--night-blue-100);
   --color-night-blue-90: var(--night-blue-90);
@@ -406,4 +450,36 @@
   --shadow-lg: var(--shadow-lg);
   --shadow-xl: var(--shadow-xl);
   --shadow-2xl: var(--shadow-2xl);
+}
+
+/* GSmart Gradient Utilities */
+.gsmart-gradient {
+  background: linear-gradient(135deg, var(--gsmart-gradient-start) 31%, var(--gsmart-gradient-end) 100%);
+}
+
+.gsmart-gradient-horizontal {
+  background: linear-gradient(90deg, var(--gsmart-gradient-start) 31%, var(--gsmart-gradient-end) 100%);
+}
+
+.gsmart-gradient-vertical {
+  background: linear-gradient(180deg, var(--gsmart-gradient-start) 31%, var(--gsmart-gradient-end) 100%);
+}
+
+.gsmart-gradient-radial {
+  background: radial-gradient(circle, var(--gsmart-gradient-start) 31%, var(--gsmart-gradient-end) 100%);
+}
+
+/* GSmart Text Gradients */
+.gsmart-text-gradient {
+  background: linear-gradient(135deg, var(--gsmart-gradient-start) 31%, var(--gsmart-gradient-end) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* GSmart Border Gradients */
+.gsmart-border-gradient {
+  border: 2px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(135deg, var(--gsmart-gradient-start) 31%, var(--gsmart-gradient-end) 100%) border-box;
 }

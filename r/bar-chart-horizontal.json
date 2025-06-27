@@ -1,0 +1,19 @@
+{
+  "name": "bar-chart-horizontal",
+  "type": "registry:component", 
+  "title": "Horizontal Bar Chart",
+  "description": "A horizontal bar chart displaying revenue by industry sector",
+  "registryDependencies": [
+    "card",
+    "chart"
+  ],
+  "dependencies": [
+    "recharts"
+  ],
+  "files": [
+    {
+      "path": "components/charts/bar-chart-horizontal.tsx",
+      "type": "registry:component"
+    }
+  ]
+} 

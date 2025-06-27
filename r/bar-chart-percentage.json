@@ -1,0 +1,20 @@
+{
+  "name": "bar-chart-percentage",
+  "type": "registry:component",
+  "title": "Percentage Bar Chart",
+  "description": "A percentage bar chart showing traffic distribution by device type with percentage labels",
+  "registryDependencies": [
+    "card",
+    "chart"
+  ],
+  "dependencies": [
+    "recharts",
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "components/charts/bar-chart-percentage.tsx",
+      "type": "registry:component"
+    }
+  ]
+} 

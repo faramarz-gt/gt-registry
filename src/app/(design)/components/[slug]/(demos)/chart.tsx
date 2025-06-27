@@ -1,12 +1,12 @@
-import { AreaChartComponent } from "@/app/(design)/components/[slug]/(demos)/area-chart";
-import { BarChartComponent } from "@/app/(design)/components/[slug]/(demos)/bar-chart";
-import { PieChartComponent } from "@/app/(design)/components/[slug]/(demos)/pie-chart";
+import AreaChartDemo from "@/app/(design)/components/[slug]/(demos)/area-chart";
+import BarChartDemo from "@/app/(design)/components/[slug]/(demos)/bar-chart";
+import PieChartDemo from "@/app/(design)/components/[slug]/(demos)/pie-chart";
 
 export const chart = {
   name: "chart",
   components: {
-    BarChart: <BarChartComponent />,
-    AreaChart: <AreaChartComponent />,
-    PieChart: <PieChartComponent />,
+    BarChart: <BarChartDemo />,
+    AreaChart: <AreaChartDemo />,
+          PieChart: <PieChartDemo />,
   },
 };

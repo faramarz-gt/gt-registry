@@ -1,0 +1,19 @@
+{
+  "name": "bar-chart-grouped",
+  "type": "registry:component",
+  "title": "Grouped Bar Chart",
+  "description": "A grouped bar chart with multiple categories showing quarterly performance by region",
+  "registryDependencies": [
+    "card",
+    "chart"
+  ],
+  "dependencies": [
+    "recharts"
+  ],
+  "files": [
+    {
+      "path": "components/charts/bar-chart-grouped.tsx",
+      "type": "registry:component"
+    }
+  ]
+} 
