@@ -25,7 +25,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-// Import all chart components
+// Import all chart components - these will use the latest implementations
 import { AreaChartComponent } from "@/app/(design)/components/[slug]/(demos)/area-chart";
 import { BarChartComponent } from "@/app/(design)/components/[slug]/(demos)/bar-chart";
 import { LineChartComponent } from "@/app/(design)/components/[slug]/(demos)/line-chart";
@@ -137,7 +137,7 @@ const chartConfig = {
   },
   mobile: {
     label: "Mobile",
-    color: "var(--chart-2)",
+    color: "var(--chart-4)",
   },
 } satisfies ChartConfig;
 
@@ -278,62 +278,62 @@ const chartTypes = [
     description: "Perfect for showing trends over time with filled areas",
     charts: [
       {
-        name: "Area Chart - Interactive",
+        name: "Area Chart",
         description: "Showing total visitors for the last 3 months",
         component: <AreaChartComponent />,
         slug: "area-chart"
       },
       {
-        name: "Area Chart",
-        description: "Showing total visitors for the last 6 months",
-        component: <AreaChartComponent />,
-        slug: "area-chart"
-      },
-      {
-        name: "Area Chart - Linear",
-        description: "Showing total visitors for the last 6 months",
-        component: <AreaChartComponent />,
-        slug: "area-chart"
-      },
-      {
-        name: "Area Chart - Step",
-        description: "Showing total visitors for the last 6 months",
-        component: <AreaChartComponent />,
-        slug: "area-chart"
-      },
-      {
-        name: "Area Chart - Legend",
-        description: "Showing total visitors for the last 6 months",
-        component: <AreaChartComponent />,
-        slug: "area-chart"
-      },
-      {
         name: "Area Chart - Stacked",
-        description: "Showing total visitors for the last 6 months",
-        component: <AreaChartComponent />,
-        slug: "area-chart"
-      },
-      {
-        name: "Area Chart - Stacked Expanded",
-        description: "Showing total visitors for the last 6 months",
-        component: <AreaChartComponent />,
-        slug: "area-chart"
-      },
-      {
-        name: "Area Chart - Icons",
-        description: "Showing total visitors for the last 6 months",
+        description: "January - June 2024",
         component: <AreaChartComponent />,
         slug: "area-chart"
       },
       {
         name: "Area Chart - Gradient",
-        description: "Showing total visitors for the last 6 months",
+        description: "January - June 2024",
         component: <AreaChartComponent />,
         slug: "area-chart"
       },
       {
-        name: "Area Chart - Axes",
-        description: "Showing total visitors for the last 6 months",
+        name: "Area Chart - Axis",
+        description: "January - June 2024",
+        component: <AreaChartComponent />,
+        slug: "area-chart"
+      },
+      {
+        name: "Area Chart - Legend",
+        description: "January - June 2024",
+        component: <AreaChartComponent />,
+        slug: "area-chart"
+      },
+      {
+        name: "Area Chart - Icons",
+        description: "January - June 2024",
+        component: <AreaChartComponent />,
+        slug: "area-chart"
+      },
+      {
+        name: "Area Chart - Linear",
+        description: "January - June 2024",
+        component: <AreaChartComponent />,
+        slug: "area-chart"
+      },
+      {
+        name: "Area Chart - Step",
+        description: "January - June 2024",
+        component: <AreaChartComponent />,
+        slug: "area-chart"
+      },
+      {
+        name: "Area Chart - Interactive",
+        description: "January - June 2024",
+        component: <AreaChartComponent />,
+        slug: "area-chart"
+      },
+      {
+        name: "Area Chart - Custom Tooltip",
+        description: "January - June 2024",
         component: <AreaChartComponent />,
         slug: "area-chart"
       }
@@ -343,10 +343,16 @@ const chartTypes = [
     id: "bar",
     label: "Bar Charts",
     icon: BarChart3,
-    description: "Ideal for comparing categories and showing distributions",
+    description: "Great for comparing categories and showing discrete data",
     charts: [
       {
         name: "Bar Chart",
+        description: "Showing total visitors for the last 6 months",
+        component: <BarChartComponent />,
+        slug: "bar-chart"
+      },
+      {
+        name: "Bar Chart - Horizontal",
         description: "January - June 2024",
         component: <BarChartComponent />,
         slug: "bar-chart"
@@ -364,19 +370,13 @@ const chartTypes = [
         slug: "bar-chart"
       },
       {
-        name: "Bar Chart - Horizontal",
+        name: "Bar Chart - Mixed",
         description: "January - June 2024",
         component: <BarChartComponent />,
         slug: "bar-chart"
       },
       {
-        name: "Bar Chart - Custom Label",
-        description: "January - June 2024",
-        component: <BarChartComponent />,
-        slug: "bar-chart"
-      },
-      {
-        name: "Bar Chart - Stacked",
+        name: "Bar Chart - Negative",
         description: "January - June 2024",
         component: <BarChartComponent />,
         slug: "bar-chart"
@@ -387,11 +387,11 @@ const chartTypes = [
     id: "line",
     label: "Line Charts",
     icon: TrendingUp,
-    description: "Great for displaying data trends and changes over time",
+    description: "Ideal for displaying trends and changes over time",
     charts: [
       {
         name: "Line Chart",
-        description: "January - June 2024",
+        description: "Showing total visitors for the last 6 months",
         component: <LineChartComponent />,
         slug: "line-chart"
       },
@@ -408,13 +408,13 @@ const chartTypes = [
         slug: "line-chart"
       },
       {
-        name: "Line Chart - Label",
+        name: "Line Chart - Custom",
         description: "January - June 2024",
         component: <LineChartComponent />,
         slug: "line-chart"
       },
       {
-        name: "Line Chart - Step",
+        name: "Line Chart - Label",
         description: "January - June 2024",
         component: <LineChartComponent />,
         slug: "line-chart"
@@ -425,7 +425,7 @@ const chartTypes = [
     id: "pie",
     label: "Pie Charts",
     icon: PieChart,
-    description: "Perfect for showing proportions and percentages",
+    description: "Best for showing proportions and parts of a whole",
     charts: [
       {
         name: "Pie Chart",
@@ -452,19 +452,19 @@ const chartTypes = [
         slug: "pie-chart"
       },
       {
-        name: "Pie Chart - Label List",
-        description: "January - June 2024",
-        component: <PieChartComponent />,
-        slug: "pie-chart"
-      },
-      {
         name: "Pie Chart - Legend",
         description: "January - June 2024",
         component: <PieChartComponent />,
         slug: "pie-chart"
       },
       {
-        name: "Pie Chart - Stacked",
+        name: "Pie Chart - Separator",
+        description: "January - June 2024",
+        component: <PieChartComponent />,
+        slug: "pie-chart"
+      },
+      {
+        name: "Pie Chart - Simple",
         description: "January - June 2024",
         component: <PieChartComponent />,
         slug: "pie-chart"
@@ -646,8 +646,8 @@ export default function ChartsPage() {
                       <p className="text-sm text-muted-foreground mb-4">{chart.description}</p>
                     </div>
                     
-                    <div className="relative aspect-[4/3] overflow-hidden rounded-lg border bg-background hover:shadow-lg transition-shadow">
-                      <div className="absolute inset-0 p-4">
+                    <div className="relative overflow-hidden rounded-lg border bg-background hover:shadow-lg transition-shadow">
+                      <div className="w-full">
                         {chart.component}
                       </div>
                     </div>

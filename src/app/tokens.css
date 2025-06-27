@@ -103,17 +103,20 @@
   --input: var(--night-blue-20); /* #CCD2D6 - Light Night Blue for input borders */
   --ring: var(--sea-blue); /* #115D7E - Sea Blue for focus rings */
 
-  /* Chart colors - PRIMARY GTreasury colors first, then shades for accessibility */
+  /* Chart colors updated for proper GTreasury color hierarchy */
+  /* PRIMARY COLORS FIRST */
   --chart-1: var(--night-blue); /* #012030 - PRIMARY Night Blue (16.3:1 contrast) */
   --chart-2: var(--sea-blue); /* #115D7E - PRIMARY Sea Blue (5.8:1 contrast) */
   --chart-3: var(--peppermint-green); /* #45C4B0 - PRIMARY Peppermint Green */
   --chart-4: var(--monsoon-green); /* #9AEBA3 - PRIMARY Monsoon Green */
-  --chart-5: var(--white); /* #FFFFFF - PRIMARY White for contrast */
-  --chart-6: var(--night-blue-70); /* #4D636E - Night Blue shade for additional data */
-  --chart-7: var(--sea-blue-80); /* #417D98 - Sea Blue shade */
-  --chart-8: var(--peppermint-green-130); /* #30897B - Peppermint Green shade */
-  --chart-9: var(--monsoon-green-130); /* #6CA572 - Monsoon Green shade */
-  --chart-10: var(--night-blue-30); /* #B3BCC1 - Light Night Blue shade */
+  /* SECONDARY COLORS NEXT */
+  --chart-5: var(--lime-green); /* #BAEB4F - SECONDARY Lime Green */
+  /* ONLY USE SHADES WHEN PRIMARY/SECONDARY ARE EXHAUSTED */
+  --chart-6: var(--sea-blue-80); /* #417D98 - Sea Blue shade for additional data */
+  --chart-7: var(--peppermint-green-130); /* #30897B - Peppermint Green shade */
+  --chart-8: var(--monsoon-green-130); /* #6CA572 - Monsoon Green shade */
+  --chart-9: var(--night-blue-70); /* #4D636E - Night Blue shade */
+  --chart-10: var(--sage-green); /* #D9FCBA - SECONDARY Sage Green */
 
   --sidebar: oklch(0.9320 0.0035 219.5341);
   --sidebar-foreground: oklch(0.2302 0.0476 235.2985);
@@ -241,17 +244,20 @@
   --input: var(--night-blue-70); /* #4D636E - Medium Night Blue for input borders */
   --ring: var(--peppermint-green); /* #45C4B0 - Peppermint Green for focus rings */
 
-  /* Chart colors - PRIMARY GTreasury colors first for dark theme */
+  /* Chart colors updated for proper GTreasury color hierarchy in dark theme */
+  /* PRIMARY COLORS FIRST (adjusted for dark theme visibility) */
   --chart-1: var(--white); /* #FFFFFF - PRIMARY White for dark theme contrast */
   --chart-2: var(--peppermint-green); /* #45C4B0 - PRIMARY Peppermint Green */
   --chart-3: var(--monsoon-green); /* #9AEBA3 - PRIMARY Monsoon Green */
-  --chart-4: var(--sea-blue-80); /* #417D98 - Sea Blue shade for visibility on dark */
-  --chart-5: var(--night-blue-30); /* #B3BCC1 - Light Night Blue for contrast */
+  --chart-4: var(--sea-blue-80); /* #417D98 - PRIMARY Sea Blue (adjusted for dark visibility) */
+  /* SECONDARY COLORS NEXT */
+  --chart-5: var(--lime-green); /* #BAEB4F - SECONDARY Lime Green */
+  /* ONLY USE SHADES WHEN PRIMARY/SECONDARY ARE EXHAUSTED */
   --chart-6: var(--peppermint-green-80); /* #6AD0C0 - Peppermint Green shade */
   --chart-7: var(--monsoon-green-80); /* #AEEFB5 - Monsoon Green shade */
   --chart-8: var(--sea-blue-60); /* #709EB2 - Sea Blue lighter shade */
-  --chart-9: var(--night-blue-40); /* #99A6AC - Night Blue medium shade */
-  --chart-10: var(--peppermint-green-60); /* #8FDCD0 - Peppermint Green lighter */
+  --chart-9: var(--night-blue-30); /* #B3BCC1 - Night Blue light shade for contrast */
+  --chart-10: var(--sage-green); /* #D9FCBA - SECONDARY Sage Green */
 
   --sidebar: oklch(0.2302 0.0476 235.2985);
   --sidebar-foreground: oklch(0.9219 0 0);
