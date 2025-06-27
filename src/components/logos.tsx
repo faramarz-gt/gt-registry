@@ -14,7 +14,7 @@ export function LogoFullWhite() {
   return (
     <div className="flex items-center justify-center p-6 bg-slate-800 rounded-lg border">
       <img
-        src="/assets/GTreasury-Logo-RGB-White.svg"
+        src="/assets/gtreasury-logo-rgb-white.svg"
         alt="GTreasury Full Logo White"
         className="max-h-16 w-auto object-contain"
       />
@@ -26,7 +26,7 @@ export function LogoSymbol() {
   return (
     <div className="flex items-center justify-center p-6 bg-background rounded-lg border">
       <img
-        src="/assets/GTreasury-Logo-RGB-Symbol-only.svg"
+        src="/assets/gtreasury-logo-rgb-symbol-only.svg"
         alt="GTreasury Symbol Only"
         className="max-h-16 w-auto object-contain"
       />
@@ -78,7 +78,7 @@ export function LogosGrid() {
               White version for dark backgrounds and overlays
             </div>
             <code className="font-mono text-muted-foreground text-xs mt-2 block">
-              /assets/GTreasury-Logo-RGB-White.svg
+              /assets/gtreasury-logo-rgb-white.svg
             </code>
           </div>
         </div>
@@ -91,7 +91,7 @@ export function LogosGrid() {
               Standalone symbol without text for compact spaces
             </div>
             <code className="font-mono text-muted-foreground text-xs mt-2 block">
-              /assets/GTreasury-Logo-RGB-Symbol-only.svg
+              /assets/gtreasury-logo-rgb-symbol-only.svg
             </code>
           </div>
         </div>

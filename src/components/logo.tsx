@@ -73,7 +73,7 @@ export function Logo({ variant = "full", className = "" }: LogoProps) {
 
   // For full logo, use appropriate color variant based on theme
   const logoSrc = isDark
-    ? "/assets/GTreasury-Logo-RGB-White.svg"
+    ? "/assets/gtreasury-logo-rgb-white.svg"
     : "/assets/gtreasury-logo-rgb.svg";
 
   return (

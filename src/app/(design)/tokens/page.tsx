@@ -165,13 +165,13 @@ export default function TokensPage() {
           />
           <LogoBlock
             name="Full Logo (White)"
-            src="/assets/GTreasury-Logo-RGB-White.svg"
+            src="/assets/gtreasury-logo-rgb-white.svg"
             description="White version for dark backgrounds and overlays"
             className="bg-slate-800 p-4 rounded"
           />
           <LogoBlock
             name="Symbol Only"
-            src="/assets/GTreasury-Logo-RGB-Symbol-only.svg"
+            src="/assets/gtreasury-logo-rgb-symbol-only.svg"
             description="Standalone symbol without text for compact spaces"
           />
           <LogoBlock
