@@ -122,12 +122,15 @@ export function ComponentCard({
 
         {(components || previewUrl) && (
           <CardContent className="flex flex-col items-center justify-center gap-4 rounded-md px-6">
-            {components &&
-              Object.entries(components).map(([key, node]) => (
-                <div className="w-full" key={key}>
-                  {node}
-                </div>
-              ))}
+            {components && (
+              <div className={`w-full ${Object.keys(components).length >= 3 ? 'grid grid-cols-1 lg:grid-cols-3 gap-4' : 'flex flex-col gap-4'}`}>
+                {Object.entries(components).map(([key, node]) => (
+                  <div className={`${Object.keys(components).length >= 3 ? '' : 'w-full'}`} key={key}>
+                    {node}
+                  </div>
+                ))}
+              </div>
+            )}
 
             {previewUrl && (
               <div

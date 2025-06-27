@@ -1,8 +1,10 @@
-import VarianceBarChart from "@/components/variance-bar-chart";
+import VarianceBarChart, { VarianceBarChartWithTooltip, VarianceBarChartCompact } from "@/components/variance-bar-chart";
 
 export const varianceBarChart = {
   name: "variance-bar-chart",
   components: {
-    Default: <VarianceBarChart />,
+    "Standard Tooltip": <VarianceBarChart />,
+    "Always-Visible Tooltip": <VarianceBarChartWithTooltip />,
+    "Compact View": <VarianceBarChartCompact />,
   },
 }; 
