@@ -46,11 +46,11 @@ async function verifyToken(token: string): Promise<string | null> {
   const redis = await getRedisClient();
   const email = await redis.get(`verification:${hash}`);
   
-  if (email) {
+  if (email !== null) {
     // Delete token after use (one-time use)
     await redis.del(`verification:${hash}`);
     console.log(`✅ Token verified and deleted: verification:${hash}`);
-    return typeof email === 'string' ? email : email.toString();
+    return String(email);
   }
   
   return null;
