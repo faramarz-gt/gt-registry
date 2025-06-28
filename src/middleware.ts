@@ -13,16 +13,19 @@ export default withAuth(
         return !!token;
       },
     },
+    pages: {
+      signIn: "/auth/signin",
+    },
   }
 );
 
-// Protect these routes
+// Protect ALL routes - users must sign in to access anything
 export const config = {
   matcher: [
     /*
-     * Match all request paths except for the ones starting with:
+     * Match all request paths including root "/" except for:
      * - api/auth (NextAuth.js API routes)
-     * - api/redis-test (Redis test endpoint)
+     * - api/redis-test (Redis test endpoint) 
      * - redis-test (Redis test page)
      * - _next/static (static files)
      * - _next/image (image optimization files)
@@ -30,6 +33,7 @@ export const config = {
      * - auth/* (auth pages)
      * - public assets and manifest files
      */
+    "/",
     "/((?!api/auth|api/redis-test|redis-test|_next/static|_next/image|favicon.ico|favicon.svg|robots.txt|auth|assets|public|manifest).*)",
   ],
 }; 
