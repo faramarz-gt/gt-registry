@@ -58,11 +58,18 @@ export default function Home() {
         <div className="space-y-6">
         <div className="space-y-4">
           <h1 className="font-bold text-4xl tracking-tight md:text-5xl">
-            Welcome to the Design Registry
+            GTreasury Design Registry
           </h1>
+          <p className="text-lg text-muted-foreground italic mb-2">
+            *Where financial artistry meets digital craftsmanship*
+          </p>
           <p className="text-lg text-muted-foreground max-w-3xl">
-            Your central hub for distributing design system tokens, UI components, blocks, and starter templates 
-            to any React project. Build faster, maintain consistency, and scale your design system effortlessly.
+            Your sanctuary where GTreasury's design language finds its voice. Every component carries the soul 
+            of corporate excellence, every chart tells stories that balance sheets could only dream of.
+          </p>
+          <p className="text-muted-foreground max-w-3xl">
+            More than a component library—this is GTreasury's visual DNA flowing through charts, buttons, 
+            and gentle gradients that whisper of precision wrapped in beauty.
           </p>
         </div>
 
@@ -129,7 +136,7 @@ export default function Home() {
               </div>
             </div>
             <CardDescription>
-              Reusable UI components for your application
+              *Foundation stones of interface beauty*
             </CardDescription>
           </CardHeader>
 
@@ -159,7 +166,7 @@ export default function Home() {
               </div>
             </div>
             <CardDescription>
-              Beautiful data visualization components
+              *Where data dances with visual poetry*
             </CardDescription>
           </CardHeader>
 
@@ -197,7 +204,7 @@ export default function Home() {
               </div>
             </div>
             <CardDescription>
-              Pre-built UI blocks for common patterns
+              *Pre-composed symphonies of design*
             </CardDescription>
           </CardHeader>
 
@@ -227,7 +234,7 @@ export default function Home() {
               </div>
             </div>
             <CardDescription>
-              Complete starter templates to jumpstart your project
+              *Complete digital universes, ready to launch*
             </CardDescription>
           </CardHeader>
 
